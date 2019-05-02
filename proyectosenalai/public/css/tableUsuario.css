@@ -1,0 +1,35 @@
+
+#div1{
+    overflow:scroll;
+
+}
+#table_id {
+    
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+
+
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+#div2 table {
+        
+    margin: auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
