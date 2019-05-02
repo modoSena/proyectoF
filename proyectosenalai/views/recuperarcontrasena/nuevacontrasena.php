@@ -96,7 +96,7 @@
         </div>
         <div class="modal-body">
         
-              <p for="">Presiona aceptar para redirigirte al inicio de sesion.</p>
+              <p for="">Presiona aceptar para redirigirte al inicio de sesión.</p>
               
               
         </div>

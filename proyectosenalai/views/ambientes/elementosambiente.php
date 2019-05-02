@@ -277,7 +277,7 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Novedad reportada con exito.</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Novedad reportada con éxito.</h2>
         </div>
         <div class="modal-body">
         

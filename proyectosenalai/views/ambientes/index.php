@@ -65,7 +65,7 @@
         <th>EDITAR</th>
             <?php } ?>
         <th>ELEMENTOS</th>
-        <th>UBICACION</th>
+        <th>UBICACIÓN</th>
         <th>NUMERO AMBIENTE</th>
         <th>DOCUMENTO CUENTADANTE</th>
         <th>NOMBRE CUENTADANTE</th>

@@ -62,7 +62,7 @@
                   <th>CAMBIAR ESTADO</th>        
                   <th>REPORTAR NOVEDAD</th>
                   <th>VER NOVEDADES</th>
-                  <th>UBICACION</th>
+                  <th>UBICACIÓN</th>
                   <th>NUMERO AMBIENTE</th>
                   <th>NUMERO SERIAL</th>
                   <th>PLACA EQUIPO</th>

@@ -285,7 +285,7 @@
 
 
             <div class="form-group">
-                <label for="">Direccion</label>
+                <label for="">Dirección</label>
                 <input type="text" name="direccion" id="direccion" class="form-control " placeholder=" " tabindex="3">
             </div>
 
@@ -362,7 +362,7 @@
 
 
 
-            <p style="text-align: center;">Nota:Los Siguientes Campos son Requeridos para el Aprendiz</p>
+            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos para el Aprendiz</p>
 
 
 
@@ -459,11 +459,11 @@
             <div class="modal-content">
                 <form id="verificarcontrasena">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLongTitle">Usuario Registrado con Exito</h2>
+                        <h2 class="modal-title" id="exampleModalLongTitle">Usuario Registrado con Éxito</h2>
                     </div>
                     <div class="modal-body">
 
-                        <p for="">Se han enviado los datos del usuario a la direcion de correo del mismo.</p>
+                        <p for="">Se han enviado los datos del usuario a la dirección de correo del mismo.</p>
 
 
                     </div>

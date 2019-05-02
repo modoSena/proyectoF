@@ -57,7 +57,7 @@
                <th>NOMBRES</th>
                <th>PRIMER APELLIDO</th>
                <th>SEGUNDO APELLIDO</th>
-               <th>DIRECCION</th>
+               <th>DIRECCIÓN</th>
                <th>CELULAR</th>
                <th>TEL</th>
                <th>EMAIL</th>

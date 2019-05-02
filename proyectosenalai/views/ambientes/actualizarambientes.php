@@ -36,7 +36,7 @@
 
 <div class="form-group">
 
-<label>Ubicacion</label>
+<label>Ubicación</label>
 <select class='form-control' id='ubicacion' name='ubicacion'>
     <option value="<?php echo $this->valores['Ubicacion_idUbicacion']?>">selecciona:</option>
     <?php foreach($this->query as $resultado) { ?>
@@ -105,7 +105,7 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Ambiente actualizado con Exito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Ambiente actualizado con éxito</h2>
         </div>
         <div class="modal-body">
         

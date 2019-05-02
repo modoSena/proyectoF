@@ -100,7 +100,7 @@
 
                         <label>Ambiente</label>
                         <select class='form-control' id='ambiente' name='ambiente'>
-                            <option value="">Primero selecciona una ubicacion</option>
+                            <option value="">Primero selecciona una ubicación</option>
 
 
 

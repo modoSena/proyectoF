@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Primer apeliido</label>
+                        <label for="">Primer Apellido</label>
                         <input type="text" name="Aapellido_primero" id="Aapellido_primero"
                             value="<?php echo $this->valores['Apellido_Primero']; ?>" class="form-control " placeholder=""
                             tabindex="1">
@@ -138,7 +138,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Direccion</label>
+                <label for="">Dirección</label>
                 <input type="text" name="Adireccion" id="Adireccion" value="<?php echo $this->valores['Direccion']; ?>"
                     class="form-control " placeholder=" " tabindex="3">
             </div>
@@ -165,7 +165,7 @@
                     </div>
                 </div>
             </div>
-            <p style="text-align: center;">Nota:Los Siguientes Campos son Requeridos para el Aprendiz</p>
+            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos para el Aprendiz</p>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <label>Programa</label>
@@ -213,7 +213,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLongTitle">Actualizaciones con Exito</h2>
+                    <h2 class="modal-title" id="exampleModalLongTitle">Actualizaciones con Éxito</h2>
                 </div>
                 <div class="modal-body">
                     <p for="">Usuario actualizado correctamente.</p>
