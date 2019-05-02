@@ -38,7 +38,7 @@
                     <div class="card ">
                       
                         <div class="card-header">
-                            <h2 class="text-center text-light">Inicia sesiòn</h2>
+                            <h2 class="text-center text-light">Inicia sesión</h2>
                         </div>
                         <div class="card-body">
                             <form class="needs-validation" id="login">
