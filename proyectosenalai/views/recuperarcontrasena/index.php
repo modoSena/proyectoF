@@ -93,7 +93,7 @@
         </div>
         <div class="modal-body">
         
-              <p for="">Se ha enviado un link de recuperacion de contraseña a tu email debes acceder a el para cambiar tu contraseña.</p>
+              <p for="">Se ha enviado un link de recuperación de contraseña a tu email debes acceder a él para cambiar tu contraseña.</p>
               
               
         </div>

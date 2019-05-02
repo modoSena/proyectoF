@@ -5,21 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.css">
-
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/login.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/header.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/tableUsuario.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>DataTables/datatables.css">
-    
-
-
+    <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
     <title>Sena L.A.I</title>
 </head>
 
@@ -64,7 +57,7 @@
                <th>NOMBRES</th>
                <th>PRIMER APELLIDO</th>
                <th>SEGUNDO APELLIDO</th>
-               <th>DIRECCION</th>
+               <th>DIRECCIÓN</th>
                <th>CELULAR</th>
                <th>TEL</th>
                <th>EMAIL</th>
