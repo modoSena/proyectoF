@@ -35,8 +35,6 @@ class administrarUsuariosModel extends Model
 
         }
 
-
-
         function consultarUsuariosInstructores(){
             $conexion = $this->db->connect();
             $consulta="SELECT idPersona,Numero_Documento,Estado_idEstado,Nombre,Apellido_Primero,Telefono,Direccion,Numero_Celular,Email,Usuario,NombrePrograma,Numero_Ficha,NombreCiudad,NombreRoles,Tipo_Documento,NombreSexo,Apellido_Segundo FROM persona   JOIN Programa ON Persona.Programa_idPrograma=Programa.idPrograma  JOIN Ciudad ON Persona.Ciudad_idCiudad=Ciudad.idCiudad JOIN Roles ON Persona.Roles_idRoles=Roles.idroles JOIN Tipo_Documento ON Persona.Tipo_Documento_idTipo_Documento=Tipo_Documento.idTipo_Documento   JOIN Sexo ON Persona.Sexo_idSexo=Sexo.idSexo where Roles_idRoles in(1,2) ";
@@ -324,13 +322,7 @@ class administrarUsuariosModel extends Model
             $stmt->execute();
     
         }
-             
-
-
- 
-
-    
-    
+               
 }
 
 ?>

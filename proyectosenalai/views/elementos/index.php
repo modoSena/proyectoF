@@ -11,7 +11,6 @@
 
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.css">
-
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/login.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/header.css">
@@ -80,10 +79,10 @@
 
 
                  <?php if ($fila['Estado_Elementos_idEstado_Elementos'] == 1) { ?>
-                    <td> <a onclick="return confirm('¿Estas seguro?');"  href='<?php echo constant('URL');?>elementos/inhabilitarElemento/<?php echo $fila['idAmbientes']?> '><button type='button' class='btn btn-success'>Activo</button></a> </td>
+                    <td> <a onclick="return confirm('¿Estas seguro?');"  href='<?php echo constant('URL');?>elementos/inhabilitarElemento/<?php echo $fila['idElementos']?> '><button type='button' class='btn btn-success'>Activo</button></a> </td>
                     
                   <?php }else  { ?>
-                    <td> <a onclick="return confirm('¿Estas seguro?');"  href='<?php echo constant('URL');?>elementos/inhabilitarElemento/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-danger'>Inactivo</button></a> </td>
+                    <td> <a onclick="return confirm('¿Estas seguro?');"  href='<?php echo constant('URL');?>elementos/habilitarElemento/<?php echo $fila['idElementos']?>'><button type='button' class='btn btn-danger'>Inactivo</button></a> </td>
                   <?php } ?>
         
 

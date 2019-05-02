@@ -5,49 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.css">
-
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/login.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/header.css">
-
     <title>Sena L.A.I</title>
 </head>
-
 <body>
-
-
-
     <?php require('views/plantilla/header.php')  ?>
-
-
     <div class="container">
-
         <form class="form" id="formularioRegistroUsuario">
 
             <h2 style="text-align: center;">Registro de usuario</h2>
-
-
-
-
             <hr style=" height: 1px; background-color: black;s" />
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="form-group">
                 <label for="">Nombres</label>
                 <input type="text" name="nombres" id="nombres" class="form-control " placeholder="" tabindex="3">
@@ -74,15 +45,6 @@
 
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
 
@@ -102,132 +64,58 @@
                         <select class='form-control' id='rol' name='rol'>
                             <option value="">selecciona:</option>
                             <?php foreach ($this->consultarrol as $resultado) { ?>
-
-
                             <option value="<?php echo $resultado['idRoles']; ?>">
                                 <?php echo $resultado['NombreRoles']; ?> </option>
-
-
                              <?php } ?>
-
-
-
-
-
                         </select>
-
-
                     </div>
-
                 </div>
 <?php }else{?>  
-
     <div class="col-xs-6 col-sm-6 col-md-6">
-
 <div class="form-group">
-
     <label>Rol</label>
     <select class='form-control' id='rol' name='rol'>
         <option value="">selecciona:</option>
-
         <option value="1">Usuario</option>
         <option value="2">Instructor</option>
-
-
-
-
-
-
-
-
-
     </select>
-
-
 </div>
-
-</div>
-                                
+</div>                     
 <?php }?>  
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
-
                     <div class="form-group">
-
-
                         <label>Tipo documento</label>
                         <select class='form-control' id='tipodocumento' name='tipodocumento'>
                             <option value="">selecciona:</option>
                             <?php foreach($this->consultartipodocumento as $resultado ) { ?>
-
-
                             <option value="<?php echo $resultado['idTipo_Documento']; ?>">
                                 <?php echo $resultado['Tipo_Documento']; ?> </option>
-
-
                             <?php } ?>
-
                         </select>
-
-
-
                     </div>
-
                 </div>
-
                 <div class="col-xs-6 col-sm-6 col-md-6">
-
                     <div class="form-group">
                         <label for="">Documento</label>
                         <input type="text" name="documento" id="documento" class="form-control " placeholder=""
                             tabindex="3">
                     </div>
-
                 </div>
             </div>
-
-
-
-
-
             <div class="form-group">
-
                 <label>Sexo</label>
                 <select class='form-control' id='sexo' name='sexo'>
                     <option value="">selecciona:</option>
                     <?php foreach($this->consultarsexo as $resultado) { ?>
-
-
                     <option value="<?php echo $resultado['idSexo']; ?>"> <?php echo $resultado['NombreSexo']; ?>
                     </option>
-
-
                     <?php } ?>
-
                 </select>
-
             </div>
-
-
-
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
-
                     <div class="form-group">
 
                         <label>Departamento</label>

@@ -341,13 +341,7 @@ class ambientes extends Controller{
         $this->model->registrarNovedad($novedad,$idpersona,$idElemento,$fecha);
         echo 1;
       }
-                
-    
-      
       }
-
-
-    
   }
 
 
@@ -373,16 +367,11 @@ $salida = "<table id='table_id2' class='display'>
                   <th>Documento</th>
                   <th>Novedad</th>
                   <th>fecha</th>
-   
-
         </tr>
     </thead>
     <tbody>";
     foreach($this->view->query as  $fila) { 
       $salida .=  "<tr>";
-
-
-
              $salida .= "<td>" . $fila['Nombre'] ."</td>         
                <td>".  $fila['Numero_Documento']. "</td>
                <td>".$fila['Descripcion']. "</td>
@@ -394,29 +383,12 @@ $salida = "<table id='table_id2' class='display'>
      } 
     $salida.="</tbody></table>";
 
-
-
-  
    echo $salida;
 
 
    echo"<script>$(document).ready( function () { $('#table_id2').DataTable(); } );</script>";
 
-
   }
-
-
-    
-
-    
-
-
-
-
-
-
-
-
 }
 
 ?>

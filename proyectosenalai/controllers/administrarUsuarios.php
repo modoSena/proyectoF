@@ -734,7 +734,7 @@ class administrarUsuarios extends Controller {
              
          //CONSULTAMOS EL EMAIL Y USUARIO Y DOCUMENTO PARA HACER VALIDACIONES
          
-         $this->comparador = $this->model->consultarDatosParaComparar($idPersona);
+         
          
          
          //Consulta para validar que el email no exista en nuestra base de datos//

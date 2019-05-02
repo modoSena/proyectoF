@@ -69,9 +69,10 @@
              <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Mantenimiento<span class="caret"></span></a>
                  <ul class="dropdown-menu">
-                 <li> <a  href="departamentos.php" >Departamentos</a></li>
-                <li><a  href="ciudades.php" >Ciudades</a></li>
-                <li><a  href="tipoDocumento.php" >Tipo Documentos</a></li>
+                 <li> <a  href="" >Departamentos</a></li>
+                <li><a  href="" >Ciudades</a></li>
+                <li><a  href="" >Tipo Documentos</a></li>
+                <li><a  href="<?php echo constant('URL');?>programa" >Programa</a></li>
 
 
              </ul>

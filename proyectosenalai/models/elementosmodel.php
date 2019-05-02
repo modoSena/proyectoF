@@ -126,13 +126,34 @@ class elementosModel extends Model
         $stmt->bindParam(6,$estadoElementos,PDO::PARAM_INT);
         $stmt->bindParam(7,$marca,PDO::PARAM_INT);
   
-  
-        $stmt->execute();
-        
-        
-  
+        $stmt->execute();  
     }
 
+
+
+    function inhabilitarElemento($idElementos){
+
+        $conexion = $this->db->connect();
+        $consulta="UPDATE elementos set Estado_Elementos_idEstado_Elementos = '2' where idElementos = ? ";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(1,$idElementos,PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt;
+        $conexion = null;
+        $stmt= null;
+        
+    }
+
+    function hablitarelemento($idElementos){
+        $conexion = $this->db->connect();
+        $consulta="UPDATE elementos set Estado_Elementos_idEstado_Elementos = '1' where idElementos = ? ";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(1,$idElementos,PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt;
+        $conexion = null;
+        $stmt= null;
+    }
 
 
 

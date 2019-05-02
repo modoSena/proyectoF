@@ -186,6 +186,33 @@ class elementos extends Controller{
         }
     }
 
+
+
+    function inhabilitarElemento($param){
+    session_start();
+    if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] !=4 ) {
+        header('Location:'.constant('URL').'login');
+        die();
+      }
+     $idElemento = $param[0];
+     $this->model->inhabilitarElemento($idElemento);
+     header("Location:".constant('URL').'elementos');
+    }
+
+    function habilitarElemento($param){
+        session_start();
+    if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] !=4 ) {
+        header('Location:'.constant('URL').'login');
+        die();
+      }
+     $idElemento = $param[0];
+     $this->model->hablitarelemento($idElemento);
+     header("Location:".constant('URL').'elementos');
+
+    }
+
+
+
 }
 
 ?>
