@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> 
             </button>
-            <a href=""><img style="width:170px; height:50px;"src="<?php echo constant('URL');?>public/img/senalai.png" alt=""> </a><br>
+            <a href="<?php echo constant('URL')?>bienvenido"><img style="width:170px; height:50px;"src="<?php echo constant('URL');?>public/img/senalai.png" alt=""> </a><br>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -71,8 +71,8 @@
                  <ul class="dropdown-menu">
                  <li> <a  href="" >Departamentos</a></li>
                 <li><a  href="" >Ciudades</a></li>
-                <li><a  href="" >Tipo Documentos</a></li>
-                <li><a  href="<?php echo constant('URL');?>programa" >Programa</a></li>
+                <li><a  href="<?php echo constant('URL');?>tipoDocumento" >Tipo Documentos</a></li>
+                <li><a  href="<?php echo constant('URL');?>programa">Programa</a></li>
 
 
              </ul>
