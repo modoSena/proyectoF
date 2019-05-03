@@ -1,50 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.css">
-
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/login.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/header.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/tableUsuario.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>DataTables/datatables.css">
-
-
+    <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
     <title>Sena L.A.I</title>
 </head>
-
 <body>
-
-
-
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
-
-
-
-
-
-
-
-
-
     <section class="principal">
-
         <h1 style="text-align:center">elementos del ambiente <?php echo $this->query2['Numero_Ambiente'];?></h1>
-
-
         <br>
         <div id="div1">
-
         <table id="table_id" class="display">
     <thead>
         <tr>       
@@ -63,15 +39,6 @@
     <tbody>
     <?php  foreach($this->query as  $fila) { ?>
         <tr>
-        
-
-
-
-
-
-
-
-
                <td> <button  onclick="obtenerid(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
                <td> <button  onclick="buscar_datos(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
 
@@ -82,21 +49,12 @@
                <td><?php echo $fila['Fecha_Entrada'] ?></td>
                <td><?php echo $fila['Fecha_Salida'] ?></td>
                <td><?php echo $fila['NombreEstado'] ?></td>
-                
-
         </tr>
     <?php } ?>
     </tbody>
 </table>
-
         </div>
-
-
     </section>
-
-
-
-
 <!-- Modal  reportar novedad-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -106,21 +64,12 @@
         <h4 class="modal-title" id="myModalLabel">Reportar Novedad</h4>
       </div>
       <div class="modal-body">
-     
       <form id="reportarNovedad">
-  
-
-  
-
-  
   <div class="form-group">
                <label for="">Novedad</label>
                <textarea name="novedad" id="novedad"class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
               </div> 
-  
-  
               <input type="hidden" id="idd" name="idElemento">
-   
   <div class="row">
                   <div  class="col-xs-6 col-md-6">
   
@@ -136,14 +85,8 @@
           
               <div id ="alert"><img class="loading" id="loading" src="<? echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajes"> </span></div>  
   </div>
-               
   </form>
-            
-            
       </div>
-
-      
-
     </div>
   </div>
 </div>

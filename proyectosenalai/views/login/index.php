@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap4.0.0.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="<?php echo constant('URL');?>public/css/bootstrap3.3.0.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="<?php echo constant('URL');?>public/js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/login.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/footer.css" />
-
+    <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
     <title>Sena L.A.I</title>
-
 </head>
-
 <body>
     <nav class=" navbar-fixed-top navbar-inverse">
         <img src="<?php echo constant('URL');?>public/img/senalai.png" class="logo" alt="">
         <div class="container">
-
-
             <div class="navbar-header">
                 <!-- <img style="width:100px; height:70px;"src="img/sena.png" alt=""> -->
-
-
             </div>
-
         </div>
     </nav>
     <br>
     <br>
     <br>
     <div class="container">
-
         <div class="d-flex justify-content-center h-100">
             <div class="card ">
-
                 <div class="card-header">
                     <h2 class="text-center text-light">Inicia sesión</h2>
                 </div>
@@ -60,32 +49,21 @@
                                     name="contrasena">
                             </div>
                         </div>
-
-
                         <input id="submit" type="button" value="Iniciar sesion" class="btn btn-basic btn-block btn-lg">
                         <br>
                         <label for=""><a class="recuperacontrasena"
                                 href="<?php echo constant('URL')?>recuperarcontrasena">recuperar contraseña?</a></label>
-
-
-
                     </form>
                 </div>
                 <div class="card-footer">
-
-
                     <img class="loading" id="loading" src="vista/img/loading.gif" alt=""> <span id="mensajes"> </span>
-
-
                 </div>
             </div>
         </div>
     </div>
     </div>
-
     <br>
     <div id="particles"></div>
-
     <svg id="svg-source" height="0" version="1.1" style="position:absolute; margin-left: -100%">
         <g id="git" data-iconmelon="Iconmelon:c88d710192f240e49b7f92912997850e">
             <path fill="#40B7AE"
@@ -347,8 +325,6 @@
             c-0.049-0.366-0.046-0.739-0.025-1.11c0.009-0.125,0.024-0.25,0.042-0.375C12.122,17.814,12.141,17.732,12.164,17.65z"></path>
         </g>
     </svg>
-
-
     <script>
     ! function(a) {
         function b(b, d) {
@@ -580,7 +556,6 @@
     }();
 
     $(function() {
-
         $('#particles').particleground({
             minSpeedX: 0.4,
             maxSpeedX: 1.2,
@@ -600,20 +575,11 @@
 
     });
     </script>
-
-
-
-
     <?php include('views/plantilla/footer.php')?>
 </body>
-
 </html>
-
 <script>
-
 </script>
-
-
 <script>
 $(function() {
         console.log(' funciona');
@@ -639,6 +605,5 @@ $(function() {
             })
         })
     }
-
 )
 </script>

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/bootstrap4.0.0.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="<?php echo constant('URL')?>public/css/bootstrap3.3.0.min.css" rel="stylesheet" id="bootstrap-css">
@@ -13,29 +12,22 @@
     <script src="<?php echo constant('URL')?>public/js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/login.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/footer.css" />
-    
+    <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
     <title>Sena L.A.I</title>
-
 </head>
 <body >
 <nav class=" navbar-fixed-top navbar-inverse">
 <img src="<?php echo constant('URL')?>public/img/senalai.png" class="logo" alt="">
     <div class="container">
-   
-        
         <div class="navbar-header">
        <!-- <img style="width:100px; height:70px;"src="img/sena.png" alt=""> -->
-            
-   
         </div>
-
     </div>
 </nav>
 <br>
 <br>
 <br>
         <div class="container">
-                
                 <div class="d-flex justify-content-center h-100">
                     <div class="card ">
                       
@@ -58,61 +50,33 @@
                                         <input name="codigo" id="codigo"type="hidden" value="<?php echo $this->codigo ?>">
                                     </div>   
                                 </div>
-
-                              
                                     <input id="submitRecuperarContrasena" type="button" value="Cambiar contraseña" class="btn btn-basic btn-block btn-lg" >
                                     <br>
-                                  
-                                      
-                                    
-
                             </form>
                         </div>
                         <div class="card-footer">
-
-
                             <img class="loading" id="loading" src="<?php echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajeRecuperarContrasena"> </span>
-
-
-                             
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
             <!-- MODAL exito ENVIO EMAIL RECUPERAR CONTRASEÑA ---->
-
 <div data-backdrop="static" data-keyboard="false" class="modal fade" id="modalExitoRecuperarContrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-  
       <div class="modal-content">
-        
         <div class="modal-header">
           <h2 class="modal-title" id="exampleModalLongTitle">Contraseña recuperada correctamente</h2>
         </div>
         <div class="modal-body">
-        
               <p for="">Presiona aceptar para redirigirte al inicio de sesión.</p>
-              
-              
         </div>
-        
         <div class="modal-footer">
-        
-          
         <a href="<?php echo constant('URL')?>login" class="btn btn-primary">Aceptar</a>
         </div>
-  
-       
-  
       </div>
     </div>
-  </div>
-            
+  </div>  
         <br>
         <div id="particles"></div>
         
@@ -418,32 +382,11 @@
                proximity: 120, // How close two dots need to be before they join
                parallax: false
            });
-       
        });</script>
 <script src="<?php echo constant('URL')?>public/js/bootstrap.min.js"></script>
-
-
 <?php include('views/plantilla/footer.php')?>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <script>
             $(function () {
                 console.log('jquery funciona')  ;
@@ -475,5 +418,4 @@
                }
                
                )
-        </script>    
-     
+        </script>

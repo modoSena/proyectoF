@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/header.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/tableUsuario.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>DataTables/datatables.css">
+    <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
     <title>Sena L.A.I</title>
 </head>
 <body>
