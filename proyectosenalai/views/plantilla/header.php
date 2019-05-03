@@ -65,7 +65,7 @@
                  <ul class="dropdown-menu">
                  <li><a  href="<?php echo constant('URL');?>elementos" >Elementos</a></li>
                  <li> <a href="<?php echo constant('URL');?>tipoElemento" >Tipo Elementos</a></li>
-                <li><a  href="" >Marca</a></li>
+                <li><a  href="<?php echo constant('URL');?>marca">Marca</a></li>
              </ul>
              </li>
              
