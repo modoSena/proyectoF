@@ -59,9 +59,15 @@
 
                 <li><a  href="<?php echo constant('URL');?>ambientes"><span  class="glyphicon glyphicon-home"></span> Ambientes</a></li>                
                 <li> <a  href="<?php echo constant('URL');?>administrarUsuarios" ><span  class="glyphicon glyphicon-user"></span> Usuarios </a></li>
-                <li> <a  href="<?php echo constant('URL');?>elementos" ><span  class="glyphicon glyphicon-shopping-cart"></span> Elementos </a></li>
                 
-
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-shopping-cart"></i> Administrar Elementos<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                 <li><a  href="<?php echo constant('URL');?>elementos" >Elementos</a></li>
+                 <li> <a  href="" >Tipo Elementos</a></li>
+                <li><a  href="" >Marca</a></li>
+             </ul>
+             </li>
              
 
 
@@ -69,12 +75,10 @@
              <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Mantenimiento<span class="caret"></span></a>
                  <ul class="dropdown-menu">
+                 <li><a  href="<?php echo constant('URL');?>tipoDocumento" >Tipo Documentos</a></li>
                  <li> <a  href="" >Departamentos</a></li>
                 <li><a  href="" >Ciudades</a></li>
-                <li><a  href="<?php echo constant('URL');?>tipoDocumento" >Tipo Documentos</a></li>
                 <li><a  href="<?php echo constant('URL');?>programa">Programa</a></li>
-
-
              </ul>
              </li>
 
