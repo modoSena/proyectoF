@@ -11,7 +11,7 @@ class ambientesModel extends Model{
 
      function consultarAmbientes(){
         $conexion = $this->db->connect();
-        $consulta="SELECT Numero_Ambiente,Numero_Documento,Nombre,Numero_Celular,Estado_Ambientes_idEstado_Ambientes,idAmbientes,NombreUbicacion,NombreEstadoA from ambientes JOIN persona ON Persona.idPersona=ambientes.Cuentadante JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN estado_ambientes ON ambientes.Estado_Ambientes_idEstado_Ambientes=estado_ambientes.idEstado_Ambientes";
+        $consulta="SELECT Numero_Ambiente,Estado_Ambientes_idEstado_Ambientes,idAmbientes,NombreUbicacion,NombreEstadoA from ambientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN estado_ambientes ON ambientes.Estado_Ambientes_idEstado_Ambientes=estado_ambientes.idEstado_Ambientes";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
@@ -57,15 +57,14 @@ class ambientesModel extends Model{
     }
 
 
-     function registrarAmbiente($NumeroAmbiente,$idCuentadante,$ubicacion){
+     function registrarAmbiente($NumeroAmbiente,$ubicacion){
         $estado = 1;
         $conexion = $this->db->connect();
-        $consulta = "INSERT INTO Ambientes  (Numero_Ambiente,Cuentadante,Estado_Ambientes_idEstado_Ambientes,Ubicacion_idUbicacion) values(?,?,?,?)";        
+        $consulta = "INSERT INTO Ambientes  (Numero_Ambiente,Estado_Ambientes_idEstado_Ambientes,Ubicacion_idUbicacion) values(?,?,?)";        
         $stmt = $conexion->prepare($consulta);
         $stmt->bindParam(1,$NumeroAmbiente,PDO::PARAM_INT);
-        $stmt->bindParam(2,$idCuentadante ,PDO::PARAM_INT);
-        $stmt->bindParam(3,$estado,PDO::PARAM_INT);
-        $stmt->bindParam(4,$ubicacion,PDO::PARAM_INT);
+        $stmt->bindParam(2,$estado,PDO::PARAM_INT);
+        $stmt->bindParam(3,$ubicacion,PDO::PARAM_INT);
         
         $stmt->execute();
         $conexion = null;
@@ -129,7 +128,7 @@ class ambientesModel extends Model{
         
         function consultarAmbiente($idAmbientes){
             $conexion = $this->db->connect();
-            $consulta="SELECT Numero_Ambiente,Numero_Documento,idAmbientes,idPersona,Ubicacion_idUbicacion from ambientes JOIN persona ON Persona.idPersona=ambientes.Cuentadante  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  where idAmbientes= ?";
+            $consulta="SELECT Numero_Ambiente,idAmbientes,Ubicacion_idUbicacion from ambientes   JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  where idAmbientes= ?";
             $stmt = $conexion->prepare($consulta);
             $stmt->bindParam(1,$idAmbientes,PDO::PARAM_INT);
             $stmt->execute();
@@ -141,15 +140,14 @@ class ambientesModel extends Model{
             
         }
 
-        function actualizarAmbiente($NumeroAmbiente,$Cuentadante,$Ubicacion,$idAmbientes){
+        function actualizarAmbiente($NumeroAmbiente,$Ubicacion,$idAmbientes){
 
             $conexion = $this->db->connect();
-            $consulta="UPDATE ambientes set Numero_Ambiente = ? , Cuentadante = ? ,Ubicacion_idUbicacion = ? where idAmbientes = ? ";
+            $consulta="UPDATE ambientes set Numero_Ambiente = ?  ,Ubicacion_idUbicacion = ? where idAmbientes = ? ";
             $stmt = $conexion->prepare($consulta);
             $stmt->bindParam(1, $NumeroAmbiente, PDO::PARAM_INT );
-            $stmt->bindParam(2, $Cuentadante, PDO::PARAM_INT );
-            $stmt->bindParam(3, $Ubicacion, PDO::PARAM_INT );
-            $stmt->bindParam(4, $idAmbientes, PDO::PARAM_INT );
+            $stmt->bindParam(2, $Ubicacion, PDO::PARAM_INT );
+            $stmt->bindParam(3, $idAmbientes, PDO::PARAM_INT );
 
             $stmt->execute();
             $conexion = null;
@@ -229,6 +227,53 @@ class ambientesModel extends Model{
 
 
         }
+
+
+        function consultarCuentadantes($idambientes){
+
+            $conexion = $this->db->connect();
+            $consulta="SELECT Numero_Documento,Nombre,Numero_Celular,Fecha,Estado_C from DetalleCuentadante JOIN persona ON DetalleCuentadante.cuentadante=Persona.idPersona    WHERE Ambientes_idAmbientes =  ?";
+            $stmt = $conexion->prepare($consulta);
+            $stmt->bindParam(1, $idambientes, PDO::PARAM_INT );
+            $stmt->execute();
+            return $stmt;
+            $conexion = null;
+            $stmt= null;
+
+
+        }
+
+
+        function destivarCuentadantes($idambientes){
+
+            $conexion = $this->db->connect();
+            $consulta="UPDATE  DetalleCuentadante SET `Estado_C` = 2 WHERE  Ambientes_idAmbientes = ?";
+            $stmt = $conexion->prepare($consulta);
+            $stmt->bindParam(1, $idambientes, PDO::PARAM_INT );
+            $stmt->execute();
+            
+
+
+        }
+
+
+        function registrarCuentadante($fecha,$idcuentadante,$idambientes,$estado){
+
+            $conexion = $this->db->connect();
+            $consulta="INSERT INTO detallecuentadante  (Fecha,Cuentadante,Ambientes_idAmbientes,Estado_C)values (?,?,?,?)";
+            $stmt = $conexion->prepare($consulta);
+            $stmt->bindParam(1, $fecha, PDO::PARAM_STR );
+            $stmt->bindParam(2, $idcuentadante, PDO::PARAM_INT );
+            $stmt->bindParam(3, $idambientes, PDO::PARAM_INT );
+            $stmt->bindParam(4, $estado, PDO::PARAM_INT );
+            $stmt->execute();
+            return $stmt;
+            $conexion = null;
+            $stmt= null;
+
+
+        }
+
 
  
 

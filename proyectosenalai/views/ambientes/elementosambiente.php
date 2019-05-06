@@ -235,7 +235,7 @@
                 <a href="<?php echo constant('URL')?>ambientes/elementosAmbiente/<?php echo $this->idAmbientes ?>" class="btn btn-primary">Aceptar</a>
                 </div>
   
-        </form>
+      
   
       </div>
     </div>

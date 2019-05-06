@@ -39,10 +39,6 @@
 			 <label for="">Numero del Ambiente</label>
 				<input type="text" name="NumeroAmbiente" id="NumeroAmbiente" class="form-control " placeholder=" " tabindex="3" >
             </div> 
-<div class="form-group">
-			 <label for="">Cedula del Cuentadante</label>
-				<input type="text" name="Cuentadante" id="Cuentadante" class="form-control " placeholder=" " tabindex="3" >
-            </div> 
 <div class="row">
 				<div  class="col-xs-6 col-md-6">
 

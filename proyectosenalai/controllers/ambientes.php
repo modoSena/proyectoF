@@ -90,7 +90,6 @@ class ambientes extends Controller{
         
         
         $NumeroAmbiente = $_POST['NumeroAmbiente'];
-        $Cuentadante = $_POST['Cuentadante'];
         $ubicacion = $_POST['ubicacion'];
         
 
@@ -101,7 +100,6 @@ class ambientes extends Controller{
         
         
         
-        $this->e =$this->model->validardocumentoexiste($Cuentadante);
 
         if(empty($ubicacion) ) {
         
@@ -135,32 +133,10 @@ class ambientes extends Controller{
         
         
         
-        else if(empty($Cuentadante) ) {
-        
-            echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El documento del cuentadante  no puede ir vacio.
-             </div>' ;
-        } 
-        
-        
-          // solo caracteres numericos  
-            else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
-            echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El documento del cuentadante debe contener solo numeros.
-            </div>';
-          } 
-                   
-        
-        else if ($this->e == 0) {
-            echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El Cuentadante no existe.
-             </div>' ;
-        }
-        
         else {
-            $this->view->valores = $this->model->consultarIdPersona($Cuentadante);
-            $idCuentadante = $this->view->valores['idPersona'];
-            $this->model->registrarAmbiente($NumeroAmbiente,$idCuentadante,$ubicacion);
+            
+           
+            $this->model->registrarAmbiente($NumeroAmbiente,$ubicacion);
             echo 1;
         }
         
@@ -213,7 +189,6 @@ class ambientes extends Controller{
         
         $idAmbientes = $_POST['idAmbientes'];
         $NumeroAmbiente = $_POST['NumeroAmbiente'];
-        $Cuentadante = $_POST['Cuentadante'];
         $ubicacion = $_POST['ubicacion'];
         
         $this->comparador=$this->model->consultarAmbiente($idAmbientes);
@@ -224,8 +199,6 @@ class ambientes extends Controller{
         
         
         
-        
-        $this->e =$this->model->validardocumentoexiste($Cuentadante);
         
         
         if(empty($NumeroAmbiente) ) {
@@ -259,32 +232,11 @@ class ambientes extends Controller{
         
         
         
-        else if(empty($Cuentadante) ) {
-        
-            echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El documento del cuentadante  no puede ir vacio.
-             </div>' ;
-        } 
-        
-        
-          // solo caracteres numericos  
-            else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
-            echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El documento del cuentadante debe contener solo numeros.
-            </div>';
-          } 
-                   
-        
-        else if ($this->e == 0) {
-            echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El Cuentadante no existe.
-             </div>' ;
-        }
+       
         
         else {
-            $this->view->valores = $this->model->consultarIdPersona($Cuentadante);
-            $NCuentadante = $this->view->valores['idPersona'];
-            $this->model->actualizarAmbiente($NumeroAmbiente,$NCuentadante,$ubicacion,$idAmbientes);
+           
+            $this->model->actualizarAmbiente($NumeroAmbiente,$ubicacion,$idAmbientes);
             echo 1;
         }
         
@@ -389,6 +341,118 @@ $salida = "<table id='table_id2' class='display'>
    echo"<script>$(document).ready( function () { $('#table_id2').DataTable(); } );</script>";
 
   }
+
+
+
+
+
+  function registrarCuentadantes(){
+    session_start();
+    if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 ) {
+      header('Location:'.constant('URL').'login');
+      die();
+    }
+     
+    $Cuentadante = $_POST['cuentadante'];
+    $idambientes = $_POST['idambiente'];
+
+    $this->e =$this->model->validardocumentoexiste($Cuentadante);
+    
+
+    if(empty($Cuentadante) ) {
+        
+      echo '<div class="alert alert-danger">
+      <strong>ERROR!</strong> El documento del cuentadante  no puede ir vacio.
+       </div>' ;
+  } 
+  
+  
+    // solo caracteres numericos  
+      else if(!preg_match("/^[0-9]+$/",$Cuentadante)){  
+      echo '<div class="alert alert-danger">
+      <strong>ERROR!</strong> El documento del cuentadante debe contener solo numeros.
+      </div>';
+    } 
+             
+  
+  else if ($this->e == 0) {
+      echo '<div class="alert alert-danger">
+      <strong>ERROR!</strong>  El Cuentadante no existe.
+       </div>' ;
+  }
+  
+  else {
+       $this->model->destivarCuentadantes($idambientes);
+       $cuentadante = $this->model->consultarIdPersona($Cuentadante);
+       $idcuentadante =  $cuentadante['idPersona'];
+       ini_set('date.timezone','America/Bogota'); 
+       $fecha = date("Y-m-d H:i:s");
+       $estado= 1;
+       $this->model->registrarCuentadante($fecha,$idcuentadante,$idambientes,$estado);
+       echo 1;
+  }
+
+
+
+  }
+
+
+
+
+
+  function consultarCuentadantes(){
+    session_start();
+    if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 ) {
+      header('Location:'.constant('URL').'login');
+      die();
+    }
+
+
+    $idambiente = $_POST['consulta'];
+    
+    $this->view->query = $this->model->consultarCuentadantes($idambiente);
+
+
+
+$salida = "<table id='table_id2' class='display'>
+          <thead>
+        <tr>
+                  <th>DOCUMENTO</th>
+                  <th>NOMBRE</th>
+                  <th>CELULAR</th>
+                  <th>FECHA</th>
+                  <th>ESTADO</th>
+        </tr>
+    </thead>
+    <tbody>";
+    foreach($this->view->query as  $fila) { 
+      $salida .=  "<tr>";
+             $salida .= "<td>" . $fila['Numero_Documento'] ."</td>      
+               <td>".  $fila['Nombre']. "</td>
+               <td>".$fila['Numero_Celular']. "</td>
+               <td>".$fila['Fecha']. "</td>";
+               if ($fila['Estado_C'] == 1 ) {
+                $salida .= "<td>".'Activo'."</td>";
+              }else {
+                $salida .= "<td>".'Inactivo'."</td>";
+              }
+              
+
+                
+
+         $salida .="</tr>";
+     } 
+    $salida.="</tbody></table>";
+
+   echo $salida;
+
+
+   echo"<script>$(document).ready( function () { $('#table_id2').DataTable(); } );</script>";
+
+  }
+
+
+
 }
 
 ?>
