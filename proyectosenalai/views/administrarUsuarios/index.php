@@ -52,8 +52,8 @@
                 <tr>
                <th>CAMBIAR ESTADO</th>
                <th>EDITAR</th>
-               <th>DOCUMENTO</th>
                <th>TIPO DOCUMENTO</th>
+               <th>NUM. DOCUMENTO</th>
                <th>NOMBRES</th>
                <th>PRIMER APELLIDO</th>
                <th>SEGUNDO APELLIDO</th>
@@ -83,8 +83,8 @@
               <?php } ?>
 
               <td> <a href='administrarUsuarios/actualizarUsuarios/<?php echo $fila['idPersona']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>   
+              <td><?php echo $fila['Tipo_Documento']  ?></td>
                <td> <?php echo $fila['Numero_Documento'] ?></td>
-               <td><?php echo $fila['Tipo_Documento']  ?></td>
                <td><?php echo $fila['Nombre'] ?></td>
                <td><?php echo $fila['Apellido_Primero'] ?></td>
                <td><?php echo $fila['Apellido_Segundo'] ?></td>
