@@ -51,7 +51,7 @@
             <thead>
                 <tr>
                <th>CAMBIAR ESTADO</th>
-               <th>Editar</th>
+               <th>EDITAR</th>
                <th>DOCUMENTO</th>
                <th>TIPO DOCUMENTO</th>
                <th>NOMBRES</th>
@@ -59,7 +59,7 @@
                <th>SEGUNDO APELLIDO</th>
                <th>DIRECCIÓN</th>
                <th>CELULAR</th>
-               <th>TEL</th>
+               <th>TEL.</th>
                <th>EMAIL</th>
                <th>SEXO</th>
                <th>PROGRAMA</th>
