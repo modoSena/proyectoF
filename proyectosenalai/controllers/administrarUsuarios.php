@@ -1,28 +1,16 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
 require 'phpmailer/Exception.php';
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
-
 class administrarUsuarios extends Controller {
-  
-       
-
-
-
-
     function __construct()
     {
-        parent::__construct();
-        
-        
+        parent::__construct();  
     }
 
     function render(){
-
-
         session_start();
         if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
          header('Location:'.constant('URL').'login');
@@ -34,15 +22,8 @@ class administrarUsuarios extends Controller {
         }else {
          $this->view->query = $this->model->consultarUsuarios();
         }
-        
-
         $this->view->render('administrarUsuarios/index');
-
-
     }
-
-
-
 
     function inhabilitarUsuario($param = null){
       session_start();
@@ -60,16 +41,9 @@ class administrarUsuarios extends Controller {
               die();
            
      }
-
      $this->model->inhabilitarUsuario($idpersona);
      header("Location:".constant('URL').'administrarUsuarios');
-     
-     
     }
-
-
-
-
 
     function habilitarUsuario($param = null){
       session_start();
@@ -77,34 +51,18 @@ class administrarUsuarios extends Controller {
          header('Location:'.constant('URL').'login');
          die();
        }
-
-
-
       $idpersona = $param[0];
-
-
       $rol = $this->model->verificarId($idpersona);
 
       if ($_SESSION['Roles_idRoles'] !=4 && $rol['Roles_idRoles'] == 4 or $rol['Roles_idRoles']  == 3  ) {
 
                echo "No puedes editar este Usuario";
-               die();
-            
+               die();     
       } 
-
       $this->model->habilitarUsuario($idpersona);
       header("Location:".constant('URL').'administrarUsuarios');
-      
-
-      
-
-
     }
 
-
-
-
-    
     function registrarUsuarios(){
       session_start();
       if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
@@ -117,33 +75,14 @@ class administrarUsuarios extends Controller {
       $this->view->consultarprograma = $this->model->consultarprograma();
       $this->view->consultartipodocumento = $this->model->consultartipodocumento();
       $this->view->render('administrarUsuarios/registrarUsuarios');
-
     }
 
-
-
-
-
-
-
     function ciudadesPorDepartamento(){
-
-
-
             if (isset($_POST['consulta'])) {
-            $q = $_POST['consulta'];
-                  
-                        
+            $q = $_POST['consulta'];                      
             $this->view->query = $this->model->consultarCiudadesPorDepartamento($q);
-                        
-         
-               
-               
             if ($this->view->query->rowCount() > 0) {
                      
-               
-               
-               
                $salida = "<label>ciudad</label>";
                
                $salida .="<select class='form-control' id='ciudad' name='ciudad'> ";
@@ -152,58 +91,25 @@ class administrarUsuarios extends Controller {
                
                foreach($this->view->query as $resultado ){ 
                
-               
                   $salida .= "<option value=".$resultado['idCiudad'].">" .$resultado['NombreCiudad'].  "</option>";
                
-               
                } 
-               
                $salida .="</select>";
                
-               
-               
-               
-               
-               
-                     
                }else{
                   $salida = "<label>ciudad</label>";
                
                   $salida .="<select class='form-control' id='ciudad' name='ciudad'> ";
                
                   $salida .="<option value='' >No hay resultados :</option>";
-               
-               
-               
-               
-                  
-               
-               
-               
-               
+
                $salida .="</select>";
                }
                
                echo $salida;
                
                } 
-      
-     
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     function registrarUsuario(){
 
@@ -211,16 +117,10 @@ class administrarUsuarios extends Controller {
       if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
          header('Location:'.constant('URL').'login');
          die();
-       }
-                    
-      
-
-
+       }   
                   if (isset($_POST["envioRegistroUsuario"])){
-
                   sleep(2);                 
 
-                     
                      $nombres = $_POST['nombres'];
                      $apellido_primero = $_POST['apellido_primero'];
                      $apellido_segundo = $_POST['apellido_segundo'];

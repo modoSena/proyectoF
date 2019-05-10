@@ -68,7 +68,6 @@
                     </div>
                 </div>
 <?php }else{?>  
-
                     <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <label>Rol</label>
@@ -84,7 +83,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label>Tipo documento</label>
+                        <label>Tipo Documento</label>
                         <select class='form-control' id='Atipodocumento' name='Atipodocumento'>
                             <OPTION value="<?php echo $this->valores['Tipo_Documento_idTipo_Documento']; ?>">Selecciona:
                             </option>
@@ -97,7 +96,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Documento</label>
+                        <label for="">Num. Documento</label>
                         <input type="text" name="Adocumento" id="Adocumento"
                             value="<?php echo $this->valores['Numero_Documento']; ?>" class="form-control " placeholder=" "
                             tabindex="3">
@@ -105,7 +104,6 @@
                 </div>
             </div>
             <div class="form-group">
-
                 <label>Sexo</label>
                 <select class='form-control' id='Asexo' name='Asexo'>
                     <option value="<?php echo $this->valores['Sexo_idSexo']; ?>">selecciona:</option>
@@ -150,7 +148,6 @@
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
-
                     <div class="form-group">
                         <label for="">Celular </label>
                         <input type="text" name="Anumero_celular" id="Anumero_celular"
@@ -220,7 +217,7 @@
                     <p for="">Usuario actualizado correctamente.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="<?php echo constant('URL')?>administrarUsuarios/actualizarUsuarios/<?php echo $this->valores['idPersona'] ?>"
+                    <a href="<?php echo constant('URL')?>administrarUsuarios/index<?php echo $this->valores['idPersona'] ?>"
                         class="btn btn-primary">Aceptar</a>
                 </div>
             </div>
@@ -256,10 +253,8 @@ $(function () {
                }
            })
         }) 
-       }
-       
+       }   
        )
-
        function buscar_datos(consulta){
     $.ajax({
 		url:'<?php echo constant('URL')?>administrarUsuarios/ciudadesPorDepartamento',
@@ -274,8 +269,6 @@ $(function () {
 		console.log("error");
 	});
 }
-
-
 $('select#departamento').on('change',function(){
     var valor = $(this).val();
    if (valor != "") {
@@ -283,5 +276,4 @@ $('select#departamento').on('change',function(){
    }
 
 });
-
 </script>
