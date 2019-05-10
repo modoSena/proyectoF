@@ -595,14 +595,6 @@ class administrarUsuarios extends Controller {
       $this->view->render('administrarUsuarios/actualizarUsuarios');
     }
 
-
-
-
-
-
-
-
-
     function actualizarUsuario(){
 
       session_start();
@@ -707,11 +699,6 @@ class administrarUsuarios extends Controller {
                   <strong>ERROR!</strong> El campo Primer Apellido solo debe tener letras y no pueden haber espacios.
                   </div>'; 
                  }
-         
-         
-         
-         
-         
                 
                         //NO cumple longitud minima  
                         else if(strlen($apellido_segundo) > 20 ){  
@@ -755,14 +742,8 @@ class administrarUsuarios extends Controller {
                          echo '<div class="alert alert-danger">
                          <strong>ERROR!</strong>  El usuario ya ha sido registrado, intenta con otro.
                          </div>';
-                        
-                         
+
                         }
-                
-         
-         
-         
-               
                         
                   //---- VALIDACIONES DEL rol----- ///      
                         else if($rol==""){
