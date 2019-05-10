@@ -417,25 +417,27 @@ $salida = "<table id='table_id2' class='display'>
 $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
+                  <th>ESTADO</th>
                   <th>DOCUMENTO</th>
                   <th>NOMBRE</th>
                   <th>CELULAR</th>
                   <th>FECHA</th>
-                  <th>ESTADO</th>
+                  
         </tr>
     </thead>
     <tbody>";
     foreach($this->view->query as  $fila) { 
       $salida .=  "<tr>";
+      if ($fila['Estado_C'] == 1 ) {
+        $salida .= "<td>".'Activo'."</td>";
+      }else {
+        $salida .= "<td>".'Inactivo'."</td>";
+      }
              $salida .= "<td>" . $fila['Numero_Documento'] ."</td>      
                <td>".  $fila['Nombre']. "</td>
                <td>".$fila['Numero_Celular']. "</td>
                <td>".$fila['Fecha']. "</td>";
-               if ($fila['Estado_C'] == 1 ) {
-                $salida .= "<td>".'Activo'."</td>";
-              }else {
-                $salida .= "<td>".'Inactivo'."</td>";
-              }
+            
               
 
                 

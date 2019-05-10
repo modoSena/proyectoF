@@ -30,8 +30,7 @@
                   <th>PLACA EQUIPO</th>
                   <th>MARCA</th>
                   <th>TIPO ELEMENTO</th>
-                  <th>FECHA ENTRADA(SISTEMA)</th>
-                  <th>FECHA SALIDA(SISTEMA)</th>
+                  <th>FECHA </th>
                   <th>ESTADO</th>
 
         </tr>
@@ -46,8 +45,7 @@
                <td><?php echo $fila['Placa_Equipo'] ?></td>
                <td><?php echo $fila['Marca'] ?></td>
                <td><?php echo $fila['NombreTipoElemento'] ?></td>
-               <td><?php echo $fila['Fecha_Entrada'] ?></td>
-               <td><?php echo $fila['Fecha_Salida'] ?></td>
+               <td><?php echo $fila['Fecha_Novedad'] ?></td>
                <td><?php echo $fila['NombreEstado'] ?></td>
         </tr>
     <?php } ?>

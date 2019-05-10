@@ -57,7 +57,7 @@
                         <td> <a onclick="return confirm('¿Estas seguro?');" href='ambientes/habilitarambiente/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-danger'>Ocupado</button></a> </td>
                         <?php } ?>
                        <td> <a href='ambientes/actualizarambientes/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>
-                       <td> <button  onclick="obtenerid(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
+                       <td> <button   onclick="obtenerid(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
                        <td> <button  onclick="buscar_datos(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
             <?php } ?>
                        <td> <a href='ambientes/elementosAmbiente/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-info'><span class='glyphicon glyphicon-list-alt'></span></button></a> </td>
@@ -103,7 +103,7 @@
   
                    <input type="hidden" name="envioNuevoCuentadante">
   
-                     <input id="submit" name="submit" type="button" value="Registrar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
+                     <input onclick="return confirm('¿Estas seguro?');" id="submit" name="submit" type="button" value="Registrar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
                   </div>
   
                   <div  class="col-xs-6 col-md-6">

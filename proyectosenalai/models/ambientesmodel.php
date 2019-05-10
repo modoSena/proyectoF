@@ -160,7 +160,7 @@ class ambientesModel extends Model{
         function consultarElementos($idAmbientes){
 
             $conexion = $this->db->connect();
-            $consulta="SELECT idElementos,Ambientes_idAmbientes,Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Fecha_Salida,Fecha_Entrada,Marca,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where Ambientes_idAmbientes = ? ";
+            $consulta="SELECT Fecha_Novedad,idElementos,Ambientes_idAmbientes,Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Marca,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where Ambientes_idAmbientes = ? AND Estado_E = 1";
             $stmt = $conexion->prepare($consulta);
             $stmt->bindParam(1, $idAmbientes, PDO::PARAM_INT );
             $stmt->execute();
