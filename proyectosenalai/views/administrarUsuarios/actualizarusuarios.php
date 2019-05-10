@@ -217,7 +217,7 @@
                     <p for="">Usuario actualizado correctamente.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="<?php echo constant('URL')?>administrarUsuarios/index<?php echo $this->valores['idPersona'] ?>"
+                    <a href="<?php echo constant('URL')?>administrarUsuarios/actualizarUsuarios/<?php echo $this->valores['idPersona'] ?>"
                         class="btn btn-primary">Aceptar</a>
                 </div>
             </div>
