@@ -27,7 +27,10 @@
         <table id="table_id" class="display">
     <thead>
         <tr>
-                  <th>CAMBIAR ESTADO</th>        
+                  <th>CAMBIAR ESTADO</th>
+                  <th>EDITAR</th>
+                  <th>NOVEDADES</th>
+                  <th>DETALLE ELEMENTO</th>
                   <th>NUMERO SERIAL</th>
                   <th>PLACA EQUIPO</th>
                   <th>TIPO ELEMENTO</th>
@@ -47,12 +50,13 @@
                   <?php }else  { ?>
                     <td> <a onclick="return confirm('¿Estas seguro?');"  href='<?php echo constant('URL');?>elementos/habilitarElemento/<?php echo $fila['idElementos']?>'><button type='button' class='btn btn-danger'>Inactivo</button></a> </td>
                   <?php } ?>
+
+                <td> <a href='elementos/actualizarElementos/<?php echo $fila['idElementos']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>
                <td> <button  onclick="obtenerid(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
                <td> <button  onclick="buscar_datos(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
 
                <td><?php echo $fila['Numero_Serial'] ?></td> 
                <td><?php echo $fila['Placa_Equipo'] ?></td> 
-               <td><?php echo $fila['Numero_Serial'] ?></td>         
                <td><?php echo $fila['NombreTipoElemento'] ?></td>
                <td><?php echo $fila['Marca'] ?></td>
                <td><?php echo $fila['Descripcion'] ?></td>
