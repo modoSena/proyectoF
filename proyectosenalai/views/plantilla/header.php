@@ -111,7 +111,7 @@
                                             <a href="actualizarDatos.php" class="btn btn-primary btn-block btn-sm">Actualizar Datos</a>
                                         </p>
                                         <p class="text-left">
-                                            <a href="actualizarContrasena.php" class="btn btn-primary btn-block btn-sm">Cambiar contraseña </a>
+                                            <a href="<?php echo constant('URL');?>actualizarContrasena" class="btn btn-primary btn-block btn-sm">Cambiar contraseña </a>
                                         </p>
 
                                     </div>
