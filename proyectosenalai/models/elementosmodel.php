@@ -76,22 +76,22 @@ class elementosModel extends Model
     }
 
 
-    public function  registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$NombreTipoElemento,$Descripcion,$Fecha_Salida){
+     function  registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion){
 
         ini_set('date.timezone','America/Bogota'); 
         $fechaentrada = date("Y-m-d H:i:s");
         $estadoElementos =1;
         $conexion = $this->db->connect();
-        $consulta  ="INSERT into elementos(idElementos,Numero_Serial,Placa_Equipo,Fecha_Entrada,Marca,Estado_Elementos_idEstado_Elementos,NombreTipoElemento,Descripcion) values (?,?,?,?,?,?,?,?)";
+        $consulta  ="INSERT into elementos(Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Fecha_Entrada,Estado_Elementos_idEstado_Elementos,Marcas_idMarcas,Descripcion) values (?,?,?,?,?,?,?)";
         $stmt=$conexion->prepare($consulta);
         $stmt->bindParam(1,$Numero_Serial,PDO::PARAM_INT);
         $stmt->bindParam(2,$Placa_Equipo, PDO::PARAM_INT);
-        $stmt->bindParam(3,$Fecha_Salida,PDO::PARAM_INT);
-        $stmt->bindParam(4,$fechaentrada,PDO::PARAM_STR);
-        $stmt->bindParam(5,$marca,PDO::PARAM_INT);
-        $stmt->bindParam(6,$estadoElementos,PDO::PARAM_INT);
-        $stmt->bindParam(7,$NombreTipoElemento,PDO::PARAM_INT);
-        $stmt->bindParam(8,$Descripcion,PDO::PARAM_INT);
+        $stmt->bindParam(3,$idTipo_Elementos, PDO::PARAM_INT);
+        $stmt->bindParam(4,$fechaentrada, PDO::PARAM_STR);
+        $stmt->bindParam(5,$estadoElementos, PDO::PARAM_INT);
+        $stmt->bindParam(6,$marca, PDO::PARAM_INT);
+        $stmt->bindParam(7,$Descripcion, PDO::PARAM_STR);
+
         $stmt->execute();  
     }
 
