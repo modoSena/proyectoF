@@ -27,28 +27,9 @@
 <div class="form-group">
 			 <label for="">Placa equipo</label>
 				<input type="text" name="Placa_Equipo" id="Placa_Equipo" class="form-control " placeholder=" " tabindex="3" >
-            </div>
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <label>Ubicacion</label>
-                        <select class='form-control' id='ubicacion' name='ubicacion'>
-                            <option value="">selecciona:</option>
-                            <?php foreach ( $this->consultarUbicaion as $resultado) { ?>
-                            <option value="<?php echo $resultado['idUbicacion']; ?>">
-                                <?php echo $resultado['NombreUbicacion']; ?> </option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group" id="ambiente">
-                        <label>Ambiente</label>
-                        <select class='form-control' id='ambiente' name='ambiente'>
-                            <option value="">Primero selecciona una ubicación</option>
-                        </select>
-                    </div>
-                </div>
+                <label for="">Descripcion equipo</label>
+				<input type="text" name="Descripcion" id="Descripcion" class="form-control " placeholder=" " tabindex="3" >
+
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
@@ -144,27 +125,5 @@ $(function () {
        })
     }) 
    }
-   
    )
-   function buscar_datos(consulta){
-    $.ajax({
-		url:'<?php echo constant('URL')?>elementos/ambientesPorUbicacion' ,
-		type: 'POST' ,
-		dataType: 'html',
-		data: {consulta: consulta},
-	})
-	.done(function(respuesta){
-		$("#ambiente").html(respuesta);
-	})
-	.fail(function(){
-		console.log("error");
-	});
-}
-$('select#ubicacion').on('change',function(){
-    var valor = $(this).val();
-   if (valor != "") {
-       buscar_datos(valor);
-   }
-
-});
 </script>

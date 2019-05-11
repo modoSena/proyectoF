@@ -8,11 +8,10 @@ class elementosModel extends Model
 
     }
 
-
     function consultarElementos(){
 
         $conexion = $this->db->connect();
-        $consulta="SELECT idElementos,Ambientes_idAmbientes,Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Fecha_Salida,Fecha_Entrada,Marca,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento,Numero_Ambiente,idAmbientes,idUbicacion,NombreUbicacion from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas JOIN ambientes ON elementos.Ambientes_idAmbientes = ambientes.idAmbientes JOIN ubicacion ON ambientes.Ubicacion_idUbicacion = ubicacion.idUbicacion ";
+        $consulta="SELECT idElementos,Numero_Serial,Placa_Equipo,Fecha_Salida,Fecha_Entrada,Marca,Descripcion,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
@@ -44,37 +43,6 @@ class elementosModel extends Model
         $stmt= null;
         
     }
-
-
-
-    function consultarUbicaion(){
-
-        $conexion = $this->db->connect();
-        $consulta="SELECT * FROM  ubicacion  ";
-        $stmt = $conexion->prepare($consulta);
-        $stmt->execute();
-        return $stmt;
-        $conexion = null;
-        $stmt= null;
-        
-    }
-
-
-
-
-    function consultarAmbientePorUbicacion($idUbicacion){
-
-        $conexion = $this->db->connect();
-        $consulta=" SELECT idAmbientes,Numero_Ambiente FROM ambientes where Ubicacion_idUbicacion = ? ";
-        $stmt = $conexion->prepare($consulta);
-        $stmt->bindParam(1,$idUbicacion, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt;
-        $conexion = null;
-        $stmt= null;
-        
-    }
-
 
     function validarPlacaEquipo($Placa_Equipo){
 
@@ -108,31 +76,26 @@ class elementosModel extends Model
     }
 
 
-    public function  registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$ambiente){
+    public function  registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$NombreTipoElemento,$Descripcion,$Fecha_Salida){
 
         ini_set('date.timezone','America/Bogota'); 
         $fechaentrada = date("Y-m-d H:i:s");
         $estadoElementos =1;
-
         $conexion = $this->db->connect();
-        $consulta  ="INSERT into elementos(Ambientes_idAmbientes,Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Fecha_Entrada,Estado_Elementos_idEstado_Elementos,Marcas_idMarcas) values (?,?,?,?,?,?,?)";
+        $consulta  ="INSERT into elementos(idElementos,Numero_Serial,Placa_Equipo,Fecha_Entrada,Marca,Estado_Elementos_idEstado_Elementos,NombreTipoElemento,Descripcion) values (?,?,?,?,?,?,?,?)";
         $stmt=$conexion->prepare($consulta);
-
-        $stmt->bindParam(1,$ambiente,PDO::PARAM_INT);
-        $stmt->bindParam(2,$Numero_Serial, PDO::PARAM_INT);
-        $stmt->bindParam(3,$Placa_Equipo,PDO::PARAM_INT);
-        $stmt->bindParam(4,$idTipo_Elementos,PDO::PARAM_INT);
-        $stmt->bindParam(5,$fechaentrada,PDO::PARAM_STR);
+        $stmt->bindParam(1,$Numero_Serial,PDO::PARAM_INT);
+        $stmt->bindParam(2,$Placa_Equipo, PDO::PARAM_INT);
+        $stmt->bindParam(3,$Fecha_Salida,PDO::PARAM_INT);
+        $stmt->bindParam(4,$fechaentrada,PDO::PARAM_STR);
+        $stmt->bindParam(5,$marca,PDO::PARAM_INT);
         $stmt->bindParam(6,$estadoElementos,PDO::PARAM_INT);
-        $stmt->bindParam(7,$marca,PDO::PARAM_INT);
-  
+        $stmt->bindParam(7,$NombreTipoElemento,PDO::PARAM_INT);
+        $stmt->bindParam(8,$Descripcion,PDO::PARAM_INT);
         $stmt->execute();  
     }
 
-
-
     function inhabilitarElemento($idElementos){
-
         $conexion = $this->db->connect();
         $consulta="UPDATE elementos set Estado_Elementos_idEstado_Elementos = '2' where idElementos = ? ";
         $stmt = $conexion->prepare($consulta);
@@ -140,8 +103,7 @@ class elementosModel extends Model
         $stmt->execute();
         return $stmt;
         $conexion = null;
-        $stmt= null;
-        
+        $stmt= null;  
     }
 
     function hablitarelemento($idElementos){
@@ -154,40 +116,6 @@ class elementosModel extends Model
         $conexion = null;
         $stmt= null;
     }
-
-
-
-
- 
-
-    
-    
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

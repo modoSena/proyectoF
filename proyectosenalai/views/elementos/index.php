@@ -28,14 +28,11 @@
     <thead>
         <tr>
                   <th>CAMBIAR ESTADO</th>        
-                  <th>REPORTAR NOVEDAD</th>
-                  <th>VER NOVEDADES</th>
-                  <th>UBICACIÓN</th>
-                  <th>NUMERO AMBIENTE</th>
                   <th>NUMERO SERIAL</th>
                   <th>PLACA EQUIPO</th>
-                  <th>MARCA</th>
                   <th>TIPO ELEMENTO</th>
+                  <th>MARCA</th>
+                  <th>DESCRIPCIÓN</th>
                   <th>FECHA ENTRADA(SISTEMA)</th>
                   <th>FECHA SALIDA(SISTEMA)</th>
                   <th>ESTADO</th>
@@ -53,12 +50,12 @@
                <td> <button  onclick="obtenerid(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
                <td> <button  onclick="buscar_datos(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
 
-               <td><?php echo $fila['NombreUbicacion'] ?></td> 
-               <td><?php echo $fila['Numero_Ambiente'] ?></td> 
+               <td><?php echo $fila['Numero_Serial'] ?></td> 
+               <td><?php echo $fila['Placa_Equipo'] ?></td> 
                <td><?php echo $fila['Numero_Serial'] ?></td>         
-               <td><?php echo $fila['Placa_Equipo'] ?></td>
-               <td><?php echo $fila['Marca'] ?></td>
                <td><?php echo $fila['NombreTipoElemento'] ?></td>
+               <td><?php echo $fila['Marca'] ?></td>
+               <td><?php echo $fila['Descripcion'] ?></td>
                <td><?php echo $fila['Fecha_Entrada'] ?></td>
                <td><?php echo $fila['Fecha_Salida'] ?></td>
                <td><?php echo $fila['NombreEstado'] ?></td>

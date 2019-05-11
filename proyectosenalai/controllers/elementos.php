@@ -30,7 +30,6 @@ class elementos extends Controller{
             header('Location:'.constant('URL').'login');
             die();
           }
-        $this->view->consultarUbicaion = $this->model->consultarUbicaion();
         $this->view->consultarTipoEquipos = $this->model->consultarTipoEquipos();
         $this->view->consultarMarca = $this->model->consultarMarca();
         $this->view->render('elementos/registrarElementos');   
@@ -40,19 +39,10 @@ class elementos extends Controller{
     function ambientesPorUbicacion(){
 
         if (isset($_POST['consulta'])) {
-            $q = $_POST['consulta'];
-                  
-                        
+            $q = $_POST['consulta'];        
             $this->view->query = $this->model->consultarAmbientePorUbicacion($q);
-                        
-         
-               
                
             if ($this->view->query->rowCount() > 0) {
-                     
-               
-               
-               
                $salida = "<label>Ambiente</label>";
                
                $salida .="<select class='form-control' id='ambiente' name='ambiente'> ";
@@ -63,33 +53,16 @@ class elementos extends Controller{
                
                
                   $salida .= "<option value=".$resultado['idAmbientes'].">" .$resultado['Numero_Ambiente'].  "</option>";
-               
-               
                } 
                
                $salida .="</select>";
-               
-               
-               
-               
-               
-               
-                     
+ 
                }else{
                   $salida = "<label>Ambiente</label>";
                
                   $salida .="<select class='form-control' id='ambiente' name='ambiente'> ";
                
                   $salida .="<option value='' >No hay resultados :</option>";
-               
-               
-               
-               
-                  
-               
-               
-               
-               
                $salida .="</select>";
                }
                
@@ -110,10 +83,9 @@ class elementos extends Controller{
 
             $Numero_Serial = $_POST['Numero_Serial'];
             $Placa_Equipo = $_POST['Placa_Equipo'];
-            $ubicacion = $_POST['ubicacion'];
-            $ambiente = $_POST['ambiente'];
             $idTipo_Elementos = $_POST['idTipo_Elementos'];
             $marca = $_POST['marca'];
+            $Descripcion = $_POST['Descripcion'];
 
 
             //---- validar que numero de serial no exista ----- ///
@@ -151,23 +123,15 @@ class elementos extends Controller{
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  El campo Placa Equipo solo debe contener Numeros.
                             </div>';
-
+                        } else if($Descripcion == "" ){                        
+                        
+                            echo '<div class="alert alert-danger">
+                            <strong>ERROR!</strong>  El campo descripcion equipo no puede ir vacio.
+                            </div>';
                          }else if ($this->view->u > 0) {
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  El Numero  Placa Equipo ya existe.
                             </div>';
-                             
-                         }else if($ubicacion ==""){
-                            echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  Seleccione una ubicacion.
-                            </div>';
-                         
-                        }else if($ambiente ==""){
-                            echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  Seleccione un ambiente.
-                            </div>';
-                         
-
                         }else if( $idTipo_Elementos == ""){
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  Seleccione un Tipo de elemento.
@@ -179,7 +143,7 @@ class elementos extends Controller{
                             <strong>ERROR!</strong>  Seleccione una marca.
                             </div>';
                          }else {
-                             $this->model->registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$ambiente);
+                             $this->model->registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion);
                              echo 1;
                          }
            
@@ -210,9 +174,6 @@ class elementos extends Controller{
      header("Location:".constant('URL').'elementos');
 
     }
-
-
-
 }
 
 ?>
