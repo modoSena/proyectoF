@@ -16,8 +16,20 @@ class elementosModel extends Model
         $stmt->execute();
         return $stmt;
         $conexion = null;
+        $stmt= null; 
+    }
+
+    function consultarElemento($idElementos){
+        $conexion = $this->db->connect();
+        $consulta="SELECT idElementos,Numero_Serial,Placa_Equipo,Descripcion,Marca,NombreTipoElemento from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas where idElementos = ?" ;
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(1, $idElementos, PDO::PARAM_INT );
+        $stmt->execute();
+        $result = $stmt->fetch();
+        return $result;
+        $conexion = null;
         $stmt= null;
-        
+        $result = null;
     }
 
     function consultarTipoEquipos(){
@@ -116,6 +128,20 @@ class elementosModel extends Model
         $conexion = null;
         $stmt= null;
     }
+
+    public function  actualizarElemento($idElementos,$Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion){
+        $conexion = $this->db->connect();
+        $consulta  ="UPDATE  elementos  set Placa_Equipo = ? ,Numero_Serial=? ,tipo_elementos_idTipo_Elementos= ? ,marcas_idMarcas= ? ,Descripcion= ? where idElementos = ? ";
+        $stmt=$conexion->prepare($consulta);
+        $stmt->bindParam(1,$Placa_Equipo, PDO::PARAM_INT);
+        $stmt->bindParam(2,$Numero_Serial,PDO::PARAM_STR);
+        $stmt->bindParam(3,$idTipo_Elementos,PDO::PARAM_STR);
+        $stmt->bindParam(4,$marca,PDO::PARAM_STR);
+        $stmt->bindParam(5,$Descripcion,PDO::PARAM_STR);
+        $stmt->bindParam(6,$idElementos,PDO::PARAM_STR);
+        $stmt->execute();
+    }   
+
 }
 
 ?>

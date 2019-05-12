@@ -170,11 +170,6 @@ class ambientes extends Controller{
     }
 
 
-
-
-
-
-
     function  actualizarAmbiente(){
 
       session_start();
