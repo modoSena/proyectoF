@@ -131,7 +131,7 @@ class elementosModel extends Model
 
     public function  actualizarElemento($idElementos,$Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion){
         $conexion = $this->db->connect();
-        $consulta  ="UPDATE  elementos  set Placa_Equipo = ? ,Numero_Serial=? ,tipo_elementos_idTipo_Elementos= ? ,marcas_idMarcas= ? ,Descripcion= ? where idElementos = ? ";
+        $consulta  ="UPDATE  elementos  set Placa_Equipo = ? ,Numero_Serial = ? ,Tipo_Equipo_idTipo_Equipo = ? ,marcas_idMarcas = ? ,Descripcion = ? where idElementos = ? ";
         $stmt=$conexion->prepare($consulta);
         $stmt->bindParam(1,$Placa_Equipo, PDO::PARAM_INT);
         $stmt->bindParam(2,$Numero_Serial,PDO::PARAM_STR);

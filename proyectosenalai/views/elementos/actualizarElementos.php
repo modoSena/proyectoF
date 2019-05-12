@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label>Tipo Elemento</label>
                     <select class='form-control' id='idTipo_Elementos' name='idTipo_Elementos'>
-                            <OPTION value="<?php echo $this->valores['tipo_elementos_idTipo_Elementos']; ?>">Selecciona:
+                            <OPTION value="<?php echo $this->valores['Tipo_Equipo_idTipo_Equipo']; ?>">Selecciona:
                             </option>
                             <?php foreach ($this->consultarTipoEquipos as $resultado ) { ?>
                             <option value="<?php echo $resultado['idTipo_Elementos']; ?>">
