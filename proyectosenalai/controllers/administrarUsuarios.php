@@ -652,8 +652,6 @@ class administrarUsuarios extends Controller {
                                          <strong>ERROR!</strong>  Seleccione un sexo.
                                          </div>';
                                          } 
-         
-         
                                                          //---- VALIDACIONES DEL tipo documento----- ///      
                                  else if($ciudad == ""){
          
@@ -661,9 +659,6 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong>  Seleccione una ciudad.
                                  </div>';
                                  } 
-         
-         
-         
                         //---- VALIDACIONES DE LA DIRECCION----- /// 
                  else if($direccion == "" ){   
                          echo '<div class="alert alert-danger">

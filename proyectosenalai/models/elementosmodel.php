@@ -5,7 +5,6 @@ class elementosModel extends Model
     function __construct()
     {
         parent::__construct();
-
     }
 
     function consultarElementos(){
@@ -41,7 +40,6 @@ class elementosModel extends Model
         return $stmt;
         $conexion = null;
         $stmt= null;
-        
     }
 
     function consultarMarca(){
@@ -53,7 +51,6 @@ class elementosModel extends Model
         return $stmt;
         $conexion = null;
         $stmt= null;
-        
     }
 
     function validarPlacaEquipo($Placa_Equipo){
@@ -68,9 +65,7 @@ class elementosModel extends Model
         $conexion = null;
         $stmt= null;
         $result = null;  
-        
     }
-
 
     function validarNumeroSerial($Numero_Serial){
 
@@ -84,7 +79,6 @@ class elementosModel extends Model
         $conexion = null;
         $stmt= null;
         $result = null;  
-        
     }
 
 
@@ -103,7 +97,6 @@ class elementosModel extends Model
         $stmt->bindParam(5,$estadoElementos, PDO::PARAM_INT);
         $stmt->bindParam(6,$marca, PDO::PARAM_INT);
         $stmt->bindParam(7,$Descripcion, PDO::PARAM_STR);
-
         $stmt->execute();  
     }
 
@@ -140,7 +133,20 @@ class elementosModel extends Model
         $stmt->bindParam(5,$Descripcion,PDO::PARAM_STR);
         $stmt->bindParam(6,$idElementos,PDO::PARAM_STR);
         $stmt->execute();
-    }   
+    } 
+
+    public function  consultarDatosParaComparar($idElementos){
+        $conexion = $this->db->connect();
+        $consulta  ="SELECT Placa_Equipo ,Numero_Serial FROM elementos WHERE idElementos = '$idElementos' ";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(':idElementos',$idElementos,PDO::PARAM_INT);
+        $stmt->execute();
+        $resul = $stmt->fetch();
+        return $resul;
+        $conexion = null;
+        $stmt= null;
+        $resul= null;
+    }
 
 }
 

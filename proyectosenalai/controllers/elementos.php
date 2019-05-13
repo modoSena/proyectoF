@@ -208,12 +208,9 @@ class elementos extends Controller{
 
 
             //---- validar que numero de serial no exista ----- ///
-
+            $this->comparador = $this->model->consultarDatosParaComparar($idElementos);
             $this->view->t = $this->model->validarNumeroSerial($Numero_Serial);
-
             $this->view->u = $this->model->validarPlacaEquipo($Placa_Equipo);
-
-
 
                               //---- VALIDACIONES ----- ///
                      
@@ -228,11 +225,12 @@ class elementos extends Controller{
                             <strong>ERROR!</strong>  El campo Numero Serial solo debe contener Numeros.
                             </div>';
 
-                         }else if ($this->view->t > 0) {
+                         }else if($this->comparador['Numero_Serial'] != $Numero_Serial && $this->t > 0 ){
+         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El  Numero Serial ya existe.
+                            <strong>ERROR!</strong>  El numero serial ya ha sido registrado, intenta con otro.
                             </div>';
-                             
+                            
                          } else if($Placa_Equipo == "" ){                        
                         
                             echo '<div class="alert alert-danger">
@@ -242,21 +240,25 @@ class elementos extends Controller{
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  El campo Placa Equipo solo debe contener Numeros.
                             </div>';
+                            
+                         }else if($this->comparador['Placa_Equipo'] != $Placa_Equipo && $this->u > 0 ){
+         
+                            echo '<div class="alert alert-danger">
+                            <strong>ERROR!</strong>  La Placa Equipo ya ha sido registrado, intenta con otro.
+                            </div>';
+   
+                           
                         } else if($Descripcion == "" ){                        
                         
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  El campo descripcion equipo no puede ir vacio.
                             </div>';
-                         }else if ($this->view->u > 0) {
-                            echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El Numero  Placa Equipo ya existe.
-                            </div>';
+                 
                         }else if( $idTipo_Elementos == ""){
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  Seleccione un Tipo de elemento.
                             </div>';
                          
-
                         }else if( $marca == ""){
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  Seleccione una marca.
