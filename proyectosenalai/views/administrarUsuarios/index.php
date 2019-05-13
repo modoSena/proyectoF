@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,65 +14,40 @@
     <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
     <title>Sena L.A.I</title>
 </head>
-
 <body>
-
-
-
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
-
-
-
-
-
-
-
-
-
     <section class="principal">
-
         <h1 style="text-align:center">Administrar Usuarios</h1>
-
-
-
-        </div>
-
-
-
-
         <br>
        <div  id='div1'>
        <div class="form-actions">
-            <a href="administrarUsuarios/registrarUsuarios"><button type="button" class="btn btn-primary">Agregar un nuevo Usuario <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <a href="administrarUsuarios/registrarUsuarios"><button type="button" class="btn btn-primary">Agregar Usuario <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
                 <table id="table_id" class="display">
             <thead>
                 <tr>
-               <th>CAMBIAR ESTADO</th>
-               <th>EDITAR</th>
-               <th>TIPO DOCUMENTO</th>
-               <th>NUM. DOCUMENTO</th>
-               <th>NOMBRES</th>
-               <th>PRIMER APELLIDO</th>
-               <th>SEGUNDO APELLIDO</th>
-               <th>DIRECCIÓN</th>
-               <th>CELULAR</th>
-               <th>TEL.</th>
-               <th>EMAIL</th>
-               <th>SEXO</th>
-               <th>PROGRAMA</th>
-               <th>FICHA</th>
-               <th>CIUDAD</th>
-               <th>USUARIO</th>
-               <th>ROL</th>
+               <th>Cambiar Estado</th>
+               <th>Editar</th>
+               <th>Tipo Documento</th>
+               <th>Num. Documento</th>
+               <th>Nombres</th>
+               <th>Primer Apellido</th>
+               <th>Segundo Apellido</th>
+               <th>Dirección</th>
+               <th>Celular</th>
+               <th>Tel.</th>
+               <th>Email</th>
+               <th>Sexo</th>
+               <th>Programa</th>
+               <th>Ficha</th>
+               <th>Ciudad</th>
+               <th>Usuario</th>
+               <th>Rol</th>
                 </tr>
             </thead>
             <tbody>
-                
                 <?php foreach($this->query as  $fila) { ?>
-
-
               <tr>
               <?php if ($fila['Estado_idEstado'] == 1) { ?>
               <td>   <a onclick="return confirm('¿Estas seguro?');" href='administrarUsuarios/inhabilitarUsuario/<?php echo $fila['idPersona']?>'><button type='button' class='btn btn-success'>Activado</button></a> </td>
@@ -99,30 +73,14 @@
                <td><?php echo $fila['Usuario'] ?></td>
                <td><?php echo $fila['NombreRoles'] ?></td>
                </tr>
-
-
-
                 <?php } ?>
-                
-
             </tbody>
               </table>    
-
-
-
         </div>
-
-
     </section>
-
-
-
-
-
     <br>
     <br>
     <br>
-
     <?php require('views/plantilla/footer.php')  ?>
     <script src="<?php echo constant('URL');?>public/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo constant('URL');?>DataTables/datatables.js"></script>
@@ -130,10 +88,5 @@
     <script>$(document).ready( function () {
     $('#table_id').DataTable();
 } );</script>
-
-
 </body>
-
 </html>
-
-

@@ -29,7 +29,7 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card ">
                 <div class="card-header">
-                    <h2 class="text-center text-light">Inicia sesión</h2>
+                    <h2 class="text-center text-light">INICIO SESIÓN</h2>
                 </div>
                 <div class="card-body">
                     <form class="needs-validation" id="login">
@@ -52,7 +52,7 @@
                         <input id="submit" type="button" value="Iniciar sesion" class="btn btn-basic btn-block btn-lg">
                         <br>
                         <label for=""><a class="recuperacontrasena"
-                                href="<?php echo constant('URL')?>recuperarcontrasena">recuperar contraseña?</a></label>
+                                href="<?php echo constant('URL')?>recuperarcontrasena">Recuperar Contraseña?</a></label>
                     </form>
                 </div>
                 <div class="card-footer">

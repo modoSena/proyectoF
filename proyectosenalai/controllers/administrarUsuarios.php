@@ -676,13 +676,6 @@ class administrarUsuarios extends Controller {
                          <strong>ERROR!</strong>  El campo Direccion no puede  ser mayor de 30 caracteres.
                          </div>';
                         }
-         
-         
-         
-         
-         
-         
-         
           //---- VALIDACIONES DEL  EMAIL----- ///  
                  else if(strlen($email) == 0){ 
                   echo '<div class="alert alert-danger">
