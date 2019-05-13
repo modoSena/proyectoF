@@ -137,43 +137,18 @@ class administrarUsuarios extends Controller {
                      $telefono = $_POST['telefono'];
                      $idprograma = $_POST['idprograma'];
                      $numero_ficha = $_POST['numero_ficha'];
-                     
-
-
 
                   //Consulta para validar que el email no exista en nuestra base de datos//
-
-                  
                   $this->view->f =$this->model->validaremailexiste($email);
-
                   //----------fin consulta----------//
-
-
-
                   //Consulta para validar que el email no exista en nuestra base de datos//
-
-                  
                   $this->view->y =$this->model->validarusuarioexiste($usuario);
-
                   //----------fin consulta----------//
-
-
-
                   //Consulta para validar que el Documento no exista en nuestra base de datos//
-
-                  
                   $this->view->j =$this->model->validardocumentoexiste($documento);
-
-
-
-
-
                   //---- VALIDACIONES DEL NOMBRE----- ///
-                     
                         //Si esta vacio  
                         if($nombres == "" ){ 
-                        
-                        
                            echo '<div class="alert alert-danger">
                            <strong>ERROR!</strong>  El campo Nombres no puede ir vacio.
                            </div>';
@@ -190,15 +165,12 @@ class administrarUsuarios extends Controller {
                            <strong>ERROR!</strong> El campo Nombres solo debe tener letras. 
                            </div>';
                         }
-
                   //---- VALIDACIONES DE LOS  APELLIDOS----- /// 
-                     
                         else if($apellido_primero == "" ) { 
                            echo '<div class="alert alert-danger">
                            <strong>ERROR!</strong>  El campo Primer Apellido no puede ir vacio.
                            </div>';
                         }
-
                         //NO cumple longitud minima  
                         else if(strlen($apellido_primero) > 20 ){  
                            echo '<div class="alert alert-danger">
@@ -211,12 +183,6 @@ class administrarUsuarios extends Controller {
                            <strong>ERROR!</strong> El campo Primer Apellido solo debe tener letras y no pueden haber espacios.
                            </div>'; 
                         }
-
-
-
-
-
-                        
                                  //NO cumple longitud minima  
                                  else if(strlen($apellido_segundo) > 20 ){  
                                  echo '<div class="alert alert-danger">
@@ -229,10 +195,6 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong> El campo Segundo apellido solo debe tener letras o debe estar vacio.
                                  </div>'; 
                                  }
-
-
-
-                                 
                                  //---- VALIDACIONES DEL USUARIO----- ///
                         else if($usuario == "" )  {
                                  echo '<div class="alert alert-danger">
@@ -253,8 +215,6 @@ class administrarUsuarios extends Controller {
                                  </div>'; 
                                  } 
                                  // SI longitud, SI caracteres A-z
-                        
-                        
                         //---- VALIDACIONES DEL USUARIO(VALIDAR QUE EL USUARIO NO ESTE EN NUESTRA BASE DE DATOS)----- ///
                                  
                                  //Comprovar si usuario existe 
@@ -279,11 +239,6 @@ class administrarUsuarios extends Controller {
                                           <strong>ERROR!</strong>  Seleccione un tipo de documento.
                                           </div>';
                                        }      
-                                       
-                        
-
-
-
                                  //---- VALIDACIONES DEL DOCUMENTO----- /// 
                         else if($documento == "" ){   
                                  echo '<div class="alert alert-danger">
@@ -308,17 +263,12 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong>  El Documento ya ha sido registrado.
                                  </div>';
                                  } 
-
-
                                           //---- VALIDACIONES DEL tipo documento----- ///      
                                           else if($sexo == ""){
                                                 echo '<div class="alert alert-danger">
                                                 <strong>ERROR!</strong>  Seleccione un sexo.
                                                 </div>';
                                                 } 
-
-
-
                                           //---- VALIDACIONES DEL tipo documento----- ///      
                                           else if($departamento == ""){
 
@@ -326,8 +276,6 @@ class administrarUsuarios extends Controller {
                                           <strong>ERROR!</strong>  Seleccione un departamento.
                                           </div>';
                                           } 
-
-
                                                                   //---- VALIDACIONES DEL tipo documento----- ///      
                                           else if($ciudad == ""){
 
@@ -335,9 +283,6 @@ class administrarUsuarios extends Controller {
                                           <strong>ERROR!</strong>  Seleccione una ciudad.
                                           </div>';
                                           } 
-
-
-
                                  //---- VALIDACIONES DE LA DIRECCION----- /// 
                         else if($direccion == "" ){   
                                  echo '<div class="alert alert-danger">
@@ -350,13 +295,6 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong>  El campo Direccion no puede  ser mayor de 30 caracteres.
                                  </div>';
                                  }
-
-
-
-
-
-
-
                   //---- VALIDACIONES DEL  EMAIL----- ///  
                         else if(strlen($email) == 0){ 
                            echo '<div class="alert alert-danger">
@@ -371,26 +309,18 @@ class administrarUsuarios extends Controller {
                         }  
                   
                   //---- VALIDACIONES DEL  EMAIL(VALIDAR QUE EL EMAIL NO EXISTA EN LA BASE DE DATOS)----- ///      
-
-
                         //Comprovar si email existe 
                         else if($this->view->f > 0){
                            echo '<div class="alert alert-danger">
                            <strong>ERROR!</strong>  El email ya ha sido registrado, intenta con otro.
                            </div>';
                         } 
-
-
-                        
-
                         //---- VALIDACIONES DEl CELULAR----- /// 
                         else if($numero_celular == "" ){   
                                  echo '<div class="alert alert-danger">
                                  <strong>ERROR!</strong>  El campo Celular no puede ir vacio.
                                  </div>'; 
                                  }
-
-
                               // solo caracteres numericos  
                                  else if(!preg_match("/^[0-9]+$/",$numero_celular)){  
                                  echo '<div class="alert alert-danger">
@@ -410,21 +340,7 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong>  Seleccione un Programa.
                                  </div>';
                                  }
-                  
-                              
-
-
-
-
-
-
-
-
                   //---- VALIDACIONES DEL TELEFONO----- /// 
-
-                     
-
-
                            // solo caracteres numericos  
                               else if(!preg_match("/^[0-9]+$/",$telefono) && $telefono !=""){  
                               echo '<div class="alert alert-danger">
@@ -438,12 +354,6 @@ class administrarUsuarios extends Controller {
                            <strong>ERROR!</strong>  El campo Tel  FIjo debe tener los 7 digitos o puede ir vacio.
                            </div>';
                         }
-                     
-
-
-
-
-
                   //---- VALIDACIONES DEL NUMERO FICHA----- ///
                         
                            
@@ -452,13 +362,8 @@ class administrarUsuarios extends Controller {
                               <strong>ERROR!</strong>  El Campo Numero Ficha debe contener solo numeros o debe estar vacio.
                               </div>';
                                  }
-
-
-
-                        
                   //---- REGISTRAR USUARIO CORRECTAMENTE----- /// 
-                  
-                  
+
                         else {
                           
                         if ($_SESSION['Roles_idRoles'] != 4 && $rol == 4 or $rol == 3 ) {
@@ -466,12 +371,7 @@ class administrarUsuarios extends Controller {
                            echo "ERROR ";
 
                            die();
-                           
                         } 
-                        
-                        
-                     
-
                         
                         $this->model->ingresarusuario($nombres,$apellido_primero,$apellido_segundo,$usuario,$rol,$tipodocumento,$documento,$ciudad,$direccion,$email,$sexo,$numero_celular,$telefono,$idprograma,$numero_ficha);
                         
@@ -547,17 +447,9 @@ class administrarUsuarios extends Controller {
                            
                         } catch (Exception $e) {
                            echo 'no se envio error: ', $mail->ErrorInfo;
-                        }
-                     
-                  
-
-                     
+                        } 
                   }
-                  
-
                   }
-
-
     }
 
 
@@ -576,22 +468,15 @@ class administrarUsuarios extends Controller {
       if ($_SESSION['Roles_idRoles'] !=4 && $rol['Roles_idRoles'] == 4 or $rol['Roles_idRoles']  == 3  ) {
 
                echo "No puedes editar este Usuario";
-               die();
-            
-      } 
-
-      
+               die();    
+      }  
 
       $this->view->consultarsexo = $this->model->consultarsexo();
       $this->view->consultardepartamento = $this->model->consultardepartamento();
       $this->view->consultarrol = $this->model->consultarrol();
       $this->view->consultarprograma = $this->model->consultarprograma();
       $this->view->consultartipodocumento = $this->model->consultartipodocumento();
-      
       $this->view->valores = $this->model->consultarUsuario($idpersona);
-
-
-
       $this->view->render('administrarUsuarios/actualizarUsuarios');
     }
 
@@ -623,45 +508,21 @@ class administrarUsuarios extends Controller {
          $telefono = $_POST['Atelefono'];
          $idprograma = $_POST['Aidprograma'];
          $numero_ficha = $_POST['Anumero_ficha'];;
-             
+
          //CONSULTAMOS EL EMAIL Y USUARIO Y DOCUMENTO PARA HACER VALIDACIONES
-         
          $this->comparador = $this->model->consultarDatosParaComparar($idPersona);
-         
-         
          //Consulta para validar que el email no exista en nuestra base de datos//
-         
-         
          $this->f =$this->model->validaremailexiste($email);
-         
          //----------fin consulta----------//
-         
-         
-         
          //Consulta para validar que el email no exista en nuestra base de datos//
-         
-        
          $this->y=$this->model->validarusuarioexiste($usuario);
-         
          //----------fin consulta----------//
-         
-         
-         
          //Consulta para validar que el Documento no exista en nuestra base de datos//
-         
-         
          $this->j=$this->model->validardocumentoexiste($documento);
-         
-         
-         
-         
-         
          //---- VALIDACIONES DEL NOMBRE----- ///
             
                //Si esta vacio  
                  if($nombres == "" ){ 
-                 
-                 
                   echo '<div class="alert alert-danger">
                   <strong>ERROR!</strong>  El campo Nombres no puede ir vacio.
                   </div>';
@@ -711,11 +572,7 @@ class administrarUsuarios extends Controller {
                          echo '<div class="alert alert-danger">
                          <strong>ERROR!</strong> El campo Segundo apellido solo debe tener letras o debe estar vacio.
                          </div>'; 
-                        }
-         
-         
-         
-                        
+                        }       
                         //---- VALIDACIONES DEL USUARIO----- ///
                  else if($usuario == "" )  {
                          echo '<div class="alert alert-danger">
@@ -760,11 +617,6 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong>  Seleccione un tipo de documento.
                                  </div>';
                                 }      
-                                
-                 
-         
-         
-         
                         //---- VALIDACIONES DEL DOCUMENTO----- /// 
                  else if($documento == "" ){   
                          echo '<div class="alert alert-danger">
