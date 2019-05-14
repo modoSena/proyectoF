@@ -18,18 +18,18 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center"> Marcas </h1>
+        <h1 style="text-align:center">Administrar Marcas</h1>
         </div>
         <div class="form-actions">
-            <a href="<?php echo constant('URL');?>marca/registrarMarcas"><button type="button" class="btn btn-primary">Agregar una nueva marca <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <a href="<?php echo constant('URL');?>marca/registrarMarcas"><button type="button" class="btn btn-primary">Agregar Marca <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
         <br>
         <div id="div1">
         <table id="table_id" class="display">
     <thead>
         <tr>
-                  <th>EDITAR</th>        
-                  <th>NOMBRE MARCA</th>
+                  <th>Editar</th>        
+                  <th>Nombre Marca</th>
         </tr>
     </thead>
     <tbody>
