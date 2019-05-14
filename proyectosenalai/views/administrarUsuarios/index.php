@@ -30,7 +30,7 @@
                <th>Cambiar Estado</th>
                <th>Editar</th>
                <th>Tipo Documento</th>
-               <th>Num. Documento</th>
+               <th>Núm. Documento</th>
                <th>Nombres</th>
                <th>Primer Apellido</th>
                <th>Segundo Apellido</th>
