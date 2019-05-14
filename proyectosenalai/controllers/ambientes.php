@@ -311,7 +311,7 @@ $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
                   <th>Realizador por</th>
-                  <th>Documento</th>
+                  <th>Dmento</th>
                   <th>Novedad</th>
                   <th>fecha</th>
         </tr>
@@ -412,11 +412,11 @@ $salida = "<table id='table_id2' class='display'>
 $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
-                  <th>ESTADO</th>
-                  <th>DOCUMENTO</th>
-                  <th>NOMBRE</th>
-                  <th>CELULAR</th>
-                  <th>FECHA</th>
+                  <th>Estado</th>
+                  <th>Num. Documento</th>
+                  <th>Nombres</th>
+                  <th>Celular</th>
+                  <th>Fecha Registro</th>
                   
         </tr>
     </thead>

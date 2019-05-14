@@ -83,7 +83,7 @@ class administrarUsuarios extends Controller {
             $this->view->query = $this->model->consultarCiudadesPorDepartamento($q);
             if ($this->view->query->rowCount() > 0) {
                      
-               $salida = "<label>ciudad</label>";
+               $salida = "<label>Municipio</label>";
                
                $salida .="<select class='form-control' id='ciudad' name='ciudad'> ";
                
@@ -97,7 +97,7 @@ class administrarUsuarios extends Controller {
                $salida .="</select>";
                
                }else{
-                  $salida = "<label>ciudad</label>";
+                  $salida = "<label>Municipio</label>";
                
                   $salida .="<select class='form-control' id='ciudad' name='ciudad'> ";
                

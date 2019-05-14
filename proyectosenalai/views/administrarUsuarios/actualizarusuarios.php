@@ -211,7 +211,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLongTitle">Actualizaciones con Éxito</h2>
+                    <h2 class="modal-title" id="exampleModalLongTitle">Éxito</h2>
                 </div>
                 <div class="modal-body">
                     <p for="">Usuario actualizado correctamente.</p>

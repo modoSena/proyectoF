@@ -15,74 +15,44 @@
 <title>Sena L.A.I</title>
 <body>
     <?php include('views/plantilla/header.php') ?>
-
-
-   
     <div class="container">
-
 <form class="form"  id="formularioActualizarContrasena"  >
-  
 <h2 style="text-align: center;">Actualizar Contraseña</h2>
   <br>
-
-
               <div class="form-group">
-    <label for="">Contraseña actual</label>
+    <label for="">Contraseña Actual</label>
       <input type="password" name="contrasenaActual" id="contrasenaActual" class="form-control input-lg" placeholder="Ingrese contraseña actual" tabindex="3" >
     </div> 
-    
-      
          <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-6">
-        
                   <div class="form-group">
         <label for="">Nueva Contrasena</label>
               <input type="password" name="nuevaContrasena" id="nuevaContrasena" class="form-control input-lg" placeholder="ingrese contraseña" tabindex="3" >
-            </div>
-                    
+            </div>          
       </div>
-
-      <div class="col-xs-6 col-sm-6 col-md-6">
-                   
+      <div class="col-xs-6 col-sm-6 col-md-6">       
             <div class="form-group">
-        <label for="">Repite contrasena</label>
+        <label for="">Repite Contrasena</label>
               <input type="password" name="nuevaContrasena2" id="nuevaContrasena2" class="form-control input-lg" placeholder="Repita contraseña" tabindex="3" >
             </div>
                     
       </div>
        </div>
-   
    <hr/>
-          
     <div class="row">
       <div  class="col-xs-6 col-md-6">
        <input type="hidden" name="envioActualizarContrasena">
-
                 <input id="submitActualizarContrasena" name="submitActualizarContrasena" type="button" value="Aceptar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
-
-
-      
-              
               </div>
 
       <div  class="col-xs-6 col-md-6">
       <a href="<?php echo constant('URL')?>bienvenido" class="btn btn-primary btn-block btn-lg">Cancelar</a>
       </div>
     </div>
-  
-    <div id ="alert"><img class="loading" id="loading" src="<? echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajes"> </span></div>  
-    
-             
+    <div id ="alert"><img class="loading" id="loading" src="<? echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajes"> </span></div>        
 </form>
-
-
-
 </div>
 <br>
-
-
-
-
 <!-- MODAL exito ---->
 <div data-backdrop="static" data-keyboard="false" class="modal fade" id="modalExiotActualizarContrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -93,64 +63,21 @@
         <h2 class="modal-title" id="exampleModalLongTitle">Exito</h2>
       </div>
       <div class="modal-body">
-      
-            <p for="">*Su contraseña ha sido cambiada correctamente </p>
-            
-            
+            <p for="">Su contraseña ha sido cambiada correctamente </p>
       </div>
-      
       <div class="modal-footer">
-      
-        
       <a href="<?php echo constant('URL')?>bienvenido" class="btn btn-primary">Aceptar</a>
       </div>
-
       </form>
-
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <?php include('views/plantilla/footer.php') ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <script src="<?php echo constant('URL');?>public/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo constant('URL');?>public/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
 <script>
-
 $(function () {
         console.log('jquery funciona')  ;
         $('#submitActualizarContrasena').click(function () {
@@ -162,7 +89,6 @@ $(function () {
                beforeSend: function() {
                 $('#loading').show();
                 $('#mensajes').html('procesando datos');
-
             },
                success:function (respuesta) {
                 $('#loading').hide();
@@ -179,6 +105,5 @@ $(function () {
            })
         }) 
        }
-       
        )
 </script>
