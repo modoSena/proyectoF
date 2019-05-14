@@ -16,21 +16,14 @@
 <?php include('views/plantilla/header.php') ?>
 <br>
 <div class="container">
-
 <form class="form" id="ActualizarPrograma" >
-  
 <h2 style="text-align: center;">Actualizar Programa</h2>
-
 <hr style=" height: 1px;background-color: black;">
-
 <div class="form-group">
-
-			 <label for="">Nombre programa</label>
+			 <label for="">Nombre Programa</label>
 				<input type="text" name="NombrePrograma" value="<?php echo $this->valores['NombrePrograma']?>" id="NombrePrograma" class="form-control " placeholder=" " tabindex="3" >
 </div> 
-
             <input type="hidden"  value="<?php echo $this->valores['idPrograma'] ?>" name="idPrograma">
-
 <div class="row">
 				<div  class="col-xs-6 col-md-6">
 				 <input type="hidden" name="envioActualizoPrograma">
@@ -46,7 +39,6 @@
 </div>      
 </form>
 </div>
-    
  <!-- MODAL exito AL ACTUALIZAR PROGRAMA ---->
 <div data-backdrop="static" data-keyboard="false" class="modal fade" id="modalExitoActualizoPrograma" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -54,13 +46,12 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Programa actualizado con Exito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Programa actualizado con éxito</h2>
         </div>
         <div class="modal-body">
               <p for="">Se ha actualizado el programa</p> 
         </div>
-        <div class="modal-footer">
-				
+        <div class="modal-footer">	
                 <a href="<?php echo constant('URL')?>programa/actualizarProgramas/<?php echo $this->idPrograma ?>" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
@@ -101,7 +92,5 @@ $(function () {
        })
     }) 
    }
-   
    )
-
 </script>

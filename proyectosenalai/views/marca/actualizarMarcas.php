@@ -54,13 +54,12 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Marca actualizado con Exito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Marca actualizado con éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha actualizado el marca</p> 
+              <p for="">Se ha actualizado la marca</p> 
         </div>
         <div class="modal-footer">
-				
                 <a href="<?php echo constant('URL')?>marca/actualizarMarcas/<?php echo $this->idMarcas ?>" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
@@ -80,7 +79,6 @@
 $(function () {
     console.log('jquery funciona')  ;
     $('#submitMarca').click(function () {
-
        $.ajax({
            url:'<?php echo constant('URL')?>marca/actualizarMarca',
            type:'POST',
@@ -93,7 +91,6 @@ $(function () {
             $('#loading').hide();
               if (respuesta == 1) {
                 $('#modalExitoActualizoMarca').modal("show");
-                  
               }else{
                 $('#mensajes').html(respuesta);
               }
@@ -101,7 +98,5 @@ $(function () {
        })
     }) 
    }
-   
    )
-
 </script>
