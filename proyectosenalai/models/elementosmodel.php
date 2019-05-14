@@ -8,7 +8,6 @@ class elementosModel extends Model
     }
 
     function consultarElementos(){
-
         $conexion = $this->db->connect();
         $consulta="SELECT idElementos,Numero_Serial,Placa_Equipo,Fecha_Salida,Fecha_Entrada,Marca,Descripcion,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas";
         $stmt = $conexion->prepare($consulta);
@@ -32,7 +31,6 @@ class elementosModel extends Model
     }
 
     function consultarTipoEquipos(){
-
         $conexion = $this->db->connect();
         $consulta="SELECT * FROM  tipo_elementos ";
         $stmt = $conexion->prepare($consulta);
@@ -43,7 +41,6 @@ class elementosModel extends Model
     }
 
     function consultarMarca(){
-
         $conexion = $this->db->connect();
         $consulta="SELECT * FROM  Marcas  ";
         $stmt = $conexion->prepare($consulta);
@@ -54,7 +51,6 @@ class elementosModel extends Model
     }
 
     function validarPlacaEquipo($Placa_Equipo){
-
         $conexion = $this->db->connect();
         $consulta="SELECT idElementos  FROM elementos where Placa_Equipo = ? ";
         $stmt = $conexion->prepare($consulta);
@@ -68,7 +64,6 @@ class elementosModel extends Model
     }
 
     function validarNumeroSerial($Numero_Serial){
-
         $conexion = $this->db->connect();
         $consulta="SELECT idElementos  FROM elementos where Numero_Serial = ? ";
         $stmt = $conexion->prepare($consulta);
@@ -81,9 +76,7 @@ class elementosModel extends Model
         $result = null;  
     }
 
-
      function  registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion){
-
         ini_set('date.timezone','America/Bogota'); 
         $fechaentrada = date("Y-m-d H:i:s");
         $estadoElementos =1;
@@ -147,7 +140,5 @@ class elementosModel extends Model
         $stmt= null;
         $resul= null;
     }
-
 }
-
 ?>
