@@ -21,7 +21,7 @@
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
 <div class="form-group">
-			 <label for="">Numero serial</label>
+			 <label for="">Número serial</label>
 				<input type="text" name="Numero_Serial" id="Numero_Serial" class="form-control " placeholder=" " tabindex="3" >
             </div> 
 <div class="form-group">
@@ -79,7 +79,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Elemento Registrado con Exito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Elemento Registrado con Éxito</h2>
         </div>
         <div class="modal-body">
               <p for="">Se ha registrado el elemento</p>

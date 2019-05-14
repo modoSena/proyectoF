@@ -20,25 +20,25 @@
     <section class="principal">
         <h1 style="text-align:center"> Elementos </h1>
         <div class="form-actions">
-            <a href="<?php echo constant('URL');?>elementos/registrarElementos"><button type="button" class="btn btn-primary">Agregar un nuevo elemento <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <a href="<?php echo constant('URL');?>elementos/registrarElementos"><button type="button" class="btn btn-primary">Agregar Elemento <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
         <br>
         <div id="div1">
         <table id="table_id" class="display">
     <thead>
         <tr>
-                  <th>CAMBIAR ESTADO</th>
-                  <th>EDITAR</th>
-                  <th>NOVEDADES</th>
-                  <th>DETALLE ELEMENTO</th>
-                  <th>NUMERO SERIAL</th>
-                  <th>PLACA EQUIPO</th>
-                  <th>TIPO ELEMENTO</th>
-                  <th>MARCA</th>
-                  <th>DESCRIPCIÓN</th>
-                  <th>FECHA ENTRADA(SISTEMA)</th>
-                  <th>FECHA SALIDA(SISTEMA)</th>
-                  <th>ESTADO</th>
+                  <th>Cambiar Estado</th>
+                  <th>Editar</th>
+                  <th>Novedades</th>
+                  <th>Detalle Elemento</th>
+                  <th>Número Serial</th>
+                  <th>Placa Equipo</th>
+                  <th>Tipo Elemento</th>
+                  <th>Marca</th>
+                  <th>Descripción</th>
+                  <th>Fecha Entrada(Sistema)</th>
+                  <th>Fecha Salida(Sistema)</th>
+                  <th>Estado</th>
         </tr>
     </thead>
     <tbody>

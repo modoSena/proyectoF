@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Numero Ficha</label>
+                        <label for="">Número Ficha</label>
                         <input type="text" name="Anumero_ficha" id="Anumero_ficha"
                             value="<?php echo $this->valores['Numero_Ficha']; ?>" class="form-control " placeholder=" "
                             tabindex="3">
@@ -190,7 +190,7 @@
 
                     <input type="hidden" name="envioActualizarUsuario">
 
-                    <input id="Asubmit" name="Asubmit" type="button" value="Actualizar"
+                    <input id="Asubmit" name="Asubmit" type="button" value="Actúalizar"
                         class="btn btn-primary btn-block btn-lg" tabindex="7">
                 </div>
 
@@ -214,7 +214,7 @@
                     <h2 class="modal-title" id="exampleModalLongTitle">Éxito</h2>
                 </div>
                 <div class="modal-body">
-                    <p for="">Usuario actualizado correctamente.</p>
+                    <p for="">Usuario actúalizado correctamente.</p>
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo constant('URL')?>administrarUsuarios/actualizarUsuarios/<?php echo $this->valores['idPersona'] ?>"
