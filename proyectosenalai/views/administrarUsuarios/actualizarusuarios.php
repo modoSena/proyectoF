@@ -17,7 +17,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <div class="container">
         <form class="form" id="formularioActualizarDatosUsuario">
-            <h2 style="text-align: center;">Actualizar Datos </h2>
+            <h2 style="text-align: center;">Actúalizar Datos </h2>
             <hr style=" height: 1px;
   background-color: black;s" />
             <input type="hidden" value="<?php echo $this->valores['idPersona'] ?>" name="idPersona">
@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Num. Documento</label>
+                        <label for="">Núm. Documento</label>
                         <input type="text" name="Adocumento" id="Adocumento"
                             value="<?php echo $this->valores['Numero_Documento']; ?>" class="form-control " placeholder=" "
                             tabindex="3">
