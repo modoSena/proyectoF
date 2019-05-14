@@ -36,7 +36,7 @@
 </select>
 </div>
 <div class="form-group">
-			 <label for="">Numero del Ambiente</label>
+			 <label for="">Número del Ambiente</label>
 				<input type="text" name="NumeroAmbiente" value="<?php echo $this->valores['Numero_Ambiente']?>" id="NumeroAmbiente" class="form-control " placeholder=" " tabindex="3" >
             </div> 
 

@@ -18,7 +18,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center">Ambientes</h1>
+        <h1 style="text-align:center">Administrar Ambientes</h1>
         </div>
         <br>
 
@@ -26,7 +26,7 @@
         <div id="div1">
 
         <div class="form-actions">
-            <a href="<?php echo constant('URL')?>ambientes/registrarAmbientes"><button type="button" class="btn btn-primary">Agregar un nuevo ambiente <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <a href="<?php echo constant('URL')?>ambientes/registrarAmbientes"><button type="button" class="btn btn-primary">Agregar Ambiente <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
     <?php } ?>
         <table id="table_id" class="display">
@@ -35,12 +35,12 @@
             <?php if (  $_SESSION['Roles_idRoles'] == 4 ){ ?>
         <th>Cambiar Estado</th>
         <th>Editar Ambiente</th>
-        <th>Detalles DE CUENTADANTE</th>
+        <th>Detalles de Cuentadante</th>
             <?php } ?>
-        <th>ELEMENTOS</th>
-        <th>UBICACIÓN</th>
-        <th>NUMERO AMBIENTE</th>
-        <th>ESTADO</th>    
+        <th>Elementos</th>
+        <th>Ubicación</th>
+        <th>Número Ambiente</th>
+        <th>Estado</th>    
         </tr>
     </thead>
     <tbody>
