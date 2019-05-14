@@ -18,7 +18,6 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center">Ambientes</h1>
         </div>
         <br>
 
@@ -35,12 +34,12 @@
             <?php if (  $_SESSION['Roles_idRoles'] == 4 ){ ?>
         <th>Cambiar Estado</th>
         <th>Editar Ambiente</th>
-        <th>Detalles DE CUENTADANTE</th>
+        <th>Detalles De Cuentadante</th>
             <?php } ?>
-        <th>ELEMENTOS</th>
-        <th>UBICACIÓN</th>
-        <th>NUMERO AMBIENTE</th>
-        <th>ESTADO</th>    
+        <th>Elementos</th>
+        <th>Ubicación</th>
+        <th>Numero Ambiente</th>
+        <th>Estado</th>    
         </tr>
     </thead>
     <tbody>
