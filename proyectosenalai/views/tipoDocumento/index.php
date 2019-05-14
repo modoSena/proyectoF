@@ -21,15 +21,15 @@
         <h1 style="text-align:center"> Tipo Documento </h1>
         </div>
         <div class="form-actions">
-            <a href="<?php echo constant('URL');?>tipoDocumento/registrartipoDocumentos"><button type="button" class="btn btn-primary">Agregar un nuevo tipo documento <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <a href="<?php echo constant('URL');?>tipoDocumento/registrartipoDocumentos"><button type="button" class="btn btn-primary">Agregar Tipo Documento <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
         <br>
         <div id="div1">
         <table id="table_id" class="display">
     <thead>
         <tr>
-                  <th>EDITAR</th>        
-                  <th>NOMBRE TIPO DOCUMENTO</th>
+                  <th>Editar</th>        
+                  <th>Nombre Tipo Documento</th>
         </tr>
     </thead>
     <tbody>
