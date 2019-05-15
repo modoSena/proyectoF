@@ -6,9 +6,6 @@ class ambientesModel extends Model{
         parent::__construct();
         
     }
-
-
-
      function consultarAmbientes(){
         $conexion = $this->db->connect();
         $consulta="SELECT Numero_Ambiente,Estado_Ambientes_idEstado_Ambientes,idAmbientes,NombreUbicacion,NombreEstadoA from ambientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN estado_ambientes ON ambientes.Estado_Ambientes_idEstado_Ambientes=estado_ambientes.idEstado_Ambientes";
@@ -16,15 +13,10 @@ class ambientesModel extends Model{
         $stmt->execute();
         return $stmt;
         $conexion = null;
-        $stmt= null;
-        
+        $stmt= null;  
     }
 
-
-
-
      function consultarIdPersona($Cuentadante){
-
         $conexion = $this->db->connect();
         $consulta = "SELECT idPersona from Persona where Numero_Documento= :Numero_Documento";
         $stmt=$conexion->prepare($consulta);
@@ -35,13 +27,9 @@ class ambientesModel extends Model{
         $conexion = null;
         $stmt= null;
         $result = null; 
-
     }
 
-
-
      function ambienteExiste($numeroAmbiente,$ubicacion){
-
         $conexion = $this->db->connect();
         $consulta = "SELECT Numero_Ambiente from Ambientes  where Numero_Ambiente= :Numero_Ambiente and Ubicacion_idUbicacion =:ubicacion ";
         $stmt=$conexion->prepare($consulta);
@@ -53,9 +41,7 @@ class ambientesModel extends Model{
         $conexion = null;
         $stmt= null;
         $result = null; 
-
     }
-
 
      function registrarAmbiente($NumeroAmbiente,$ubicacion){
         $estado = 1;
@@ -65,19 +51,15 @@ class ambientesModel extends Model{
         $stmt->bindParam(1,$NumeroAmbiente,PDO::PARAM_INT);
         $stmt->bindParam(2,$estado,PDO::PARAM_INT);
         $stmt->bindParam(3,$ubicacion,PDO::PARAM_INT);
-        
         $stmt->execute();
         $conexion = null;
-        $stmt= null;
-
-       
+        $stmt= null; 
     }
 
 
 
     function inhabilitarambiente($idAmbientes){
         try {
-       
         $conexion = $this->db->connect();
         $consulta="UPDATE ambientes set Estado_Ambientes_idEstado_Ambientes = '2' where idAmbientes = :idAmbientes ";
         $stmt = $conexion->prepare($consulta);
@@ -86,17 +68,13 @@ class ambientesModel extends Model{
         $conexion = null;
         $stmt= null;
         return true;
-        
         } catch (PDOException $e) {
             return false;
         }
-
         }
-
 
     function habilitarambiente($idAmbientes){
         try {
-       
         $conexion = $this->db->connect();
         $consulta="UPDATE ambientes set Estado_Ambientes_idEstado_Ambientes = '1' where idAmbientes = :idAmbientes ";
         $stmt = $conexion->prepare($consulta);
@@ -109,9 +87,7 @@ class ambientesModel extends Model{
         } catch (PDOException $e) {
             return false;
         }
-
         }
-
 
         public function  validardocumentoexiste($documento){
             $conexion = $this->db->connect();
@@ -137,7 +113,6 @@ class ambientesModel extends Model{
             $conexion = null;
             $stmt= null;
             $resul= null;
-            
         }
 
         function actualizarAmbiente($NumeroAmbiente,$Ubicacion,$idAmbientes){

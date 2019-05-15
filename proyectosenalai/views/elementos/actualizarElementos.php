@@ -19,17 +19,17 @@
 
 <form class="form" id="ActualizarElemento" >
   
-<h2 style="text-align: center;">Actualizar Elemento</h2>
+<h2 style="text-align: center;">Actúalizar Elemento</h2>
 
 <hr style=" height: 1px;background-color: black;">
 
 <div class="form-group">
 <input type="hidden"  value="<?php echo $this->valores['idElementos'] ?>" name="idElementos">
-			 <label for="">Numero serial</label>
+			 <label for="">Número serial</label>
 				<input type="text" name="Numero_Serial" value="<?php echo $this->valores['Numero_Serial']?>" id="Numero_Serial" class="form-control " placeholder=" " tabindex="3" >
         <label for="">Placa equipo</label>
 				<input type="text" name="Placa_Equipo" value="<?php echo $this->valores['Placa_Equipo']?>" id="Placa_Equipo" class="form-control " placeholder=" " tabindex="3" >
-        <label for="">Descripcion equipo</label>
+        <label for="">Descripción equipo</label>
 				<input type="text" name="Descripcion" value="<?php echo $this->valores['Descripcion']?>" id="Descripcion" class="form-control " placeholder=" " tabindex="3" >
         <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
@@ -63,7 +63,7 @@
             <div class="row">
 				<div  class="col-xs-6 col-md-6">
 				 <input type="hidden" name="envioActualizoElemento">
-				   <input id="submitElemento" name="submitElemento" type="button" value="Actualizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
+				   <input id="submitElemento" name="submitElemento" type="button" value="Actúalizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
 				</div>
 
 				<div  class="col-xs-6 col-md-6">
@@ -83,10 +83,10 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Elemento actualizado con Exito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Elemento actúalizado con Éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha actualizado el elemento</p> 
+              <p for="">Se ha actúalizado el elemento</p> 
         </div>
         <div class="modal-footer">
 				

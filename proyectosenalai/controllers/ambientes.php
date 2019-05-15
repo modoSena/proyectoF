@@ -187,61 +187,33 @@ class ambientes extends Controller{
         $ubicacion = $_POST['ubicacion'];
         
         $this->comparador=$this->model->consultarAmbiente($idAmbientes);
-
-
-
         $this->p =$this->model->ambienteExiste($NumeroAmbiente,$ubicacion);
-        
-        
-        
-        
-        
         if(empty($NumeroAmbiente) ) {
-        
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong>  El  Numero Ambiente  no puede ir vacio.
              </div>' ;
         } 
-        
-        
           // solo caracteres numericos  
             else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong>  El campo Numero Ambiente debe contener solo numeros.
             </div>';
           } 
-        
-        
-        
            else if ( $this->comparador['Ubicacion_idUbicacion'] != $ubicacion && $this->p > 0 ) {
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong> El Ambiente ya existe en esta ubicacion.
              </div>' ;
         }
-
         else if ( $this->comparador['Numero_Ambiente'] != $NumeroAmbiente && $this->p > 0 ) {
           echo '<div class="alert alert-danger">
           <strong>ERROR!</strong> El Ambiente ya existe en esta ubicacion.
            </div>' ;
       }
-        
-        
-        
-       
-        
         else {
-           
             $this->model->actualizarAmbiente($NumeroAmbiente,$ubicacion,$idAmbientes);
             echo 1;
         }
-        
-        
-        
-        
-        
         }
-
-
     }
 
     function elementosAmbiente($param = null){
@@ -311,7 +283,7 @@ $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
                   <th>Realizador por</th>
-                  <th>Documento</th>
+                  <th>Dmento</th>
                   <th>Novedad</th>
                   <th>fecha</th>
         </tr>
@@ -412,11 +384,11 @@ $salida = "<table id='table_id2' class='display'>
 $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
-                  <th>ESTADO</th>
-                  <th>DOCUMENTO</th>
-                  <th>NOMBRE</th>
-                  <th>CELULAR</th>
-                  <th>FECHA</th>
+                  <th>Estado</th>
+                  <th>Num. Documento</th>
+                  <th>Nombres</th>
+                  <th>Celular</th>
+                  <th>Fecha Registro</th>
                   
         </tr>
     </thead>

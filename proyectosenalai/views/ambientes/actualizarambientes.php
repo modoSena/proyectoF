@@ -19,7 +19,7 @@
 
 <form class="form" id="ActualizarAmbiente" >
   
-<h2 style="text-align: center;">Actualizar Ambiente</h2>
+<h2 style="text-align: center;">Actúalizar Ambiente</h2>
 
 <hr style=" height: 1px;background-color: black;">
 
@@ -36,7 +36,7 @@
 </select>
 </div>
 <div class="form-group">
-			 <label for="">Numero del Ambiente</label>
+			 <label for="">Número del Ambiente</label>
 				<input type="text" name="NumeroAmbiente" value="<?php echo $this->valores['Numero_Ambiente']?>" id="NumeroAmbiente" class="form-control " placeholder=" " tabindex="3" >
             </div> 
 

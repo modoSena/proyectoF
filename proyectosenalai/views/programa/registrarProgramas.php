@@ -23,7 +23,7 @@
 
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
-			 <label for="">Nombre programa</label>
+			 <label for="">Nombre Programa</label>
 				<input type="text" name="NombrePrograma" id="NombrePrograma" class="form-control " placeholder=" " tabindex="3" >
             </div> 
 <div class="row">
@@ -49,7 +49,7 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Programa registrado con exito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Programa registrado con éxito</h2>
         </div>
         <div class="modal-body">
               <p for="">Se ha registrado el programa</p>
@@ -86,8 +86,7 @@ $(function () {
            success:function (respuesta) {
             $('#loading').hide();
               if (respuesta == 1) {
-                $('#modalExitoRegistroPrograma').modal("show");
-                  
+                $('#modalExitoRegistroPrograma').modal("show");  
               }else{
                 $('#mensajes').html(respuesta);
               }
@@ -95,7 +94,5 @@ $(function () {
        })
     }) 
    }
-   
    )
-
 </script>

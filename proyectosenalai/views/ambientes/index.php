@@ -18,7 +18,6 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center">Ambientes</h1>
         </div>
         <br>
 
@@ -33,15 +32,14 @@
     <thead>
         <tr>
             <?php if (  $_SESSION['Roles_idRoles'] == 4 ){ ?>
-        <th>CAMBIAR ESTADO</th>
-        <th>EDITAR AMBIENTE</th>
-        <th>NUEVO CUENTADANTE</th>
-        <th>DETALLES DE CUENTADANTE</th>
+        <th>Cambiar Estado</th>
+        <th>Editar Ambiente</th>
+        <th>Detalles De Cuentadante</th>
             <?php } ?>
-        <th>ELEMENTOS</th>
-        <th>UBICACIÓN</th>
-        <th>NUMERO AMBIENTE</th>
-        <th>ESTADO</th>    
+        <th>Elementos</th>
+        <th>Ubicación</th>
+        <th>Numero Ambiente</th>
+        <th>Estado</th>    
         </tr>
     </thead>
     <tbody>
@@ -57,8 +55,8 @@
                         <td> <a onclick="return confirm('¿Estas seguro?');" href='ambientes/habilitarambiente/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-danger'>Ocupado</button></a> </td>
                         <?php } ?>
                        <td> <a href='ambientes/actualizarambientes/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>
-                       <td> <button   onclick="obtenerid(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
-                       <td> <button  onclick="buscar_datos(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
+                       <td> <button   onclick="obtenerid(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button>
+                        <button  onclick="buscar_datos(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
             <?php } ?>
                        <td> <a href='ambientes/elementosAmbiente/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-info'><span class='glyphicon glyphicon-list-alt'></span></button></a> </td>
                         <td><?php echo $fila['NombreUbicacion'] ?></td>
@@ -72,17 +70,6 @@
 </table>
         </div>          
     </section>
-
-
-
-
-
-
-
-
-
-
-
     <!-- Modal  reportar novedad-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -119,20 +106,6 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -141,27 +114,12 @@
         <h2 class="modal-title" id="myModalLabel">Cuentadante</h2>
       </div>
       <div class="modal-body">
-
-
     <div id="table_idy">
-
-    </div>
-     
-            
+    </div>      
       </div>
-
-      
-
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
  <!-- MODAL exito AL REPORTRA NOVEDAD ---->
  <div data-backdrop="static" data-keyboard="false" class="modal fade" id="modalExitoRegistroCuentadante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -174,26 +132,14 @@
         <div class="modal-body">
         
               <p for="">Se ha registrado el nuevo cuentadante.</p>
-              
-              
+  
         </div>
         <div class="modal-footer">
-				
-               
-                  
                 <a href="<?php echo constant('URL')?>ambientes" class="btn btn-primary">Aceptar</a>
                 </div>
-  
-      
-  
       </div>
     </div>
   </div>  
-
-
-
-
-
     <br>
     <br>
     <br>
@@ -202,16 +148,9 @@
     <script src="<?php echo constant('URL');?>public/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL');?>DataTables/datatables.js"></script>
     <script > function  obtenerid(id){ $("#idd").val(id);}</script>
-
     <script>$(document).ready( function () {
     $('#table_id').DataTable();
 } );</script>
-
-
-
-
-
-
 <script>
 $(function () {
     console.log('jquery funciona')  ;
@@ -240,20 +179,8 @@ $(function () {
    }
    
    )
-
 </script>
-
-
-
-
-
-
-
-
 <script>
-
-
-
 function buscar_datos(consulta){
     $.ajax({
 		url: '<?php echo constant('URL')?>ambientes/consultarCuentadantes' ,
@@ -268,15 +195,6 @@ function buscar_datos(consulta){
 		console.log("error");
 	});
 }
-
-
 </script>
-
-
-
-
-
-
-
 </body>
 </html>

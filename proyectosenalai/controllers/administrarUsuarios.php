@@ -83,7 +83,7 @@ class administrarUsuarios extends Controller {
             $this->view->query = $this->model->consultarCiudadesPorDepartamento($q);
             if ($this->view->query->rowCount() > 0) {
                      
-               $salida = "<label>ciudad</label>";
+               $salida = "<label>Municipio</label>";
                
                $salida .="<select class='form-control' id='ciudad' name='ciudad'> ";
                
@@ -97,7 +97,7 @@ class administrarUsuarios extends Controller {
                $salida .="</select>";
                
                }else{
-                  $salida = "<label>ciudad</label>";
+                  $salida = "<label>Municipio</label>";
                
                   $salida .="<select class='form-control' id='ciudad' name='ciudad'> ";
                
@@ -718,86 +718,35 @@ class administrarUsuarios extends Controller {
                          <strong>ERROR!</strong>  El campo Celular debe tener 10 numeros.
                          </div>';
                         }
-          
-                       
-         
-         
-         
-         
-         
-         
-         
-         
          //---- VALIDACIONES DEL TELEFONO----- /// 
-         
-            
-         
-         
                    // solo caracteres numericos  
                       else if(!preg_match("/^[0-9]+$/",$telefono) && $telefono !=""){  
                        echo '<div class="alert alert-danger">
                        <strong>ERROR!</strong>  El campo Tel fijo  debe contener solo numeros o debe estar vacio.
                        </div>';
                         }
-         
                  //NO cumple longitud  
                  else if(strlen($telefono) != 7 && $telefono !="" ){  
                   echo '<div class="alert alert-danger">
                   <strong>ERROR!</strong>  El campo Tel  FIjo debe tener los 7 digitos o puede ir vacio.
                   </div>';
                  }
-            
-         
-         
-         
-         
-         
-         //---- VALIDACIONES DEL NUMERO FICHA----- ///
-                 
-                   
+         //---- VALIDACIONES DEL NUMERO FICHA----- ///   
                    else if(!preg_match("/^[0-9]+$/",$numero_ficha) && $numero_ficha !=""){  
                        echo '<div class="alert alert-danger">
                        <strong>ERROR!</strong>  El Campo Numero Ficha debe contener solo numeros o debe estar vacio.
                        </div>';
                         }
-         
-         
-         
-                 
           //---- REGISTRAR USUARIO CORRECTAMENTE----- /// 
-          
-          
                 else {
-
                   if ($_SESSION['Roles_idRoles'] != 4 && $rol == 4 or $rol == 3 ) {
-
                      echo "ERROR ";
-
-                     die();
-                     
+                     die(); 
                   } 
-         
-         
-                
-                 
                   $this->model->actualizarUsuario($idPersona,$nombres,$apellido_primero,$apellido_segundo,$usuario,$rol,$tipodocumento,$documento,$ciudad,$direccion,$email,$sexo,$numero_celular,$telefono,$idprograma,$numero_ficha);
-                 echo 1;
-                 
-                  
-               }
-         
-               
-         
-          
-         
-            
+                 echo 1; 
+               } 
          }
-     
-
-
     }
-
 }
-
 ?>
-
