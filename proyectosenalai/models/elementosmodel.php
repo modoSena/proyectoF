@@ -20,7 +20,7 @@ class elementosModel extends Model
 
     function consultarElemento($idElementos){
         $conexion = $this->db->connect();
-        $consulta="SELECT idElementos,Numero_Serial,Placa_Equipo,Descripcion,Marca,NombreTipoElemento from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas where idElementos = ?" ;
+        $consulta="SELECT Tipo_Equipo_idTipo_Equipo,marcas_idMarcas,idElementos,Numero_Serial,Placa_Equipo,Descripcion,Marca,NombreTipoElemento from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas where idElementos = ?" ;
         $stmt = $conexion->prepare($consulta);
         $stmt->bindParam(1, $idElementos, PDO::PARAM_INT );
         $stmt->execute();

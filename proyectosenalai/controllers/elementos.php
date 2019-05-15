@@ -209,8 +209,8 @@ class elementos extends Controller{
 
             //---- validar que numero de serial no exista ----- ///
             $this->comparador = $this->model->consultarDatosParaComparar($idElementos);
-            $this->view->t = $this->model->validarNumeroSerial($Numero_Serial);
-            $this->view->u = $this->model->validarPlacaEquipo($Placa_Equipo);
+            $this->t = $this->model->validarNumeroSerial($Numero_Serial);
+            $this->u = $this->model->validarPlacaEquipo($Placa_Equipo);
 
                               //---- VALIDACIONES ----- ///
                      
