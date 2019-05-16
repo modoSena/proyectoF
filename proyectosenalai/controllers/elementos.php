@@ -1,15 +1,9 @@
 <?php
-
 class elementos extends Controller{
-
-
     function __construct()
     {
-        parent::__construct();
-    
-        
+        parent::__construct();  
     }
-
     function render(){
         session_start();
 
@@ -17,7 +11,6 @@ class elementos extends Controller{
             header('Location:'.constant('URL').'login');
             die();        
         }
-
         $this->view->query = $this->model->consultarElementos();
         $this->view->render('elementos/index');
     }

@@ -15,7 +15,7 @@
 <body>
     <?php require('views/plantilla/header.php')  ?>
     <div class="container">
-        <form class="form" id="formularioActualizarDatosUsuario">
+        <form class="form" id="formularioActualizarDatos">
             <h2 style="text-align: center;">Actúalizar Datos </h2>
             <hr style=" height: 1px;
   background-color: black;s" />
@@ -210,7 +210,7 @@
                     <p for="">Usuario actúalizado correctamente.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="<?php echo constant('URL')?>administrarUsuarios/actualizarUsuarios/<?php echo $this->valores['idPersona'] ?>"
+                    <a href="<?php echo constant('URL')?>actualizarDatos/index/<?php echo $this->valores['idPersona'] ?>"
                         class="btn btn-primary">Aceptar</a>
                 </div>
             </div>
@@ -228,9 +228,9 @@ $(function () {
         $('#Asubmit').click(function () {
 
            $.ajax({
-               url:'<?php echo constant('URL')?>administrarUsuarios/actualizarUsuario',
+               url:'<?php echo constant('URL')?>actualizarDatos/actualizarUsuario',
                type:'POST',
-               data:$("#formularioActualizarDatosUsuario").serialize(),
+               data:$("#formularioActualizarDatos").serialize(),
                beforeSend: function() {
                 $('#loading').show();
                 $('#mensajes').html('procesando datos');
@@ -267,6 +267,5 @@ $('select#departamento').on('change',function(){
    if (valor != "") {
        buscar_datos(valor);
    }
-
 });
 </script>

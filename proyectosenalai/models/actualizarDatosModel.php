@@ -1,6 +1,6 @@
 <?php
 
-class administrarUsuariosModel extends Model
+class actualizarDatosModel extends Model
 {
     function __construct()
     {
@@ -39,36 +39,6 @@ class administrarUsuariosModel extends Model
             $conexion = null;
             $stmt= null;           
         }
-
-        function inhabilitarUsuario($idPersona){
-            try {
-            $conexion = $this->db->connect();
-            $consulta="UPDATE persona set Estado_idEstado = '2' where idPersona = :idPersona ";
-            $stmt = $conexion->prepare($consulta);
-            $stmt->bindParam(':idPersona', $idPersona, PDO::PARAM_INT );
-            $stmt->execute();
-            $conexion = null;
-            $stmt= null;
-            return true;      
-            } catch (PDOException $e) {
-                return false;
-            }
-            }
-
-        function habilitarUsuario($idPersona){
-            try {
-            $conexion = $this->db->connect();
-            $consulta="UPDATE persona set Estado_idEstado = '1' where idPersona = :idPersona ";
-            $stmt = $conexion->prepare($consulta);
-            $stmt->bindParam(':idPersona', $idPersona , PDO::PARAM_INT);
-            $stmt->execute();
-            $conexion = null;
-            $stmt= null;
-                
-            } catch (PDOException $e) {
-                    return false;
-            }
-            } 
             
         public  function consultarsexo(){
             $conexion = $this->db->connect();
@@ -183,32 +153,7 @@ class administrarUsuariosModel extends Model
               $result = null; 
           }
         
-          public function  ingresarusuario($nombres,$apellido_primero,$apellido_segundo,$usuario,$rol,$tipodocumento,$documento,$ciudad,$direccion,$email,$sexo,$numero_celular,$telefono,$idprograma,$numero_ficha){
-              $conexion = $this->db->connect();
-              $contrasenaa = $documento;
-              $defaultestado = 1;
-              $contrasena = md5($contrasenaa);
-              $consulta  ="INSERT into persona(Numero_Documento,Tipo_Documento_idTipo_Documento,Nombre,Apellido_Primero,Apellido_Segundo,Direccion,Email,Estado_idEstado,Telefono,Sexo_idSexo,Numero_Celular,Ciudad_idCiudad,Usuario,Contrasena,Roles_idRoles,Numero_Ficha,Programa_idPrograma) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-              $stmt=$conexion->prepare($consulta);
-              $stmt->bindParam(1,$documento,PDO::PARAM_STR);
-              $stmt->bindParam(2,$tipodocumento, PDO::PARAM_INT);
-              $stmt->bindParam(3,$nombres,PDO::PARAM_STR);
-              $stmt->bindParam(4,$apellido_primero,PDO::PARAM_STR);
-              $stmt->bindParam(5,$apellido_segundo,PDO::PARAM_STR);
-              $stmt->bindParam(6,$direccion,PDO::PARAM_STR);
-              $stmt->bindParam(7,$email,PDO::PARAM_STR);
-              $stmt->bindParam(8,$defaultestado, PDO::PARAM_INT);
-              $stmt->bindParam(9,$telefono,PDO::PARAM_STR);
-              $stmt->bindParam(10,$sexo, PDO::PARAM_INT);
-              $stmt->bindParam(11,$numero_celular,PDO::PARAM_STR);
-              $stmt->bindParam(12,$ciudad, PDO::PARAM_INT);
-              $stmt->bindParam(13,$usuario,PDO::PARAM_STR);
-              $stmt->bindParam(14,$contrasena,PDO::PARAM_STR);
-              $stmt->bindParam(15,$rol, PDO::PARAM_INT);
-              $stmt->bindParam(16,$numero_ficha, PDO::PARAM_INT);
-              $stmt->bindParam(17,$idprograma, PDO::PARAM_INT);
-              $stmt->execute();
-          }
+
           
           public function consultarUsuario($idPersona){
             $conexion = $this->db->connect();
