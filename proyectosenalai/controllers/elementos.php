@@ -15,7 +15,6 @@ class elementos extends Controller{
         $this->view->render('elementos/index');
     }
 
-
     function registrarElementos(){
         session_start();
 
@@ -27,7 +26,6 @@ class elementos extends Controller{
         $this->view->consultarMarca = $this->model->consultarMarca();
         $this->view->render('elementos/registrarElementos');   
     }
-
 
     function ambientesPorUbicacion(){
 
@@ -65,7 +63,6 @@ class elementos extends Controller{
     }
 
     function registrarElemento(){
-
         session_start();
         if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] !=4 ) {
             header('Location:'.constant('URL').'login');
