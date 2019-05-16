@@ -11,32 +11,25 @@ class actualizarDatos extends Controller {
     }
 
     function render(){
-        session_start();
-        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" ) {
-         header('Location:'.constant('URL').'login');
-         die();        
+      session_start();
+
+      if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" ) {
+       header('Location:'.constant('URL').'login');
+       die();        
+
      }
-      $this->view->query = $this->model->consultarUsuarios();
-      $this->view->render('actualizarDatos/index');
+       $idpersona = $_SESSION['idPersona'];
+       $this->view->consultarsexo = $this->model->consultarsexo();
+       $this->view->consultardepartamento = $this->model->consultardepartamento();
+       $this->view->consultarrol = $this->model->consultarrol();
+       $this->view->consultarprograma = $this->model->consultarprograma();
+       $this->view->consultartipodocumento = $this->model->consultartipodocumento();
+       $this->view->valores = $this->model->consultarUsuario($idpersona);
+       $this->view->render('actualizarDatos/index');
     }
 
 
-   function actualizarUsuarios($param = null){
-     session_start();
 
-     if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" ) {
-      header('Location:'.constant('URL').'login');
-      die();        
-  
-    }
-      $idpersona = $param[0];
-      $this->view->consultarsexo = $this->model->consultarsexo();
-      $this->view->consultardepartamento = $this->model->consultardepartamento();
-      $this->view->consultarrol = $this->model->consultarrol();
-      $this->view->consultarprograma = $this->model->consultarprograma();
-      $this->view->consultartipodocumento = $this->model->consultartipodocumento();
-      $this->view->render('actualizarDatos/index');
-    }
 
     function actualizarUsuario(){
 

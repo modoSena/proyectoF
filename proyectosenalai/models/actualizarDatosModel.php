@@ -6,20 +6,6 @@ class actualizarDatosModel extends Model
     {
         parent::__construct();
     }
-
-    function verificarId($idPersona){
-        $conexion = $this->db->connect();
-        $consulta="SELECT Roles_idRoles from persona  where idPersona = ?";
-        $stmt = $conexion->prepare($consulta);
-        $stmt->bindParam(1, $idPersona, PDO::PARAM_INT );
-        $stmt->execute();
-        $result = $stmt->fetch();
-        return $result;
-        $conexion = null;
-        $stmt= null;
-        $result = null;       
-    }
-
       function consultarUsuarios(){
             $conexion = $this->db->connect();
             $consulta="SELECT idPersona,Numero_Documento,Estado_idEstado,Nombre,Apellido_Primero,Telefono,Direccion,Numero_Celular,Email,Usuario,NombrePrograma,Numero_Ficha,NombreCiudad,NombreRoles,Tipo_Documento,NombreSexo,Apellido_Segundo FROM persona   JOIN Programa ON Persona.Programa_idPrograma=Programa.idPrograma  JOIN Ciudad ON Persona.Ciudad_idCiudad=Ciudad.idCiudad JOIN Roles ON Persona.Roles_idRoles=Roles.idroles JOIN Tipo_Documento ON Persona.Tipo_Documento_idTipo_Documento=Tipo_Documento.idTipo_Documento   JOIN Sexo ON Persona.Sexo_idSexo=Sexo.idSexo";
@@ -27,7 +13,7 @@ class actualizarDatosModel extends Model
             $stmt->execute();
             return $stmt;
             $conexion = null;
-            $stmt= null;           
+            $stmt= null;    
         }
 
         function consultarUsuariosInstructores(){
@@ -48,7 +34,6 @@ class actualizarDatosModel extends Model
             return $stmt;
             $conexion = null;
             $stmt= null;
-            
             }
             
             public function consultarCiudadesPorDepartamento($q){
@@ -153,8 +138,6 @@ class actualizarDatosModel extends Model
               $result = null; 
           }
         
-
-          
           public function consultarUsuario($idPersona){
             $conexion = $this->db->connect();
             $consulta="SELECT idPersona,Numero_Documento,Nombre,Apellido_Primero,Telefono,Direccion,Numero_Celular,Email,Usuario,Programa_idPrograma,Numero_Ficha,Ciudad_idCiudad,Roles_idRoles,Tipo_Documento_idTipo_Documento,Sexo_idSexo,Apellido_Segundo FROM persona  WHERE idPersona = :idPersona ";

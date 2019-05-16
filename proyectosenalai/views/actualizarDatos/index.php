@@ -18,7 +18,7 @@
         <form class="form" id="formularioActualizarDatos">
             <h2 style="text-align: center;">Actúalizar Datos </h2>
             <hr style=" height: 1px;
-  background-color: black;s" />
+            background-color: black;s" />
             <input type="hidden" value="<?php echo $this->valores['idPersona'] ?>" name="idPersona">
             <div class="form-group">
                 <label for="">Nombres</label>
@@ -210,7 +210,7 @@
                     <p for="">Usuario actúalizado correctamente.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="<?php echo constant('URL')?>actualizarDatos/index/<?php echo $this->valores['idPersona'] ?>"
+                    <a href="<?php echo constant('URL')?>bienvenido"
                         class="btn btn-primary">Aceptar</a>
                 </div>
             </div>
