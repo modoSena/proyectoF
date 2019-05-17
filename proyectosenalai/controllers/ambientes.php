@@ -1,13 +1,9 @@
 <?php
-
 class ambientes extends Controller{
-
 
     function __construct()
     {
         parent::__construct();
-    
-        
     }
 
     function render(){
@@ -187,61 +183,33 @@ class ambientes extends Controller{
         $ubicacion = $_POST['ubicacion'];
         
         $this->comparador=$this->model->consultarAmbiente($idAmbientes);
-
-
-
         $this->p =$this->model->ambienteExiste($NumeroAmbiente,$ubicacion);
-        
-        
-        
-        
-        
         if(empty($NumeroAmbiente) ) {
-        
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong>  El  Numero Ambiente  no puede ir vacio.
              </div>' ;
         } 
-        
-        
           // solo caracteres numericos  
             else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong>  El campo Numero Ambiente debe contener solo numeros.
             </div>';
           } 
-        
-        
-        
            else if ( $this->comparador['Ubicacion_idUbicacion'] != $ubicacion && $this->p > 0 ) {
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong> El Ambiente ya existe en esta ubicacion.
              </div>' ;
         }
-
         else if ( $this->comparador['Numero_Ambiente'] != $NumeroAmbiente && $this->p > 0 ) {
           echo '<div class="alert alert-danger">
           <strong>ERROR!</strong> El Ambiente ya existe en esta ubicacion.
            </div>' ;
       }
-        
-        
-        
-       
-        
         else {
-           
             $this->model->actualizarAmbiente($NumeroAmbiente,$ubicacion,$idAmbientes);
             echo 1;
         }
-        
-        
-        
-        
-        
         }
-
-
     }
 
     function elementosAmbiente($param = null){

@@ -23,7 +23,8 @@ SENA L.A.I.</h6>
 <div class="copyright">
   <div class="container">
     <div class="col-md-6">
-      <p>Derechos reservados © copyright desde 2019</p>
+      <p>Derechos reservados © copyright desde <?php echo date("Y"); ?></p>
+      
     </div>
     <div class="col-md-6">
       <ul class="bottom_ul">

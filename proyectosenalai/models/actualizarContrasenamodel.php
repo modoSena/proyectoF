@@ -18,8 +18,4 @@ class actualizarContrasenamodel extends Model{
 
 }
 
-
-
-
-
 ?>

@@ -1,15 +1,9 @@
 <?php
-
 class elementos extends Controller{
-
-
     function __construct()
     {
-        parent::__construct();
-    
-        
+        parent::__construct();  
     }
-
     function render(){
         session_start();
 
@@ -17,11 +11,9 @@ class elementos extends Controller{
             header('Location:'.constant('URL').'login');
             die();        
         }
-
         $this->view->query = $this->model->consultarElementos();
         $this->view->render('elementos/index');
     }
-
 
     function registrarElementos(){
         session_start();
@@ -34,7 +26,6 @@ class elementos extends Controller{
         $this->view->consultarMarca = $this->model->consultarMarca();
         $this->view->render('elementos/registrarElementos');   
     }
-
 
     function ambientesPorUbicacion(){
 
@@ -72,7 +63,6 @@ class elementos extends Controller{
     }
 
     function registrarElemento(){
-
         session_start();
         if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] !=4 ) {
             header('Location:'.constant('URL').'login');
@@ -209,8 +199,8 @@ class elementos extends Controller{
 
             //---- validar que numero de serial no exista ----- ///
             $this->comparador = $this->model->consultarDatosParaComparar($idElementos);
-            $this->view->t = $this->model->validarNumeroSerial($Numero_Serial);
-            $this->view->u = $this->model->validarPlacaEquipo($Placa_Equipo);
+            $this->t = $this->model->validarNumeroSerial($Numero_Serial);
+            $this->u = $this->model->validarPlacaEquipo($Placa_Equipo);
 
                               //---- VALIDACIONES ----- ///
                      
