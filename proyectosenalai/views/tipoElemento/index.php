@@ -28,8 +28,8 @@
         <table id="table_id" class="display">
     <thead>
         <tr>
-                  <th>EDITAR</th>        
-                  <th>NOMBRE TIPO ELEMENTO</th>
+                  <th>Editar</th>        
+                  <th>Nombre Tipo Elemento</th>
         </tr>
     </thead>
     <tbody>
