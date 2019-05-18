@@ -18,10 +18,6 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-<<<<<<< HEAD
-=======
-        <h1 style="text-align:center">Administrar Ambientes</h1>
->>>>>>> 5f405ac5754aff06c9d0183781a8d83a40e9016f
         </div>
         <h1 style="text-align: center;">Administrar Ambientes</h1>
         <br>
