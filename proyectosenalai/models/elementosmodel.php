@@ -140,5 +140,61 @@ class elementosModel extends Model
         $stmt= null;
         $resul= null;
     }
+
+
+    
+    function consultarUbicacion(){
+
+        $conexion = $this->db->connect();
+        $consulta="SELECT * FROM  ubicacion  ";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->execute();
+        return $stmt;
+        $conexion = null;
+        $stmt= null;
+        
+    }
+
+    function consultarAmbientePorUbicacion($idUbicacion){
+
+        $conexion = $this->db->connect();
+        $consulta=" SELECT idAmbientes,Numero_Ambiente FROM ambientes where Ubicacion_idUbicacion = ? ";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(1,$idUbicacion, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt;
+        $conexion = null;
+        $stmt= null;
+        
+    }
+    function consultaridELementoPorPlacaequipo($placa){
+
+        $conexion = $this->db->connect();
+        $consulta="SELECT idElementos FROM elementos where Placa_Equipo = ?  ";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(1,$placa, PDO::PARAM_INT);
+        $stmt->execute();
+        $resul = $stmt->fetch();
+        return $resul;
+        $conexion = null;
+        $stmt= null;
+        $resul= null;
+        
+    }
+
+    function  ibicacionInicial($idElemento,$ambiente){
+        ini_set('date.timezone','America/Bogota'); 
+        $fechaentrada = date("Y-m-d H:i:s");
+        $estadoElementos =1;
+        $conexion = $this->db->connect();
+        $consulta  ="INSERT into detalleambiente(Fecha_Novedad,Elementos_idElementos,Ambientes_idAmbientes,Estado_E) values (?,?,?,?)";
+        $stmt=$conexion->prepare($consulta);
+        $stmt->bindParam(1,$fechaentrada,PDO::PARAM_INT);
+        $stmt->bindParam(2,$idElemento, PDO::PARAM_INT);
+        $stmt->bindParam(3,$ambiente, PDO::PARAM_INT);
+        $stmt->bindParam(4,$estadoElementos, PDO::PARAM_INT);
+        $stmt->execute();  
+    }
+    
 }
 ?>

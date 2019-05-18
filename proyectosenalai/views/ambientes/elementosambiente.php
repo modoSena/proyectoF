@@ -19,6 +19,23 @@
     <br><br>
     <section class="principal">
         <h1 style="text-align:center">elementos del ambiente <?php echo $this->query2['Numero_Ambiente'];?></h1>
+
+        <div class="trans"> 
+  <button class="btn btn-primary btn-responsive btninter centrado " data-toggle="modal" data-target="#mover">Mover elementos a otro ambiente</button>&nbsp;&nbsp;
+  <button class="btn btn-primary btn-responsive btninter right centrado"  data-toggle="modal" data-target="#ingresar">Ingresar elementos de otro ambiente</button> 
+</div>
+
+<style>
+  
+    .trans{
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+
+</style>
         <br>
         <div id="div1">
         <table id="table_id" class="display">
@@ -251,6 +268,57 @@
 
 
 
+
+
+
+
+
+
+<!-- Modal mover elementos a otro ambiente -->
+<div class="modal fade" id="mover" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal ingresar elementos a otro ambiente -->
+<div class="modal fade" id="ingresar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

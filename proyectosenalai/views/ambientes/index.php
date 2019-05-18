@@ -19,6 +19,7 @@
     <br><br>
     <section class="principal">
         </div>
+        <h1 style="text-align: center;">Administrar Ambientes</h1>
         <br>
 
     <?php if (  $_SESSION['Roles_idRoles'] == 4   ){ ?>
