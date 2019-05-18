@@ -41,7 +41,7 @@
                <th>Sexo</th>
                <th>Programa</th>
                <th>Ficha</th>
-               <th>Ciudad</th>
+               <th>Municipio</th>
                <th>Usuario</th>
                <th>Rol</th>
                 </tr>
