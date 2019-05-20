@@ -22,7 +22,7 @@
 <div class="form-group">
 <div class="form-group">
 			 <label for="">Número serial</label>
-				<input type="text" name="Numero_Serial" id="Numero_Serial" class="form-control " placeholder=" " tabindex="3" >
+				<input type="text" name="Numero_Serial" id="Numero_Serial" class="form-control" placeholder=" " tabindex="3" >
             </div> 
 <div class="form-group">
 			 <label for="">Placa equipo</label>

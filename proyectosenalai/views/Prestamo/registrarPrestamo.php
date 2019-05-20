@@ -6,25 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/login.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/header.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>public/css/tableUsuario.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>DataTables/datatables.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/login.css">
+    <link rel="stylesheet"  type="text/css" href="<?php echo constant('URL')?>public/css/tableUsuario.css">
     <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
-    <title>Sena L.A.I</title>
-</head>
+</head><title>Sena L.A.I</title>
 <body>
-    <?php require('views/plantilla/header.php')  ?>
-    <br><br>
-    <section class="principal">
-      <form action="" method="POST" id="addPrestamo">
+<?php include('views/plantilla/header.php') ?>
+<br>
+<div class="container">
+<div class="form-group">
+<form class="form" action="" method="POST" id="addPrestamo">
+<h2 style="text-align: center;">Registrar un prestamo</h2>
+<hr style=" height: 1px;background-color: black;">
+<section class="principal">
+
         <table class="table">
           <?php if ($_SESSION['Roles_idRoles'] == 3 || $_SESSION['Roles_idRoles'] == 4){ ?>
   <tr>
     <td colspan="2">
       Persona<br>
-      <select class="form-control" id="slPersonas" name="slPersonas">
+      <select class="form-control" id="slPersonas" class="form-control"  name="slPersonas">
       </select>
     </td>
   </tr>
@@ -32,7 +35,7 @@
     <tr>
     <td colspan="2">
       Jornada<br>
-      <select class="form-control" id="slJornadas" name="slJornadas">
+      <select class="form-control" id="slJornadas" class="form-control" name="slJornadas">
       </select>
     </td>
   </tr>
@@ -43,7 +46,7 @@
     <td>
       Tipo elemento<br>
       <select name="slTipoElemento" id="slTipoElemento" class="form-control">
-       <!--- <option value="0">Selecione el tipo de elemento...</option>--->
+        <option value="0">Selecione el tipo de elemento...</option>
       </select>
     </td>
     <td> Elementos
@@ -51,11 +54,12 @@
         <option value="0">Seleccione el elemento...</option>
       </select>
     </td>
-    <td>
+  </tr>
+   <tr>
+   <td>
       <button type="button" name="btnAgregar" id="btnAgregar" class="btn btn-success">Añadir elemento</button>
     </td>
-  </tr>
-   
+   </tr>
 </table>
 
 <table class="table table-bordered" id="tblElementos">
@@ -71,10 +75,45 @@
     </tr>
   </tbody>
 </table>
-<button type="submit" id="btnGuardar" class="btn btn-success">Registrar préstamo</button><br><br>
+<div class="row">
+				<div  class="col-xs-6 col-md-6">
+        <button type="submit" id="btnGuardar" class="btn btn-primary btn-block btn-lg">Registrar préstamo</button><br><br>
+
+			
+				</div>
+
+				<div  class="col-xs-6 col-md-6">
+				<a href="<?php echo constant('URL')?>elementos" class="btn btn-primary btn-block btn-lg">Cancelar</a>
+				</div>
+			</div>
+		
+			<div id ="alert"><img class="loading" id="loading" src="<? echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajes"> </span></div>  
+</div>
+    </section>       
 </form>
-    </section>
-    <?php require('views/plantilla/footer.php')  ?>
+</div>
+</div> 
+</div>
+ <!-- MODAL exito AL REGISTRAR ELEMENTO ---->
+<div data-backdrop="static" data-keyboard="false" class="modal fade" id="modalExitoPrestamo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLongTitle">Prestamo Registrado con Éxito</h2>
+        </div>
+        <div class="modal-body">
+              <p for="">Se ha registrado el elemento</p>
+        </div>
+        <div class="modal-footer">
+                <a href="<?php echo constant('URL')?>elementos/registrarElementos" class="btn btn-primary">Aceptar</a>
+                </div>
+        </form>
+      </div>
+    </div>
+  </div>  
+<br>
+<br>
+<?php require('views/plantilla/footer.php')  ?>
 </body>
 <script src="<?php echo constant('URL');?>public/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo constant('URL');?>public/js/bootstrap.min.js"></script>
@@ -152,7 +191,7 @@
     });
   }
     function loadTipoElementos(){
-    $('#slTipoElemento').append('<option value="0">Seleccione Tipo Elemento...</option>');
+    $('#slJornadas').append('<option value="0">Seleccione Tipo Elemento...</option>');
       $.ajax({
       cache: false,
       type: "POST",
