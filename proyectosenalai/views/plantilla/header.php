@@ -46,6 +46,7 @@
              </ul>
              </li>
               <?php } ?>
+              <li><a  href="<?php echo constant('URL');?>Prestamos">Prestamos</a></li>
              </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
