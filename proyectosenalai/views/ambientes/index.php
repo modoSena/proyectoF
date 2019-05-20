@@ -19,13 +19,14 @@
     <br><br>
     <section class="principal">
         </div>
+        <h1 style="text-align: center;">Administrar Ambientes</h1>
         <br>
 
     <?php if (  $_SESSION['Roles_idRoles'] == 4   ){ ?>
         <div id="div1">
 
         <div class="form-actions">
-            <a href="<?php echo constant('URL')?>ambientes/registrarAmbientes"><button type="button" class="btn btn-primary">Agregar un nuevo ambiente <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <a href="<?php echo constant('URL')?>ambientes/registrarAmbientes"><button type="button" class="btn btn-primary">Agregar Ambiente <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
     <?php } ?>
         <table id="table_id" class="display">

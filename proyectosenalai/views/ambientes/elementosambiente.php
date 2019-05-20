@@ -19,6 +19,8 @@
     <br><br>
     <section class="principal">
         <h1 style="text-align:center">elementos del ambiente <?php echo $this->query2['Numero_Ambiente'];?></h1>
+
+
         <br>
         <div id="div1">
         <table id="table_id" class="display">
@@ -93,51 +95,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -160,46 +117,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -238,29 +155,6 @@
       </div>
     </div>
   </div>  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

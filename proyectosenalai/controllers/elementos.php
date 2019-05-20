@@ -11,7 +11,9 @@ class elementos extends Controller{
             header('Location:'.constant('URL').'login');
             die();        
         }
+        $this->view->consultarUbicacion = $this->model->consultarUbicacion();
         $this->view->query = $this->model->consultarElementos();
+        $this->view->queryy = $this->model->consultarElementos();
         $this->view->render('elementos/index');
     }
 
@@ -22,6 +24,7 @@ class elementos extends Controller{
             header('Location:'.constant('URL').'login');
             die();
           }
+        $this->view->consultarUbicacion = $this->model->consultarUbicacion();  
         $this->view->consultarTipoEquipos = $this->model->consultarTipoEquipos();
         $this->view->consultarMarca = $this->model->consultarMarca();
         $this->view->render('elementos/registrarElementos');   
@@ -62,6 +65,51 @@ class elementos extends Controller{
                } 
     }
 
+    function moverElementos(){
+        session_start();
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] !=4 ) {
+            header('Location:'.constant('URL').'login');
+            die();
+          }
+
+          if (isset($_POST['envioMoverElemento'])) {
+              
+          
+            $ambiente = $_POST['ambiente'];
+
+           if($ambiente == "" ){                        
+                        
+            echo '<div class="alert alert-danger">
+            <strong>ERROR!</strong> Selecciona un ambiente.
+            </div>';
+           }else if (!isset($_POST['idsElementos'])) {
+            echo '<div class="alert alert-danger">
+            <strong>ERROR!</strong> No hay elementos seleccionados.
+            </div>';
+           }else {
+            $idElementos =  $_POST['idsElementos'];
+            
+            foreach ($idElementos as $idElemento ) {
+                $this->model->destivarElementosDelAmbiente($idElemento);
+                $this->model->ibicacionInicial($idElemento,$ambiente);
+            }           
+            echo 1;
+           }
+          }
+          
+
+
+
+
+         
+
+
+
+    }
+
+
+    
+
     function registrarElemento(){
         session_start();
         if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] !=4 ) {
@@ -76,6 +124,10 @@ class elementos extends Controller{
             $idTipo_Elementos = $_POST['idTipo_Elementos'];
             $marca = $_POST['marca'];
             $Descripcion = $_POST['Descripcion'];
+            $marca = $_POST['marca'];
+            $Descripcion = $_POST['Descripcion'];
+            $ubicacion = $_POST['ubicacion'];
+            $ambiente = $_POST['ambiente'];
 
 
             //---- validar que numero de serial no exista ----- ///
@@ -132,8 +184,18 @@ class elementos extends Controller{
                             echo '<div class="alert alert-danger">
                             <strong>ERROR!</strong>  Seleccione una marca.
                             </div>';
+
+
+                        } else if($ambiente == "" ){                        
+                        
+                            echo '<div class="alert alert-danger">
+                            <strong>ERROR!</strong>  seleccione un ambiente.
+                            </div>';   
                          }else {
                              $this->model->registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion);
+                             $resultIdElemento = $this->model->consultaridELementoPorPlacaequipo($Placa_Equipo);
+                             $idElemento = $resultIdElemento['idElementos'];
+                             $this->model->ibicacionInicial($idElemento,$ambiente); 
                              echo 1;
                          }
            
