@@ -11,7 +11,9 @@ class elementos extends Controller{
             header('Location:'.constant('URL').'login');
             die();        
         }
+        $this->view->consultarUbicacion = $this->model->consultarUbicacion();
         $this->view->query = $this->model->consultarElementos();
+        $this->view->queryy = $this->model->consultarElementos();
         $this->view->render('elementos/index');
     }
 
@@ -61,6 +63,48 @@ class elementos extends Controller{
                echo $salida;
                
                } 
+    }
+
+    function moverElementos(){
+        session_start();
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] !=4 ) {
+            header('Location:'.constant('URL').'login');
+            die();
+          }
+
+          if (isset($_POST['envioMoverElemento'])) {
+              
+          
+            $ambiente = $_POST['ambiente'];
+
+           if($ambiente == "" ){                        
+                        
+            echo '<div class="alert alert-danger">
+            <strong>ERROR!</strong> Selecciona un ambiente.
+            </div>';
+           }else if (!isset($_POST['idsElementos'])) {
+            echo '<div class="alert alert-danger">
+            <strong>ERROR!</strong> No hay elementos seleccionados.
+            </div>';
+           }else {
+            $idElementos =  $_POST['idsElementos'];
+            
+            foreach ($idElementos as $idElemento ) {
+                $this->model->destivarElementosDelAmbiente($idElemento);
+                $this->model->ibicacionInicial($idElemento,$ambiente);
+            }           
+            echo 1;
+           }
+          }
+          
+
+
+
+
+         
+
+
+
     }
 
 

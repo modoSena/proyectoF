@@ -9,7 +9,7 @@ class elementosModel extends Model
 
     function consultarElementos(){
         $conexion = $this->db->connect();
-        $consulta="SELECT idElementos,Numero_Serial,Placa_Equipo,Fecha_Salida,Fecha_Entrada,Marca,Descripcion,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento from elementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas";
+        $consulta="SELECT Fecha_Novedad,Descripcion,Numero_Ambiente,NombreUbicacion,Fecha_Entrada,Fecha_Salida,idElementos,Ambientes_idAmbientes,Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Marca,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where   Estado_E = 1";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
@@ -195,6 +195,21 @@ class elementosModel extends Model
         $stmt->bindParam(4,$estadoElementos, PDO::PARAM_INT);
         $stmt->execute();  
     }
+
+
+
+    function  destivarElementosDelAmbiente($idElementos){
+        $estadoElementos =2;
+        $conexion = $this->db->connect();
+        $consulta  ="UPDATE DetalleAmbiente set Estado_E = ? where Elementos_idElementos = ?";
+        $stmt=$conexion->prepare($consulta);
+        $stmt->bindParam(1,$estadoElementos,PDO::PARAM_INT);
+        $stmt->bindParam(2,$idElementos,PDO::PARAM_INT);
+        $stmt->execute();  
+    }
+
+
+
     
 }
 ?>
