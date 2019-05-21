@@ -235,7 +235,7 @@
         if(!existElement(item.idElemento)){
           $('#slElemento').append($('<option>', { 
             value: item.idElemento,
-            text : item.Descripcion + " - " + item.Placa 
+            text : item.Placa + " - " + item.Descripcion 
           }));
         }
       });
@@ -243,7 +243,7 @@
     $.each(objElementos, function (i, item) {
       $('#slElemento').append($('<option>', { 
         value: item.idElemento,
-        text : item.Descripcion + " - " + item.Placa 
+        text : item.Placa + " - " + item.Descripcion 
       })); 
     });
   }
@@ -313,6 +313,6 @@ $(document).ready(function(){
 $(".readonly").keydown(function(e){
     e.preventDefault();
 });
-</script>
 
+</script>
 </html>
