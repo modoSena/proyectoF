@@ -78,15 +78,11 @@
 <div class="row">
 				<div  class="col-xs-6 col-md-6">
         <button type="submit" id="btnGuardar" class="btn btn-primary btn-block btn-lg">Registrar préstamo</button><br><br>
-
-			
 				</div>
-
 				<div  class="col-xs-6 col-md-6">
 				<a href="<?php echo constant('URL')?>elementos" class="btn btn-primary btn-block btn-lg">Cancelar</a>
 				</div>
 			</div>
-		
 			<div id ="alert"><img class="loading" id="loading" src="<? echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajes"> </span></div>  
 </div>
     </section>       
@@ -191,7 +187,8 @@
     });
   }
     function loadTipoElementos(){
-    $('#slJornadas').append('<option value="0">Seleccione Tipo Elemento...</option>');
+    $('#slTipoElemento').html('<option value="0">Seleccione Tipo Elemento...</option>');
+    $('#slElemento').html('<option value="0">Seleccione el elemento...</option>');
       $.ajax({
       cache: false,
       type: "POST",
@@ -270,7 +267,7 @@ $(document).ready(function(){
       ObjTabla.nombreElemento = $("#slElemento option:selected").text();
       ArrayTabla.push(ObjTabla);
       cargarTablaElementos(ArrayTabla);
-      loadLista($(this).val());
+      loadTipoElementos();
     }else{
       alert('Seleccione un elemento');
     }

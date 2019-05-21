@@ -112,7 +112,7 @@ class Prestamosmodel extends Model
         if ($stmt->execute()) {
             $this->Object = array();
             foreach ($stmt as $fila) {
-                $objPersona = array('idPersona' => $fila['idPersona'], 'Nombre' => $fila['Nombre'].' '.$fila['Apellido_Primero']);
+                $objPersona = array('idPersona' => $fila['idPersona'], 'Nombre' => $fila['Nombre'].' '.$fila['Apellido_Primero'].' - '.$fila['Numero_Documento']);
                 array_push($this->Object,$objPersona);
             }
         }
