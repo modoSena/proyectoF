@@ -309,10 +309,7 @@ $(document).ready(function(){
   });
 
 });
-
-
-
-
+// funcion de fechas atras
 $(".readonly").keydown(function(e){
     e.preventDefault();
 });
