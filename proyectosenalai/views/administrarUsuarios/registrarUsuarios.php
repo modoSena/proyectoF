@@ -99,7 +99,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Num. Documento</label>
+                        <label for="">Núm. Documento</label>
                         <input type="text" name="documento" id="documento" class="form-control " placeholder=""
                             tabindex="3">
                     </div>
@@ -164,7 +164,7 @@
 
                 </div>
             </div>
-            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos para el Aprendiz</p>
+            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos</p>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <label>Programa</label>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Numero Ficha</label>
+                        <label for="">Número Ficha</label>
                         <input type="text" name="numero_ficha" id="numero_ficha" class="form-control " placeholder=" "
                             tabindex="3">
                     </div>

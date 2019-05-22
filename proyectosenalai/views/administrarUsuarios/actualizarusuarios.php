@@ -162,7 +162,7 @@
                     </div>
                 </div>
             </div>
-            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos para el Aprendiz</p>
+            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos</p>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <label>Programa</label>
