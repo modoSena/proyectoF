@@ -57,15 +57,16 @@ class Prestamosmodel extends Model
     function ElementosByPrestamo($idPrestamo)
     {
         $Connection = $this->db->connect();
-        $SqlCommand = "SELECT elementos.idElementos,elementos.Placa_Equipo,elementos.Numero_Serial, elementos.Descripcion
+        $SqlCommand = "SELECT elementos.idElementos,elementos.Placa_Equipo,elementos.Numero_Serial, elementos.Descripcion, tipo_elementos.NombreTipoElemento
                         FROM elementos
-                        INNER JOIN ep ON elementos.idElementos = ep.Elementos_idElementos                     
+                        INNER JOIN ep ON elementos.idElementos = ep.Elementos_idElementos
+                        INNER JOIN tipo_elementos on elementos.Tipo_Equipo_idTipo_Equipo = tipo_elementos.idTipo_Elementos                  
                         WHERE ep.Prestamo_idPrestamo = $idPrestamo";
         $stmt = $Connection->prepare($SqlCommand);
         $stmt->execute();
         $this->Object = array();
         foreach ($stmt as $fila) {
-           $objElemento = array('idElemento'=>$fila['idElementos'],'Placa'=>$fila['Placa_Equipo'],'Serial'=>$fila['Numero_Serial'],'Descripcion' => $fila['Descripcion']);
+           $objElemento = array('idElemento'=>$fila['idElementos'],'Placa'=>$fila['Placa_Equipo'],'Serial'=>$fila['Numero_Serial'],'TipoE'=>$fila['NombreTipoElemento'],'Descripcion' => $fila['Descripcion']);
            array_push($this->Object,$objElemento);
         }
     }

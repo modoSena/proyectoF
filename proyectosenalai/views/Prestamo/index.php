@@ -41,6 +41,7 @@
             <tr>
               <td>Placa Equipo</td>
               <td>Número Serial</td>
+              <td>Tipo Elemento</td>
               <td>Descripción Elemento</td>
             </tr>
           </thead>
@@ -103,7 +104,7 @@
                   success: function(R) {
                     $('#listaElementosPrestamo').html('');
                     $.each(R.Objeto, function (i, item) {
-                        $('#listaElementosPrestamo').append("<tr><td>"+item.Placa+"</td><td>"+item.Serial+"</td><td>"+item.Descripcion+"</td></tr>");
+                        $('#listaElementosPrestamo').append("<tr><td>"+item.Placa+"</td><td>"+item.Serial+"</td><td>"+item.TipoE+"</td><td>"+item.Descripcion+"</td></tr>");
                     });
                   }, error: function(jqXHR, textStatus, errorThrown) {
 
