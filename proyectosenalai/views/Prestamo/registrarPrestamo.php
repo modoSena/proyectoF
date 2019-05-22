@@ -97,10 +97,10 @@
           <h2 class="modal-title" id="exampleModalLongTitle">Prestamo Registrado con Éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha registrado el elemento</p>
+              <p for="">Se ha registrado el presstamo</p>
         </div>
         <div class="modal-footer">
-                <a href="<?php echo constant('URL')?>elementos/registrarElementos" class="btn btn-primary">Aceptar</a>
+                <a href="<?php echo constant('URL')?>Prestamo" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
       </div>
@@ -257,7 +257,7 @@ $(document).ready(function(){
   //loadLista();
   loadUsuarios();
   loadJornadas();
-  loadTipoElementos();
+  
 
   $("#btnAgregar").click(function(){
     if ($("#slElemento option:selected").val() != 0) {
@@ -275,7 +275,29 @@ $(document).ready(function(){
 
   $("#slTipoElemento").on("change", function(){
     loadLista($(this).val());
-  })
+  });
+
+  $("#slJornadas").on("change", function(){
+    if ($(this).val() != 0) {
+      loadTipoElementos();
+    }else{
+      $("#slTipoElemento").html('');
+      $("#slElemento").html('');
+    }
+  });
+  $("#slTipoElemento").on("click", function(){
+    if ($("#slJornadas option:selected").val() == 0){
+      alert('Debe seleccionar una jornada');
+    }
+  });
+  $("#slElemento").on("click", function(){
+    if ($("#slJornadas option:selected").val() == 0){
+      alert('Debe seleccionar una jornada');
+    }else if ($("#slTipoElemento option:selected").val() == 0){
+      alert('Debe seleccionar un tipo de elemento');
+    }
+     
+  });
 
   $("#btnGuardar").click(function(e){
     e.preventDefault();
