@@ -57,15 +57,15 @@ class Prestamosmodel extends Model
     function ElementosByPrestamo($idPrestamo)
     {
         $Connection = $this->db->connect();
-        $SqlCommand = "SELECT elementos.idElementos,elementos.Placa_Equipo, elementos.Descripcion
+        $SqlCommand = "SELECT elementos.idElementos,elementos.Placa_Equipo,elementos.Numero_Serial, elementos.Descripcion
                         FROM elementos
-                        INNER JOIN ep ON elementos.idElementos = ep.Elementos_idElementos
+                        INNER JOIN ep ON elementos.idElementos = ep.Elementos_idElementos                     
                         WHERE ep.Prestamo_idPrestamo = $idPrestamo";
         $stmt = $Connection->prepare($SqlCommand);
         $stmt->execute();
         $this->Object = array();
         foreach ($stmt as $fila) {
-           $objElemento = array('idElemento'=>$fila['idElementos'],'Placa'=>$fila['Placa_Equipo'],'Descripcion' => $fila['Descripcion']);
+           $objElemento = array('idElemento'=>$fila['idElementos'],'Placa'=>$fila['Placa_Equipo'],'Serial'=>$fila['Numero_Serial'],'Descripcion' => $fila['Descripcion']);
            array_push($this->Object,$objElemento);
         }
     }

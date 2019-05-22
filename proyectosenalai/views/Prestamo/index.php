@@ -40,7 +40,8 @@
           <thead>
             <tr>
               <td>Placa Equipo</td>
-              <td>Descripción</td>
+              <td>Número Serial</td>
+              <td>Descripción Elemento</td>
             </tr>
           </thead>
           <tbody id="listaElementosPrestamo">
@@ -102,7 +103,7 @@
                   success: function(R) {
                     $('#listaElementosPrestamo').html('');
                     $.each(R.Objeto, function (i, item) {
-                        $('#listaElementosPrestamo').append("<tr><td>"+item.Placa+"</td><td>"+item.Descripcion+"</td></tr>");
+                        $('#listaElementosPrestamo').append("<tr><td>"+item.Placa+"</td><td>"+item.Serial+"</td><td>"+item.Descripcion+"</td></tr>");
                     });
                   }, error: function(jqXHR, textStatus, errorThrown) {
 
