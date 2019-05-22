@@ -66,6 +66,7 @@
               <th>Fecha Inicial</th>
               <th>Número Documento</th>
               <th>Nombre Prestador</th>
+              <th>Jornada</th>
             </thead>
             <tbody id="listaPrestamos">
                 <?php  foreach($this->query as $fila) { ?>
@@ -75,6 +76,7 @@
                         <td><?php echo $fila['Fecha_inicial'] ?></td>
                         <td><?php echo $fila['Numero_Documento'] ?></td>
                         <td><?php echo $fila['Nombre'].' '.$fila['Apellido_Primero'].' '.$fila['Apellido_Segundo'] ?></td>
+                        <td><?php echo $fila['tipoJornada'] ?></td>
                     </tr>
                 <?php  }?>
             </tbody>
