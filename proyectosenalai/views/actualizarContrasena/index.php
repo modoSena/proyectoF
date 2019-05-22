@@ -17,7 +17,7 @@
     <?php include('views/plantilla/header.php') ?>
     <div class="container">
 <form class="form"  id="formularioActualizarContrasena"  >
-<h2 style="text-align: center;">Actualizar Contraseña</h2>
+<h2 style="text-align: center;">Actúalizar Contraseña</h2>
   <br>
               <div class="form-group">
     <label for="">Contraseña Actual</label>

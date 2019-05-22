@@ -46,7 +46,7 @@
 
 				 <input type="hidden" name="envioActualizoAmbiente">
 
-				   <input id="submitAmbiente" name="submitAmbiente" type="button" value="Actualizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
+				   <input id="submitAmbiente" name="submitAmbiente" type="button" value="Actúalizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
 				</div>
 
 				<div  class="col-xs-6 col-md-6">
