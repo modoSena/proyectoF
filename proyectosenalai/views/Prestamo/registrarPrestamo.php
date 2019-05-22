@@ -40,7 +40,7 @@
     </td>
   </tr>
   <tr>
-    <td colspan="2">Fecha inicial<br><input type="date" name="dtFechaInicial" class="form-control"></td>
+    <td colspan="2">Fecha inicial<br><input type="date" name="dtFechaInicial" class="form-control" min="<?php echo date("Y-m-d"); ?>" max="" class="readonly"></td>
   </tr>
   <tr>
     <td>
@@ -83,8 +83,7 @@
 				<a href="<?php echo constant('URL')?>elementos" class="btn btn-primary btn-block btn-lg">Cancelar</a>
 				</div>
 			</div>
-			<div id ="alert"><img class="loading" id="loading" src="<? echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajes"> </span></div>  
-</div>
+			
     </section>       
 </form>
 </div>
@@ -236,7 +235,7 @@
         if(!existElement(item.idElemento)){
           $('#slElemento').append($('<option>', { 
             value: item.idElemento,
-            text : item.Descripcion + " - " + item.Placa 
+            text : item.Placa + " - " + item.Descripcion 
           }));
         }
       });
@@ -244,7 +243,7 @@
     $.each(objElementos, function (i, item) {
       $('#slElemento').append($('<option>', { 
         value: item.idElemento,
-        text : item.Descripcion + " - " + item.Placa 
+        text : item.Placa + " - " + item.Descripcion 
       })); 
     });
   }
@@ -310,6 +309,10 @@ $(document).ready(function(){
   });
 
 });
-</script>
+// funcion de fechas atras
+$(".readonly").keydown(function(e){
+    e.preventDefault();
+});
 
+</script>
 </html>
