@@ -151,10 +151,10 @@ class Prestamosmodel extends Model
         session_start();
         $Connection = $this->db->connect();
         if ($_SESSION['Roles_idRoles'] == 3 || $_SESSION['Roles_idRoles'] == 4) {
-            $SqlCommand = "SELECT * FROM prestamos WHERE Estado_Prestamo = 'E'";
+            $SqlCommand = "SELECT * FROM prestamos join persona on prestamos.Persona_idPersona = persona.idPersona WHERE Estado_Prestamo = 'E'";
         }else{
             $codPersona = $_SESSION['idPersona'];
-            $SqlCommand = "SELECT * FROM prestamos WHERE Persona_idPersona = $codPersona AND Estado_Prestamo = 'E'";
+            $SqlCommand = "SELECT * FROM prestamos join persona on prestamos.Persona_idPersona = persona.idPersona WHERE Persona_idPersona = $codPersona AND Estado_Prestamo = 'E'";
         }
         
         $stmt = $Connection->prepare($SqlCommand);
