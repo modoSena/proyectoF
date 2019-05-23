@@ -58,7 +58,7 @@
 
                 <td> <a href='elementos/actualizarElementos/<?php echo $fila['idElementos']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>
                <td> <button  onclick="obtenerid(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
-               <td> <button  onclick="buscar_datos(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
+               <td> <button  onclick="historial(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
 
                <td><?php echo $fila['Numero_Serial'] ?></td> 
                <td><?php echo $fila['Placa_Equipo'] ?></td> 
@@ -144,7 +144,7 @@
     <tbody>
     <?php  foreach($this->queryy as  $fila) { ?>
         <tr>
-            <td><input  type="checkbox" name="idsElementos[]"  value="<?php echo $fila['idElementos'] ?>" id=""></td>
+            <td><input  type="checkbox" name="idsElementos[]"  value="<?php echo $fila['idDetalleAmbiente'] ?>" id=""></td>
 
 
 
@@ -180,6 +180,37 @@
       </div>
   </div>
 </div>
+
+
+
+
+    <!-- Modal historial -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Historial del Elemento</h2>
+      </div>
+      <div class="modal-body">
+
+
+    <div id="table_idy">
+
+    </div>
+     
+            
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
     <!-- Modal exito -->
@@ -296,6 +327,26 @@ $('select#ubicacion').on('change',function(){
 });
 
 
+
+
+
+
+
+
+function historial(consulta){
+    $.ajax({
+		url: '<?php echo constant('URL')?>elementos/consultarHistorialElemento' ,
+		type: 'POST' ,
+		dataType: 'html',
+		data: {consulta: consulta},
+	})
+	.done(function(respuesta){
+		$("#table_idy").html(respuesta);
+	})
+	.fail(function(){
+		console.log("error");
+	});
+}
 
 
 

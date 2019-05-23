@@ -87,10 +87,12 @@ class elementos extends Controller{
             <strong>ERROR!</strong> No hay elementos seleccionados.
             </div>';
            }else {
-            $idElementos =  $_POST['idsElementos'];
+            $idDetalleAmbientes =  $_POST['idsElementos'];
             
-            foreach ($idElementos as $idElemento ) {
-                $this->model->destivarElementosDelAmbiente($idElemento);
+            foreach ($idDetalleAmbientes as $idDetalleAmbiente ) {
+                $this->model->destivarElementosDelAmbiente($idDetalleAmbiente);
+                $idElementos= $this->model->consultaridELementoPoridDetalleambiente($idDetalleAmbiente);
+                $idElemento = $idElementos['Elementos_idElementos'];
                 $this->model->ibicacionInicial($idElemento,$ambiente);
             }           
             echo 1;
@@ -201,6 +203,57 @@ class elementos extends Controller{
            
         }
     }
+
+
+
+
+    function consultarHistorialElemento(){
+        session_start();
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 ) {
+          header('Location:'.constant('URL').'login');
+          die();
+        }
+    
+    
+        $idElemento = $_POST['consulta'];
+        
+        $this->view->queryu = $this->model->consultarHistorialElemento($idElemento);
+    
+    
+    
+    $salida = "<table id='table_id2' class='display'>
+              <thead>
+            <tr>
+                      <th>Numero Placa</th>
+                      <th>Numero Serial</th>
+                      <th>Ubicacion</th>
+                      <th>Fecha Entrada</th>
+                      <th>Fecha Salida</th>
+
+            </tr>
+        </thead>
+        <tbody>";
+        foreach($this->view->queryu as  $fila) { 
+          $salida .=  "<tr>";
+          
+                 $salida .= "<td>" . $fila['Placa_Equipo']."</td>  
+                   <td>".$fila['Numero_Serial']. "</td>       
+                   <td>". $fila['NombreUbicacion']."  ".$fila['Numero_Ambiente'].  "</td>
+                   <td>".$fila['Fecha_Novedad']. "</td>       
+                   <td>".$fila['Novedad_Fecha_Salida']. "</td>";
+    
+                    
+    
+             $salida .="</tr>";
+         } 
+        $salida.="</tbody></table>";
+    
+       echo $salida;
+    
+    
+       echo"<script>$(document).ready( function () { $('#table_id2').DataTable(); } );</script>";
+    
+      }
 
 
 
