@@ -9,7 +9,7 @@ class elementosModel extends Model
 
     function consultarElementos(){
         $conexion = $this->db->connect();
-        $consulta="SELECT idDetalleAmbiente,Fecha_Novedad,Descripcion,Numero_Ambiente,NombreUbicacion,Fecha_Entrada,Fecha_Salida,idElementos,Ambientes_idAmbientes,Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Marca,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where   Estado_E = 1";
+        $consulta="SELECT idDetalleAmbiente,Fecha_Novedad,Descripcion,Numero_Ambiente,NombreUbicacion,idElementos,Ambientes_idAmbientes,Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Marca,Estado_Elementos_idEstado_Elementos,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where   Estado_E = 1";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
@@ -77,19 +77,17 @@ class elementosModel extends Model
     }
 
      function  registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion){
-        ini_set('date.timezone','America/Bogota'); 
-        $fechaentrada = date("Y-m-d H:i:s");
+
         $estadoElementos =1;
         $conexion = $this->db->connect();
-        $consulta  ="INSERT into elementos(Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Fecha_Entrada,Estado_Elementos_idEstado_Elementos,Marcas_idMarcas,Descripcion) values (?,?,?,?,?,?,?)";
+        $consulta  ="INSERT into elementos(Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Estado_Elementos_idEstado_Elementos,Marcas_idMarcas,Descripcion) values (?,?,?,?,?,?)";
         $stmt=$conexion->prepare($consulta);
         $stmt->bindParam(1,$Numero_Serial,PDO::PARAM_INT);
         $stmt->bindParam(2,$Placa_Equipo, PDO::PARAM_INT);
         $stmt->bindParam(3,$idTipo_Elementos, PDO::PARAM_INT);
-        $stmt->bindParam(4,$fechaentrada, PDO::PARAM_STR);
-        $stmt->bindParam(5,$estadoElementos, PDO::PARAM_INT);
-        $stmt->bindParam(6,$marca, PDO::PARAM_INT);
-        $stmt->bindParam(7,$Descripcion, PDO::PARAM_STR);
+        $stmt->bindParam(4,$estadoElementos, PDO::PARAM_INT);
+        $stmt->bindParam(5,$marca, PDO::PARAM_INT);
+        $stmt->bindParam(6,$Descripcion, PDO::PARAM_STR);
         $stmt->execute();  
     }
 
@@ -153,6 +151,20 @@ class elementosModel extends Model
         $conexion = null;
         $stmt= null;
         
+    }
+
+    function consultarNovedades($idElemento){
+
+        $conexion = $this->db->connect();
+        $consulta="SELECT Descripcion,Numero_Documento,Nombre,Apellido_Primero,Fecha_Realizacion FROM novedades   JOIN persona ON novedades.Persona_idPersona = persona.idPersona WHERE Elementos_idElementos = ?";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(1, $idElemento, PDO::PARAM_INT );
+        $stmt->execute();
+        return $stmt;
+        $conexion = null;
+        $stmt= null;
+
+
     }
 
     function consultarAmbientePorUbicacion($idUbicacion){
@@ -231,7 +243,7 @@ class elementosModel extends Model
     function consultarHistorialElemento($idElemento){
 
         $conexion = $this->db->connect();
-        $consulta="SELECT idDetalleAmbiente,Fecha_Novedad,Novedad_Fecha_Salida,Numero_Ambiente,NombreUbicacion,Numero_Serial,Placa_Equipo,Marca,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where idElementos = ? and  Estado_E = 2 ";
+        $consulta="SELECT idDetalleAmbiente,Fecha_Novedad,Novedad_Fecha_Salida,Numero_Ambiente,NombreUbicacion,Numero_Serial,Placa_Equipo,Marca,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where idElementos = ?  ";
         $stmt = $conexion->prepare($consulta);
         $stmt->bindParam(1,$idElemento, PDO::PARAM_INT);
         $stmt->execute();

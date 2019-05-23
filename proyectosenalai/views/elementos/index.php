@@ -40,8 +40,6 @@
                   <th>Marca</th>
                   <th>Descripción</th>
                   <th>Ubicacion Actual</th>
-                  <th>Fecha Entrada(Sistema)</th>
-                  <th>Fecha Salida(Sistema)</th>
                   <th>Estado</th>
         </tr>
     </thead>
@@ -57,7 +55,7 @@
                   <?php } ?>
 
                 <td> <a href='elementos/actualizarElementos/<?php echo $fila['idElementos']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>
-               <td> <button  onclick="obtenerid(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
+               <td> <button  onclick="novedadesReportadas(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3"><span class='glyphicon glyphicon-file'></span></button> </td>
                <td> <button  onclick="historial(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
 
                <td><?php echo $fila['Numero_Serial'] ?></td> 
@@ -66,8 +64,6 @@
                <td><?php echo $fila['Marca'] ?></td>
                <td><?php echo $fila['Descripcion'] ?></td>
                <td><?php echo $fila['NombreUbicacion'].' '.'ambiente'.' '.$fila['Numero_Ambiente'] ?></td>
-               <td><?php echo $fila['Fecha_Entrada'] ?></td>
-               <td><?php echo $fila['Fecha_Salida'] ?></td>
                <td><?php echo $fila['NombreEstado'] ?></td>
         </tr>
     <?php } ?>
@@ -182,7 +178,29 @@
 </div>
 
 
+    <!-- Modal novedades reportadas -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Novedades reportadas</h2>
+      </div>
+      <div class="modal-body">
 
+
+    <div id="table_idyy">
+
+    </div>
+     
+            
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
 
     <!-- Modal historial -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -342,6 +360,22 @@ function historial(consulta){
 	})
 	.done(function(respuesta){
 		$("#table_idy").html(respuesta);
+	})
+	.fail(function(){
+		console.log("error");
+	});
+}
+
+
+function novedadesReportadas(consulta){
+    $.ajax({
+		url: '<?php echo constant('URL')?>elementos/consultarNovedades' ,
+		type: 'POST' ,
+		dataType: 'html',
+		data: {consulta: consulta},
+	})
+	.done(function(respuesta){
+		$("#table_idyy").html(respuesta);
 	})
 	.fail(function(){
 		console.log("error");

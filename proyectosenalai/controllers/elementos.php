@@ -206,6 +206,50 @@ class elementos extends Controller{
 
 
 
+    function consultarNovedades(){
+        session_start();
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 ) {
+          header('Location:'.constant('URL').'login');
+          die();
+        }
+    
+    
+        $idElemento = $_POST['consulta'];
+        
+        $this->view->query = $this->model->consultarNovedades($idElemento);
+    
+    
+    
+    $salida = "<table id='table_id12' class='display'>
+              <thead>
+            <tr>
+                      <th>Realizador por</th>
+                      <th>Documento</th>
+                      <th>Novedad</th>
+                      <th>fecha</th>
+            </tr>
+        </thead>
+        <tbody>";
+        foreach($this->view->query as  $fila) { 
+          $salida .=  "<tr>";
+                 $salida .= "<td>" . $fila['Nombre'] ."</td>         
+                   <td>".  $fila['Numero_Documento']. "</td>
+                   <td>".$fila['Descripcion']. "</td>
+                   <td>".$fila['Fecha_Realizacion']. "</td>";
+    
+                    
+    
+             $salida .="</tr>";
+         } 
+        $salida.="</tbody></table>";
+    
+       echo $salida;
+    
+    
+       echo"<script>$(document).ready( function () { $('#table_id12').DataTable(); } );</script>";
+    
+      }
+
 
     function consultarHistorialElemento(){
         session_start();
