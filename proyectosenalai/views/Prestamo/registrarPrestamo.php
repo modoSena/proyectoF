@@ -84,7 +84,9 @@
 				</div>
 			</div>
 			
-    </section>       
+    </section> 
+
+    <p id="mensaje" class="alert alert-danger"></p>      
 </form>
 </div>
 </div> 
@@ -268,7 +270,9 @@ $(document).ready(function(){
       cargarTablaElementos(ArrayTabla);
       loadTipoElementos();
     }else{
-      alert('Seleccione un elemento');
+
+      $("#mensaje").html('Seleccione un elemento');
+      
     }
         
   });
@@ -287,14 +291,15 @@ $(document).ready(function(){
   });
   $("#slTipoElemento").on("click", function(){
     if ($("#slJornadas option:selected").val() == 0){
-      alert('Debe seleccionar una jornada');
+
+      $("#mensaje").html('Debe seleccionar una jornada');
     }
   });
   $("#slElemento").on("click", function(){
     if ($("#slJornadas option:selected").val() == 0){
-      alert('Debe seleccionar una jornada');
+      $("#mensaje").html('Debe seleccionar una jornada');
     }else if ($("#slTipoElemento option:selected").val() == 0){
-      alert('Debe seleccionar un tipo de elemento');
+      $("#mensaje").html('Debe seleccionar un tipo de elemento');
     }
      
   });
@@ -326,7 +331,8 @@ $(document).ready(function(){
         }
       });
     }else{
-      alert('Debe añadir al menos un (1) elemento.');
+      $("#mensaje").html('Debe añadir al menos un (1) elemento.');
+      
     }
   });
 
