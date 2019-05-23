@@ -32,8 +32,8 @@
                  
                   <th>Cambiar Estado</th>
                   <th>Editar</th>
-                  <th>Novedades</th>
-                  <th>Detalle Elemento</th>
+                  <th>Novedades Reportadas</th>
+                  <th>Historial Elemento</th>
                   <th>Número Serial</th>
                   <th>Placa Equipo</th>
                   <th>Tipo Elemento</th>
