@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> 
             </button>
-            <a href="<?php echo constant('URL')?>bienvenido"><img style="width:170px; height:50px;"src="<?php echo constant('URL');?>public/img/senalai.png" alt=""> </a><br>
+            <a href="<?php echo constant('URL')?>bienvenido"><img style="width:170px; height:50px;"src="<?php echo constant('URL');?>public/img/senalai.png" alt=""> </a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
