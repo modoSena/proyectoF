@@ -86,7 +86,7 @@
 			
     </section> 
 
-    <p id="mensaje" class="alert alert-danger"></p>      
+    <p id="mensaje"></p>      
 </form>
 </div>
 </div> 
@@ -271,8 +271,7 @@ $(document).ready(function(){
       loadTipoElementos();
     }else{
 
-      $("#mensaje").html('Seleccione un elemento');
-      
+      $("#mensaje").html('<div class="alert alert-danger"><strong>ERROR!</strong>Seleccione un elemento</div>');
     }
         
   });
@@ -291,17 +290,16 @@ $(document).ready(function(){
   });
   $("#slTipoElemento").on("click", function(){
     if ($("#slJornadas option:selected").val() == 0){
-
-      $("#mensaje").html('Debe seleccionar una jornada');
+      $("#mensaje").html('<div class="alert alert-danger"><strong>ERROR!</strong>Debe seleccionar una jornada</div>');
     }
   });
   $("#slElemento").on("click", function(){
     if ($("#slJornadas option:selected").val() == 0){
-      $("#mensaje").html('Debe seleccionar una jornada');
+      $("#mensaje").html('<div class="alert alert-danger"><strong>ERROR!</strong>Debe seleccionar una jornada</div>');
     }else if ($("#slTipoElemento option:selected").val() == 0){
-      $("#mensaje").html('Debe seleccionar un tipo de elemento');
+      $("#mensaje").html('<div class="alert alert-danger"><strong>ERROR!</strong>Debe seleccionar un tipo de elemento</div>');
     }
-     
+    
   });
 
   $("#btnGuardar").click(function(e){
@@ -331,8 +329,7 @@ $(document).ready(function(){
         }
       });
     }else{
-      $("#mensaje").html('Debe añadir al menos un (1) elemento.');
-      
+      $("#mensaje").html('<div class="alert alert-danger"><strong>ERROR!</strong>  Debe añadir al menos un (1) elemento</div>');
     }
   });
 
