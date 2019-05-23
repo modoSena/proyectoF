@@ -226,7 +226,7 @@ class elementos extends Controller{
             <tr>
                       <th>Numero Placa</th>
                       <th>Numero Serial</th>
-                      <th>Ubicacion</th>
+                      <th>Ambiente</th>
                       <th>Fecha Entrada</th>
                       <th>Fecha Salida</th>
 
