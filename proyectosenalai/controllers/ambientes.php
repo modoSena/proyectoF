@@ -279,7 +279,7 @@ $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
                   <th>Realizador por</th>
-                  <th>Dmento</th>
+                  <th>Documento</th>
                   <th>Novedad</th>
                   <th>fecha</th>
         </tr>
