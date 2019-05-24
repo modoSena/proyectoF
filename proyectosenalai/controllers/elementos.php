@@ -146,31 +146,31 @@ class elementos extends Controller{
                         if($Numero_Serial == "" ){                        
                         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo Numero Serial no puede ir vacio.
+                            <strong>ERROR!</strong>  El campo Numero Serial no puede ir vacío.
                             </div>';
                          }else if(!preg_match("/^[0-9]+$/",$Numero_Serial)){
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo Numero Serial solo debe contener Numeros.
+                            <strong>ERROR!</strong>  El campo Número Serial solo debe contener Números.
                             </div>';
 
                          }else if ($this->view->t > 0) {
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El  Numero Serial ya existe.
+                            <strong>ERROR!</strong>  El  Número Serial ya existe.
                             </div>';
                              
                          } else if($Placa_Equipo == "" ){                        
                         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo  Placa Equipo no puede ir vacio.
+                            <strong>ERROR!</strong>  El campo  Placa Equipo no puede ir vacío.
                             </div>';
                          }else if(!preg_match("/^[0-9]+$/",$Placa_Equipo)){
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo Placa Equipo solo debe contener Numeros.
+                            <strong>ERROR!</strong>  El campo Placa Equipo solo debe contener Números.
                             </div>';
                         } else if($Descripcion == "" ){                        
                         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo descripcion equipo no puede ir vacio.
+                            <strong>ERROR!</strong>  El campo descripcion equipo no puede ir vacío.
                             </div>';
                          }else if ($this->view->u > 0) {
                             echo '<div class="alert alert-danger">
@@ -223,7 +223,7 @@ class elementos extends Controller{
     $salida = "<table id='table_id12' class='display'>
               <thead>
             <tr>
-                      <th>Realizador por</th>
+                      <th>Realizado por</th>
                       <th>Documento</th>
                       <th>Novedad</th>
                       <th>fecha</th>
@@ -268,8 +268,8 @@ class elementos extends Controller{
     $salida = "<table id='table_id2' class='display'>
               <thead>
             <tr>
-                      <th>Numero Placa</th>
-                      <th>Numero Serial</th>
+                      <th>Número Placa</th>
+                      <th>Número Serial</th>
                       <th>Ambiente</th>
                       <th>Fecha Entrada</th>
                       <th>Fecha Salida</th>
@@ -367,27 +367,27 @@ class elementos extends Controller{
                         if($Numero_Serial == "" ){                        
                         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo Numero Serial no puede ir vacio.
+                            <strong>ERROR!</strong>  El campo Número Serial no puede ir vacío.
                             </div>';
                          }else if(!preg_match("/^[0-9]+$/",$Numero_Serial)){
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo Numero Serial solo debe contener Numeros.
+                            <strong>ERROR!</strong>  El campo Número Serial solo debe contener Números.
                             </div>';
 
                          }else if($this->comparador['Numero_Serial'] != $Numero_Serial && $this->t > 0 ){
          
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El numero serial ya ha sido registrado, intenta con otro.
+                            <strong>ERROR!</strong>  El número serial ya ha sido registrado, intenta con otro.
                             </div>';
                             
                          } else if($Placa_Equipo == "" ){                        
                         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo  Placa Equipo no puede ir vacio.
+                            <strong>ERROR!</strong>  El campo  Placa Equipo no puede ir vacío.
                             </div>';
                          }else if(!preg_match("/^[0-9]+$/",$Placa_Equipo)){
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo Placa Equipo solo debe contener Numeros.
+                            <strong>ERROR!</strong>  El campo Placa Equipo solo debe contener Números.
                             </div>';
                             
                          }else if($this->comparador['Placa_Equipo'] != $Placa_Equipo && $this->u > 0 ){
@@ -400,7 +400,7 @@ class elementos extends Controller{
                         } else if($Descripcion == "" ){                        
                         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo descripcion equipo no puede ir vacio.
+                            <strong>ERROR!</strong>  El campo descripción equipo no puede ir vacío.
                             </div>';
                  
                         }else if( $idTipo_Elementos == ""){

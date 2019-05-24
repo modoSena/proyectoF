@@ -100,14 +100,14 @@ class ambientes extends Controller{
         if(empty($ubicacion) ) {
         
           echo '<div class="alert alert-danger">
-          <strong>ERROR!</strong>  Seleccione ubicacion.
+          <strong>ERROR!</strong>  Seleccione ubicación.
            </div>' ;
       } 
         
         else if(empty($NumeroAmbiente) ) {
         
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El  Numero Ambiente  no puede ir vacio.
+            <strong>ERROR!</strong>  El  Número Ambiente  no puede ir vacío.
              </div>' ;
         } 
         
@@ -115,7 +115,7 @@ class ambientes extends Controller{
           // solo caracteres numericos  
             else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo Numero Ambiente debe contener solo numeros.
+            <strong>ERROR!</strong>  El campo Número Ambiente debe contener solo números.
             </div>';
           } 
         
@@ -123,7 +123,7 @@ class ambientes extends Controller{
         
            else if ( $this->p > 0 ) {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El Ambiente ya existe en esta ubicacion.
+            <strong>ERROR!</strong> El Ambiente ya existe en esta ubicación.
              </div>' ;
         }
         
@@ -186,23 +186,23 @@ class ambientes extends Controller{
         $this->p =$this->model->ambienteExiste($NumeroAmbiente,$ubicacion);
         if(empty($NumeroAmbiente) ) {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El  Numero Ambiente  no puede ir vacio.
+            <strong>ERROR!</strong>  El  Número Ambiente  no puede ir vacío.
              </div>' ;
         } 
           // solo caracteres numericos  
             else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo Numero Ambiente debe contener solo numeros.
+            <strong>ERROR!</strong>  El campo Número Ambiente debe contener solo números.
             </div>';
           } 
            else if ( $this->comparador['Ubicacion_idUbicacion'] != $ubicacion && $this->p > 0 ) {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El Ambiente ya existe en esta ubicacion.
+            <strong>ERROR!</strong> El Ambiente ya existe en esta ubicación.
              </div>' ;
         }
         else if ( $this->comparador['Numero_Ambiente'] != $NumeroAmbiente && $this->p > 0 ) {
           echo '<div class="alert alert-danger">
-          <strong>ERROR!</strong> El Ambiente ya existe en esta ubicacion.
+          <strong>ERROR!</strong> El Ambiente ya existe en esta ubicación.
            </div>' ;
       }
         else {
@@ -278,7 +278,7 @@ class ambientes extends Controller{
 $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
-                  <th>Realizador por</th>
+                  <th>Realizado por</th>
                   <th>Documento</th>
                   <th>Novedad</th>
                   <th>fecha</th>
@@ -325,7 +325,7 @@ $salida = "<table id='table_id2' class='display'>
     if(empty($Cuentadante) ) {
         
       echo '<div class="alert alert-danger">
-      <strong>ERROR!</strong> El documento del cuentadante  no puede ir vacio.
+      <strong>ERROR!</strong> El documento del cuentadante  no puede ir vacío.
        </div>' ;
   } 
   
@@ -333,7 +333,7 @@ $salida = "<table id='table_id2' class='display'>
     // solo caracteres numericos  
       else if(!preg_match("/^[0-9]+$/",$Cuentadante)){  
       echo '<div class="alert alert-danger">
-      <strong>ERROR!</strong> El documento del cuentadante debe contener solo numeros.
+      <strong>ERROR!</strong> El documento del cuentadante debe contener solo números.
       </div>';
     } 
              

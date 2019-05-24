@@ -79,7 +79,7 @@ class actualizarContrasena extends Controller{
            // SI longitud, NO VALIDO numeros y letras  
            else if(!preg_match("/^[0-9a-zA-Z]+$/", $nuevaContrasena)){  
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo contraseña solo debe tener letras y numeros y no pueden haber espacios
+            <strong>ERROR!</strong>  El campo contraseña solo debe tener letras y números y no pueden haber espacios
             </div>'; 
            }
            // validar que la nueva contraseña no sea igual a la anterior

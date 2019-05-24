@@ -53,13 +53,13 @@ class login extends Controller{
 
         if ($usuario == "") {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El campo usuario no puede ir vació.
+            <strong>ERROR!</strong> El campo usuario no puede ir vacío.
             </div>';
         }
         
         else if($contrasenaa ==""){
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong> El campo contraseña no puede ir vació. 
+            <strong>ERROR!</strong> El campo contraseña no puede ir vacío. 
             </div>';
         }
 
@@ -67,7 +67,7 @@ class login extends Controller{
 
             if ($this->view->datos['Estado_idEstado'] != 1) {
                 echo  '<div class="alert alert-danger">
-            <strong>ERROR!</strong> Usuario "inhabilitado".
+            <strong>ERROR!</strong> Usuario "inhabilitado" Contacte Administrador.
             </div>';
             }else {
                echo 1;

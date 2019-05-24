@@ -75,7 +75,7 @@ class actualizarDatos extends Controller {
                //Si esta vacio  
                  if($nombres == "" ){ 
                   echo '<div class="alert alert-danger">
-                  <strong>ERROR!</strong>  El campo Nombres no puede ir vacio.
+                  <strong>ERROR!</strong>  El campo Nombres no puede ir vacío.
                   </div>';
                  }
               //NO cumple longitud  
@@ -95,7 +95,7 @@ class actualizarDatos extends Controller {
              
                  else if($apellido_primero == "" ) { 
                   echo '<div class="alert alert-danger">
-                  <strong>ERROR!</strong>  El campo Primer Apellido no puede ir vacio.
+                  <strong>ERROR!</strong>  El campo Primer Apellido no puede ir vacío.
                   </div>';
                  }
          
@@ -121,13 +121,13 @@ class actualizarDatos extends Controller {
                         //SI longitud pero NO solo caracteres A-z  
                         else if(!preg_match("/[A-Za-z]/",$apellido_segundo) && $apellido_segundo !="" ){  
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong> El campo Segundo apellido solo debe tener letras o debe estar vacio.
+                         <strong>ERROR!</strong> El campo Segundo apellido solo debe tener letras o debe estar vacío.
                          </div>'; 
                         }       
                         //---- VALIDACIONES DEL USUARIO----- ///
                  else if($usuario == "" )  {
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Usuario no puede ir vacio.
+                         <strong>ERROR!</strong>  El campo Usuario no puede ir vacío.
                          </div>'; 
                         }
                         
@@ -140,7 +140,7 @@ class actualizarDatos extends Controller {
                         //SI longitud pero NO solo caracteres A-z  
                         else if(!preg_match("/^[0-9a-zA-Z]+$/",$usuario)) {
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong> El campo usuario solo debe tener letras y numeros.
+                         <strong>ERROR!</strong> El campo usuario solo debe tener letras y números.
                          </div>'; 
                         } 
                         // SI longitud, SI caracteres A-z
@@ -171,7 +171,7 @@ class actualizarDatos extends Controller {
                         //---- VALIDACIONES DEL DOCUMENTO----- /// 
                  else if($documento == "" ){   
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Documento no puede ir vacio.
+                         <strong>ERROR!</strong>  El campo Documento no puede ir vacío.
                          </div>'; 
                         }
                         //NO cumple longitud minima  
@@ -183,7 +183,7 @@ class actualizarDatos extends Controller {
                         //SI longitud pero NO solo caracteres A-z  
                         else if(!preg_match("/^[0-9]+$/",$documento)){  
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Documento solo debe contener  numeros.
+                         <strong>ERROR!</strong>  El campo Documento solo debe contener  números.
                          </div>';
                         }
          
@@ -213,7 +213,7 @@ class actualizarDatos extends Controller {
                         //---- VALIDACIONES DE LA DIRECCION----- /// 
                  else if($direccion == "" ){   
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Direccion no puede ir vacio.
+                         <strong>ERROR!</strong>  El campo Direccion no puede ir vacío.
                          </div>'; 
                         }
                         //NO cumple longitud minima  
@@ -225,7 +225,7 @@ class actualizarDatos extends Controller {
           //---- VALIDACIONES DEL  EMAIL----- ///  
                  else if(strlen($email) == 0){ 
                   echo '<div class="alert alert-danger">
-                  <strong>ERROR!</strong>  El campo email no puede ir vacio.
+                  <strong>ERROR!</strong>  El campo Email no puede ir vacío.
                   </div>';
                  }   
                  // SI escrito, NO VALIDO email  
@@ -241,7 +241,7 @@ class actualizarDatos extends Controller {
          
                 
                   echo '<div class="alert alert-danger">
-                  <strong>ERROR!</strong>  El email ya ha sido registrado, intenta con otro.
+                  <strong>ERROR!</strong>  El Email ya ha sido registrado, intenta con otro.
                   </div>';
                  
                    
@@ -251,7 +251,7 @@ class actualizarDatos extends Controller {
                  //---- VALIDACIONES DEl CELULAR----- /// 
                  else if($numero_celular == "" ){   
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Celular no puede ir vacio.
+                         <strong>ERROR!</strong>  El campo Celular no puede ir vacío.
                          </div>'; 
                         }
          
@@ -259,7 +259,7 @@ class actualizarDatos extends Controller {
                        // solo caracteres numericos  
                          else if(!preg_match("/^[0-9]+$/",$numero_celular)){  
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Celular debe contener solo numeros y no pueden haber espacios.
+                         <strong>ERROR!</strong>  El campo Celular debe contener solo números y no pueden haber espacios.
                          </div>';
                        } 
          
@@ -273,19 +273,19 @@ class actualizarDatos extends Controller {
                    // solo caracteres numericos  
                       else if(!preg_match("/^[0-9]+$/",$telefono) && $telefono !=""){  
                        echo '<div class="alert alert-danger">
-                       <strong>ERROR!</strong>  El campo Tel fijo  debe contener solo numeros o debe estar vacio.
+                       <strong>ERROR!</strong>  El campo Tel fijo  debe contener solo números o debe estar vacúo.
                        </div>';
                         }
                  //NO cumple longitud  
                  else if(strlen($telefono) != 7 && $telefono !="" ){  
                   echo '<div class="alert alert-danger">
-                  <strong>ERROR!</strong>  El campo Tel  FIjo debe tener los 7 digitos o puede ir vacio.
+                  <strong>ERROR!</strong>  El campo Tel  FIjo debe tener los 7 dígitos o puede ir vacío.
                   </div>';
                  }
          //---- VALIDACIONES DEL NUMERO FICHA----- ///   
                    else if(!preg_match("/^[0-9]+$/",$numero_ficha) && $numero_ficha !=""){  
                        echo '<div class="alert alert-danger">
-                       <strong>ERROR!</strong>  El Campo Numero Ficha debe contener solo numeros o debe estar vacio.
+                       <strong>ERROR!</strong>  El Campo Numero Ficha debe contener solo números o debe estar vacío.
                        </div>';
                         }
           //---- REGISTRAR USUARIO CORRECTAMENTE----- /// 
