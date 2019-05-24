@@ -18,10 +18,10 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center">Administrar Préstamos</h1>
+        <h1 style="text-align:center; font-family: fantasy;">Administrar Préstamos</h1>
         </div>
         <div class="form-actions">
-            <a href="<?php echo constant('URL');?>Prestamos/addprestamo"><button type="button" class="btn btn-primary">Crear Préstamo</button></a>
+            <a href="<?php echo constant('URL');?>Prestamos/addprestamo"><button type="button" class="btn btn-primary">Agregar Préstamo <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
         <br>
 

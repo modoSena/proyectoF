@@ -18,7 +18,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center"> Tipo Documento </h1>
+        <h1 style="text-align:center; font-family: fantasy;"> Tipo Documento </h1>
         </div>
         <div class="form-actions">
             <a href="<?php echo constant('URL');?>tipoDocumento/registrartipoDocumentos"><button type="button" class="btn btn-primary">Agregar Tipo Documento <span class="glyphicon glyphicon-level-up"></span></button></a>

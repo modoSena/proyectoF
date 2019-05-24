@@ -18,7 +18,7 @@
     <div class="container">
         <form class="form" id="formularioRegistroUsuario">
 
-            <h2 style="text-align: center;">Registro de usuario</h2>
+            <h2 style="text-align: center; font-family: fantasy;">Registro de usuario</h2>
             <hr style=" height: 1px; background-color: black;s" />
             <div class="form-group">
                 <label for="">Nombres</label>

@@ -20,7 +20,7 @@
 
 <form class="form" id="registrartipoElemento" >
   
-<h2 style="text-align: center;">Registrar un tipo elemento</h2>
+<h2 style="text-align: center; font-family: fantasy;">Registrar un tipo elemento</h2>
 
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">

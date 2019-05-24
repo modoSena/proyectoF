@@ -16,7 +16,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <div class="container">
         <form class="form" id="formularioActualizarDatos">
-            <h2 style="text-align: center;">Actúalizar Datos </h2>
+            <h2 style="text-align: center; font-family: fantasy;">Actúalizar Datos </h2>
             <hr style=" height: 1px;
             background-color: black;s" />
             <input type="hidden" value="<?php echo $this->valores['idPersona'] ?>" name="idPersona">

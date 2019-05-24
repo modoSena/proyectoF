@@ -19,7 +19,7 @@
 
 <form class="form" id="registrarPrograma" >
   
-<h2 style="text-align: center;">Registrar un Programa</h2>
+<h2 style="text-align: center; font-family: fantasy;">Registrar un Programa</h2>
 
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">

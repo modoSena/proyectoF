@@ -19,7 +19,7 @@
 
 <form class="form" id="ActualizarMarca" >
   
-<h2 style="text-align: center;">Actúalizar Marca</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actúalizar Marca</h2>
 
 <hr style=" height: 1px;background-color: black;">
 

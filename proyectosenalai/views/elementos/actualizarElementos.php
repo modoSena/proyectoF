@@ -19,7 +19,7 @@
 
 <form class="form" id="ActualizarElemento" >
   
-<h2 style="text-align: center;">Actúalizar Elemento</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actúalizar Elemento</h2>
 
 <hr style=" height: 1px;background-color: black;">
 

@@ -17,7 +17,7 @@
 <br>
 <div class="container">
 <form class="form" id="ActualizarPrograma" >
-<h2 style="text-align: center;">Actúalizar Programa</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actúalizar Programa</h2>
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
 			 <label for="">Nombre Programa</label>

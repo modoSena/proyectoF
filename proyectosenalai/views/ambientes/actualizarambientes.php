@@ -19,7 +19,7 @@
 
 <form class="form" id="ActualizarAmbiente" >
   
-<h2 style="text-align: center;">Actúalizar Ambiente</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actúalizar Ambiente</h2>
 
 <hr style=" height: 1px;background-color: black;">
 

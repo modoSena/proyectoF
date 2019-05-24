@@ -18,7 +18,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center">Administrar Usuarios</h1>
+        <h1 style="text-align:center; font-family: fantasy;">Administrar Usuarios</h1>
         <br>
        <div  id='div1'>
        <div class="form-actions">

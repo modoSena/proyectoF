@@ -18,7 +18,7 @@
 
 <form class="form" id="ActualizartipoDocumento" >
   
-<h2 style="text-align: center;">Actúalizar Tipo Documento</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actúalizar Tipo Documento</h2>
 
 <hr style=" height: 1px;background-color: black;">
 

@@ -18,7 +18,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center">elementos del ambiente <?php echo $this->query2['Numero_Ambiente'];?></h1>
+        <h1 style="text-align:center; font-family: fantasy;">Elementos Del Ambiente <?php echo $this->query2['Numero_Ambiente'];?></h1>
 
 
         <br>
@@ -26,14 +26,14 @@
         <table id="table_id" class="display">
     <thead>
         <tr>       
-                  <th>REPORTAR NOVEDAD</th>
-                  <th>VER NOVEDADES</th>
-                  <th>NÚMERO SERIAL</th>
-                  <th>PLACA EQUIPO</th>
-                  <th>MARCA</th>
-                  <th>TIPO ELEMENTO</th>
-                  <th>FECHA </th>
-                  <th>ESTADO</th>
+                  <th>Reportar Novedad</th>
+                  <th>Ver Novedades</th>
+                  <th>Número Serial</th>
+                  <th>Placa Equipo</th>
+                  <th>Marca</th>
+                  <th>TIPO Elemento</th>
+                  <th>Fecha </th>
+                  <th>Estado</th>
 
         </tr>
     </thead>

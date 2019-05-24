@@ -17,7 +17,7 @@
 <br>
 <div class="container">
 <form class="form" id="registrarElemento" >
-<h2 style="text-align: center;">Registrar un elemento</h2>
+<h2 style="text-align: center; font-family: fantasy;">Registrar un elemento</h2>
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
 <div class="form-group">

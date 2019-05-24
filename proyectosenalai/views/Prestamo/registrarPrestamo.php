@@ -18,7 +18,7 @@
 <div class="container">
 <div class="form-group">
 <form class="form" action="" method="POST" id="addPrestamo">
-<h2 style="text-align: center;">Registrar Un Préstamo</h2>
+<h2 style="text-align: center; font-family: fantasy;">Registrar Un Préstamo</h2>
 <hr style=" height: 1px;background-color: black;">
 <section class="principal">
 

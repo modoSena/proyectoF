@@ -20,7 +20,7 @@
 
 <form class="form" id="registrartipoDocumento" >
   
-<h2 style="text-align: center;">Registrar un tipo documento</h2>
+<h2 style="text-align: center; font-family: fantasy;">Registrar un tipo documento</h2>
 
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
