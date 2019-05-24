@@ -39,7 +39,7 @@
                   <th>Tipo Elemento</th>
                   <th>Marca</th>
                   <th>Descripción</th>
-                  <th>Ubicacion Actual</th>
+                  <th>Ubicación Actual</th>
                   <th>Estado</th>
         </tr>
     </thead>
@@ -124,17 +124,14 @@
 
         <table id="table_idd" class="display">
     <thead>
-        <tr>
-
-                         
+        <tr>           
                   <th>Selecciona</th>
-
                   <th>Número Serial</th>
                   <th>Placa Equipo</th>
                   <th>Tipo Elemento</th>
                   <th>Marca</th>
                   <th>Descripción</th>
-                  <th>Ubicacion Actual</th>
+                  <th>Ubicación Actual</th>
         </tr>
     </thead>
     <tbody>

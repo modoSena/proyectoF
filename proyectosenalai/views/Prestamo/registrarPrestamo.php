@@ -18,7 +18,7 @@
 <div class="container">
 <div class="form-group">
 <form class="form" action="" method="POST" id="addPrestamo">
-<h2 style="text-align: center;">Registrar un prestamo</h2>
+<h2 style="text-align: center;">Registrar Un Préstamo</h2>
 <hr style=" height: 1px;background-color: black;">
 <section class="principal">
 
@@ -40,11 +40,11 @@
     </td>
   </tr>
   <tr>
-    <td colspan="2">Fecha inicial<br><input type="date" name="dtFechaInicial" class="form-control" min="<?php echo date("Y-m-d"); ?>" max="" class="readonly"></td>
+    <td colspan="2">Fecha Inicial<br><input type="date" name="dtFechaInicial" class="form-control" min="<?php echo date("Y-m-d"); ?>" max="" class="readonly"></td>
   </tr>
   <tr>
     <td>
-      Tipo elemento<br>
+      Tipo Elemento<br>
       <select name="slTipoElemento" id="slTipoElemento" class="form-control">
         <option value="0">Selecione el tipo de elemento...</option>
       </select>
@@ -77,7 +77,7 @@
 </table>
 <div class="row">
 				<div  class="col-xs-6 col-md-6">
-        <button type="submit" id="btnGuardar" class="btn btn-primary btn-block btn-lg">Registrar préstamo</button><br><br>
+        <button type="submit" id="btnGuardar" class="btn btn-primary btn-block btn-lg">Registrar Préstamo</button><br><br>
 				</div>
 				<div  class="col-xs-6 col-md-6">
 				<a href="<?php echo constant('URL')?>elementos" class="btn btn-primary btn-block btn-lg">Cancelar</a>
@@ -96,10 +96,10 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Prestamo Registrado con Éxito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Préstamo Registrado con Éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha registrado el prestamo</p>
+              <p for="">Se ha registrado el préstamo</p>
         </div>
         <div class="modal-footer">
                 <a href="<?php echo constant('URL')?>Prestamo" class="btn btn-primary">Aceptar</a>

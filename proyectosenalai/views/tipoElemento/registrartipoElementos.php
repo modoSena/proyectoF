@@ -24,7 +24,7 @@
 
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
-			 <label for="">Nombre tipo elemento</label>
+			 <label for="">Nombre Tipo Elemento</label>
 				<input type="text" name="NombreTipoElemento" id="NombreTipoElemento" class="form-control " placeholder=" " tabindex="3" >
             </div> 
 <div class="row">

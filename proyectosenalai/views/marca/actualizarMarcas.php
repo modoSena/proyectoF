@@ -25,7 +25,7 @@
 
 <div class="form-group">
 
-			 <label for="">Nombre marca</label>
+			 <label for="">Nombre Marca</label>
 				<input type="text" name="Marca" value="<?php echo $this->valores['Marca']?>" id="Marca" class="form-control " placeholder=" " tabindex="3" >
 </div> 
 

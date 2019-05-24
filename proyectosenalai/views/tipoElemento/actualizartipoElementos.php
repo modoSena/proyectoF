@@ -24,7 +24,7 @@
 
 <div class="form-group">
 
-			 <label for="">Nombre tipo elemento</label>
+			 <label for="">Nombre Tipo Elemento</label>
 				<input type="text" name="NombreTipoElemento" value="<?php echo $this->valores['NombreTipoElemento']?>" id="NombreTipoElemento" class="form-control " placeholder=" " tabindex="3" >
 </div> 
 

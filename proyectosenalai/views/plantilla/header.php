@@ -65,7 +65,7 @@
                                         <p class="text-left"><strong><?php  echo $_SESSION['Nombre']." ".$_SESSION['Apellido_Primero']; ?></strong></p>
                                         <p class="text-left small"><?php echo $_SESSION['Email'] ?> </p>
                                         <p class="text-left">
-                                            <a href="<?php echo constant('URL');?>actualizarDatos" class="btn btn-primary btn-block btn-sm">Actualizar Datos</a>
+                                            <a href="<?php echo constant('URL');?>actualizarDatos" class="btn btn-primary btn-block btn-sm">Actúalizar Datos</a>
                                         </p>
                                         <p class="text-left">
                                             <a href="<?php echo constant('URL');?>actualizarContrasena" class="btn btn-primary btn-block btn-sm">Cambiar contraseña </a>

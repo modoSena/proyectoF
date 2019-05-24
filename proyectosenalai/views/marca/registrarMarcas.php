@@ -23,7 +23,7 @@
 
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
-			 <label for="">Nombre marca</label>
+			 <label for="">Nombre Marca</label>
 				<input type="text" name="Marca" id="Marca" class="form-control " placeholder=" " tabindex="3" >
             </div> 
 <div class="row">

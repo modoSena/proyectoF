@@ -381,7 +381,7 @@ $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
                   <th>Estado</th>
-                  <th>Num. Documento</th>
+                  <th>Núm. Documento</th>
                   <th>Nombres</th>
                   <th>Celular</th>
                   <th>Fecha Registro</th>
