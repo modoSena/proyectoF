@@ -28,7 +28,7 @@
         <tr>       
                   <th>REPORTAR NOVEDAD</th>
                   <th>VER NOVEDADES</th>
-                  <th>NUMERO SERIAL</th>
+                  <th>NÚMERO SERIAL</th>
                   <th>PLACA EQUIPO</th>
                   <th>MARCA</th>
                   <th>TIPO ELEMENTO</th>

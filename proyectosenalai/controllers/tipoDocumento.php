@@ -53,7 +53,7 @@ class tipoDocumento extends Controller{
 
            if ($Tipo_Documento == "") {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo tipo documento no puede ir vacio.
+            <strong>ERROR!</strong>  El campo tipo documento no puede ir vacío.
             </div>';
            
 
@@ -96,7 +96,7 @@ class tipoDocumento extends Controller{
 
          if ($Tipo_Documento == "") {
           echo '<div class="alert alert-danger">
-          <strong>ERROR!</strong>  El campo tipo documento no puede ir vacio.
+          <strong>ERROR!</strong>  El campo tipo documento no puede ir vacío.
           </div>';
          
 

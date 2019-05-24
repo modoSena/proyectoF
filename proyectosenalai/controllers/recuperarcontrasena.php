@@ -54,7 +54,7 @@ class recuperarcontrasena extends Controller{
                 //---- VALIDACIONES DEL  EMAIL----- ///  
                 if(strlen($email) == 0){ 
                     echo '<div class="alert alert-danger">
-                    <strong>ERROR!</strong>  El campo email no puede ir vacio.
+                    <strong>ERROR!</strong>  El campo Email no puede ir vacío.
                     </div>';
                 }   
                 // SI escrito, NO VALIDO email  
@@ -217,14 +217,14 @@ class recuperarcontrasena extends Controller{
         
              if(empty($Rcontrasena1) ) {  
                 echo '<div class="alert alert-danger">
-                <strong>ERROR!</strong>  El campo Nueva contraseña  no puede ir vacio.
+                <strong>ERROR!</strong>  El campo Nueva contraseña  no puede ir vacío.
                  </div>' ;
                  } 
         
                // SI longitud, NO VALIDO numeros y letras  
                else if(!preg_match("/^[0-9a-zA-Z]+$/", $Rcontrasena1)){  
                 echo '<div class="alert alert-danger">
-                <strong>ERROR!</strong>  El campo contraseña solo debe tener letras y numeros y no pueden haber espacios.
+                <strong>ERROR!</strong>  El campo contraseña solo debe tener letras y números y no pueden haber espacios.
                 </div>'; 
                }
         
@@ -232,7 +232,7 @@ class recuperarcontrasena extends Controller{
                //NO tiene minimo de 8 caracteres o mas de 30 caracteres  
                else if(strlen($Rcontrasena1) < 8 || strlen($Rcontrasena1) > 30){  
                 echo '<div class="alert alert-danger">
-                <strong>ERROR!</strong>  La Nueva Contrasena  no puede tener menos de 8 caracteres o mas de 30 caracteres.
+                <strong>ERROR!</strong>  La Nueva Contraseña  no puede tener menos de 8 caracteres o mas de 30 caracteres.
                 </div>' ;
                } 
         

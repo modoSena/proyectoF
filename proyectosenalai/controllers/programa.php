@@ -53,7 +53,7 @@ class programa extends Controller{
 
            if ($NombrePrograma == "") {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo programa no puede ir vacio.
+            <strong>ERROR!</strong>  El campo programa no puede ir vacío.
             </div>';
            
 
@@ -96,7 +96,7 @@ class programa extends Controller{
 
          if ($NombrePrograma == "") {
           echo '<div class="alert alert-danger">
-          <strong>ERROR!</strong>  El campo programa no puede ir vacio.
+          <strong>ERROR!</strong>  El campo programa no puede ir vacío.
           </div>';
          
 

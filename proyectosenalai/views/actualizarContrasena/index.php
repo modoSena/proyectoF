@@ -60,7 +60,7 @@
     <div class="modal-content">
       <form id="verificarcontrasena">
       <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLongTitle">Exito</h2>
+        <h2 class="modal-title" id="exampleModalLongTitle">Éxito</h2>
       </div>
       <div class="modal-body">
             <p for="">Su contraseña ha sido cambiada correctamente </p>

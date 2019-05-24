@@ -171,19 +171,19 @@ class actualizarDatos extends Controller {
                         //---- VALIDACIONES DEL DOCUMENTO----- /// 
                  else if($documento == "" ){   
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Documento no puede ir vacío.
+                         <strong>ERROR!</strong>  El campo Número Documento no puede ir vacío.
                          </div>'; 
                         }
                         //NO cumple longitud minima  
                         else if(strlen($documento) > 30 ){  
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Documento no puede  ser mayor de 30 caracteres.
+                         <strong>ERROR!</strong>  El campo Número Documento no puede ser mayor de 30 caracteres.
                          </div>';
                         }
                         //SI longitud pero NO solo caracteres A-z  
                         else if(!preg_match("/^[0-9]+$/",$documento)){  
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Documento solo debe contener  números.
+                         <strong>ERROR!</strong>  El campo Número Documento solo debe contener  números.
                          </div>';
                         }
          
@@ -192,7 +192,7 @@ class actualizarDatos extends Controller {
          
                          
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El Documento ya ha sido registrado.
+                         <strong>ERROR!</strong>  El Número Documento ya ha sido registrado.
                          </div>';
                         
          

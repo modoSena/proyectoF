@@ -63,10 +63,10 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Ambiente actualizado con éxito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Ambiente actúalizado con éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha actualizado el ambiente</p> 
+              <p for="">Se ha actúalizado el ambiente</p> 
         </div>
         <div class="modal-footer">
                 <a href="<?php echo constant('URL')?>ambientes/actualizarAmbientes/<?php echo $this->idAmbientes ?>" class="btn btn-primary">Aceptar</a>

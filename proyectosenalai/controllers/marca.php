@@ -53,7 +53,7 @@ class marca extends Controller{
 
            if ($Marca == "") {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo marca no puede ir vacio.
+            <strong>ERROR!</strong>  El campo marca no puede ir vacío.
             </div>';
            
 
@@ -96,7 +96,7 @@ class marca extends Controller{
 
          if ($Marca == "") {
           echo '<div class="alert alert-danger">
-          <strong>ERROR!</strong>  El campo marca no puede ir vacio.
+          <strong>ERROR!</strong>  El campo marca no puede ir vacío.
           </div>';
          
 

@@ -39,7 +39,7 @@
             <?php } ?>
         <th>Elementos</th>
         <th>Ubicación</th>
-        <th>Numero Ambiente</th>
+        <th>Número Ambiente</th>
         <th>Estado</th>    
         </tr>
     </thead>

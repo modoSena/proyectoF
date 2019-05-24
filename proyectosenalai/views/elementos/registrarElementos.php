@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <center><p>Nota: Si no selecciona una ubicacion, por defecto su ubicacion inicial sera el ambiente 1 de torre sur</p></center>
+            <center><p>Nota: Si no selecciona una ubicación, por defecto su ubicación inicial sera el ambiente 1 de torre sur</p></center>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">

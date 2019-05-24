@@ -53,7 +53,7 @@ class tipoElemento extends Controller{
 
            if ($NombreTipoElemento == "") {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo tipo elemento no puede ir vacio.
+            <strong>ERROR!</strong>  El campo tipo elemento no puede ir vacío.
             </div>';
            
 
@@ -96,7 +96,7 @@ class tipoElemento extends Controller{
 
          if ($NombreTipoElemento == "") {
           echo '<div class="alert alert-danger">
-          <strong>ERROR!</strong>  El campo tipo elemento no puede ir vacio.
+          <strong>ERROR!</strong>  El campo tipo elemento no puede ir vacío.
           </div>';
          
 
