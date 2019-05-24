@@ -164,7 +164,6 @@
 
                 </div>
             </div>
-            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos</p>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <label>Programa</label>
@@ -183,6 +182,7 @@
                             tabindex="3">
                     </div>
                 </div>
+                <p style="text-align: center;">Nota: El Campo Programa es Requerido</p>
             </div>
             <hr />
             <div class="row">
