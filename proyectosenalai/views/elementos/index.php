@@ -18,7 +18,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center; font-family: fantasy;"> Elementos </h1>
+        <h1 style="text-align:center; font-family: fantasy;">Administrar Elementos </h1>
         <div class="form-actions">
             <a href="<?php echo constant('URL');?>elementos/registrarElementos"><button type="button" class="btn btn-primary">Agregar Elemento <span class="glyphicon glyphicon-level-up"></span></button></a>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Mover Elementos <i class="glyphicon glyphicon-shopping-cart"></i></button>

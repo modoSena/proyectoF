@@ -20,7 +20,7 @@
 
 <form class="form" id="registrarAmbiente" >
   
-<h2 style="text-align: center;">Registrar un Ambiente</h2>
+<h2 style="text-align: center; font-family: fantasy;">Registrar un Ambiente</h2>
 
 <hr style=" height: 1px;background-color: black;">
 

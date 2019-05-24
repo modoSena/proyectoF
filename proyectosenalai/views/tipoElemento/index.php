@@ -18,7 +18,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <br><br>
     <section class="principal">
-        <h1 style="text-align:center; font-family: fantasy;"> Tipo Elementos </h1>
+        <h1 style="text-align:center; font-family: fantasy;">Administrar Tipo Elementos </h1>
         </div>
         <div class="form-actions">
             <a href="<?php echo constant('URL');?>tipoElemento/registrartipoElementos"><button type="button" class="btn btn-primary">Agregar Tipo Elemento <span class="glyphicon glyphicon-level-up"></span></button></a>
