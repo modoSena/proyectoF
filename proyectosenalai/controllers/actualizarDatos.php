@@ -273,7 +273,7 @@ class actualizarDatos extends Controller {
                    // solo caracteres numericos  
                       else if(!preg_match("/^[0-9]+$/",$telefono) && $telefono !=""){  
                        echo '<div class="alert alert-danger">
-                       <strong>ERROR!</strong>  El campo Tel fijo  debe contener solo números o debe estar vacúo.
+                       <strong>ERROR!</strong>  El campo Tel fijo  debe contener solo números o debe estar vacío.
                        </div>';
                         }
                  //NO cumple longitud  
