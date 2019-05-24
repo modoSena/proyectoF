@@ -286,7 +286,7 @@ class administrarUsuarios extends Controller {
                                  //---- VALIDACIONES DE LA DIRECCION----- /// 
                         else if($direccion == "" ){   
                                  echo '<div class="alert alert-danger">
-                                 <strong>ERROR!</strong>  El campo Direccion no puede ir vacío.
+                                 <strong>ERROR!</strong>  El campo Dirección no puede ir vacío.
                                  </div>'; 
                                  }
                                  //NO cumple longitud minima  
@@ -359,7 +359,7 @@ class administrarUsuarios extends Controller {
                            
                            else if(!preg_match("/^[0-9]+$/",$numero_ficha) && $numero_ficha !=""){  
                               echo '<div class="alert alert-danger">
-                              <strong>ERROR!</strong>  El Campo Número Ficha debe contener solo números o debe estar vacío.
+                              <strong>ERROR!</strong>  El Campo Número Ficha debe contener solo números o puede ir vacío.
                               </div>';
                                  }
                   //---- REGISTRAR USUARIO CORRECTAMENTE----- /// 
@@ -419,7 +419,7 @@ class administrarUsuarios extends Controller {
                                     <hr />
                                     <p style='font-size:25px;'>Tus datos son:</p>
                                     <p style='font-size:25px;'>Usuario: ".$usuario."</p>
-                                    <p style='font-size:25px;'>contraseña: Es el numero de tu documento</p>
+                                    <p style='font-size:25px;'>contraseña: Es el número de tu documento</p>
                                     <p style='font-size:25px;'>ALERTA: POR FAVOR ACTUALIZA TU CONTRASEÑA LO MAS PRONTO POSIBLE</p>
                                     
                                  
