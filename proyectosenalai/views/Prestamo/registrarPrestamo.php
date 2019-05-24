@@ -99,7 +99,7 @@
           <h2 class="modal-title" id="exampleModalLongTitle">Prestamo Registrado con Éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha registrado el presstamo</p>
+              <p for="">Se ha registrado el prestamo</p>
         </div>
         <div class="modal-footer">
                 <a href="<?php echo constant('URL')?>Prestamo" class="btn btn-primary">Aceptar</a>

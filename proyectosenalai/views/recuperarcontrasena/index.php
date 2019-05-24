@@ -35,7 +35,7 @@
                             <h2 class="text-center text-light">Recuperar contraseña</h2>
                         </div>
                         <div class="card-body">
-                        <h5 style="color:#fff;">Ingresa el email que tienes asociado a tu cuenta  Sena L.A.I</h5>
+                        <h5 style="color:#fff;">Ingresa el Email que tienes asociado a tu cuenta  Sena L.A.I</h5>
                             <form class="needs-validation" id="emailformularioRecuperarContrasena">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
@@ -62,7 +62,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Envio de email Exitoso.</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Envio de email con Éxito.</h2>
         </div>
         <div class="modal-body">
               <p for="">Se ha enviado un link de recuperación de contraseña a tu email debes acceder a él para cambiar tu contraseña.</p>
