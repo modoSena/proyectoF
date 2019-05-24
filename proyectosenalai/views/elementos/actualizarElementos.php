@@ -25,11 +25,11 @@
 
 <div class="form-group">
 <input type="hidden"  value="<?php echo $this->valores['idElementos'] ?>" name="idElementos">
-			 <label for="">Número serial</label>
+			 <label for="">Número Serial</label>
 				<input type="text" name="Numero_Serial" value="<?php echo $this->valores['Numero_Serial']?>" id="Numero_Serial" class="form-control " placeholder=" " tabindex="3" >
-        <label for="">Placa equipo</label>
+        <label for="">Placa Equipo</label>
 				<input type="text" name="Placa_Equipo" value="<?php echo $this->valores['Placa_Equipo']?>" id="Placa_Equipo" class="form-control " placeholder=" " tabindex="3" >
-        <label for="">Descripción equipo</label>
+        <label for="">Descripción Equipo</label>
 				<input type="text" name="Descripcion" value="<?php echo $this->valores['Descripcion']?>" id="Descripcion" class="form-control " placeholder=" " tabindex="3" >
         <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">

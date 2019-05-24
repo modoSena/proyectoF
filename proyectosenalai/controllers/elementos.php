@@ -146,7 +146,7 @@ class elementos extends Controller{
                         if($Numero_Serial == "" ){                        
                         
                             echo '<div class="alert alert-danger">
-                            <strong>ERROR!</strong>  El campo Numero Serial no puede ir vacío.
+                            <strong>ERROR!</strong>  El campo Número Serial no puede ir vacío.
                             </div>';
                          }else if(!preg_match("/^[0-9]+$/",$Numero_Serial)){
                             echo '<div class="alert alert-danger">

@@ -21,13 +21,13 @@
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
 <div class="form-group">
-			 <label for="">Número serial</label>
+			 <label for="">Número Serial</label>
 				<input type="text" name="Numero_Serial" id="Numero_Serial" class="form-control" placeholder=" " tabindex="3" >
             </div> 
 <div class="form-group">
-			 <label for="">Placa equipo</label>
+			 <label for="">Placa Equipo</label>
 				<input type="text" name="Placa_Equipo" id="Placa_Equipo" class="form-control " placeholder=" " tabindex="3" >
-                <label for="">Descripcion equipo</label>
+                <label for="">Descripcion Equipo</label>
 				<input type="text" name="Descripcion" id="Descripcion" class="form-control " placeholder=" " tabindex="3" >
 
             </div>
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label>Ubicacion</label>
+                        <label>Ubicación</label>
                         <select class='form-control' id='ubicacion' name='ubicacion'>
                             <option value="2">selecciona:</option>
                             <?php foreach ( $this->consultarUbicacion as $resultado) { ?>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group" id="ambiente">
-                        <label>Ambiente</label>
+                        <label>Número Ambiente</label>
                         <select class='form-control' id='ambiente' name='ambiente'>
                             <option value="1">Primero selecciona una ubicación</option>
                         </select>

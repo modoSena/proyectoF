@@ -21,7 +21,7 @@
         <h1 style="text-align:center"> Tipo Elementos </h1>
         </div>
         <div class="form-actions">
-            <a href="<?php echo constant('URL');?>tipoElemento/registrartipoElementos"><button type="button" class="btn btn-primary">Agregar un nuevo tipo elemento <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <a href="<?php echo constant('URL');?>tipoElemento/registrartipoElementos"><button type="button" class="btn btn-primary">Agregar Tipo Elemento <span class="glyphicon glyphicon-level-up"></span></button></a>
         </div>
         <br>
         <div id="div1">
