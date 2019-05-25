@@ -62,7 +62,6 @@
           <table class="table table-bordered" id="tblPrestamo">
             <thead>
               <th>Detalle Elementos</th>
-              <th>Préstamo Número</th>
               <th>Fecha Inicial</th>
               <th>Número Documento</th>
               <th>Nombre Prestador</th>
@@ -72,7 +71,6 @@
                 <?php  foreach($this->query as $fila) { ?>
                     <tr>
                         <td><button type="button" class="btn btn-info" id="btnVer" data-id="<?php echo $fila['idPrestamos'] ?>" data-toggle="modal" data-target="#exampleModalCenter"><span class='glyphicon glyphicon-eye-open'></span></button></td>
-                        <td><?php echo $fila['idPrestamos'] ?></td>
                         <td><?php echo $fila['Fecha_inicial'] ?></td>
                         <td><?php echo $fila['Numero_Documento'] ?></td>
                         <td><?php echo $fila['Nombre'].' '.$fila['Apellido_Primero'].' '.$fila['Apellido_Segundo'] ?></td>
