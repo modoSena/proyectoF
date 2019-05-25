@@ -8,7 +8,7 @@ class ambientesModel extends Model{
     }
      function consultarAmbientes(){
         $conexion = $this->db->connect();
-        $consulta="SELECT Numero_Ambiente,Estado_Ambientes_idEstado_Ambientes,idAmbientes,NombreUbicacion,NombreEstadoA from ambientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN estado_ambientes ON ambientes.Estado_Ambientes_idEstado_Ambientes=estado_ambientes.idEstado_Ambientes";
+        $consulta="SELECT  idDetalleCuentadante,Numero_Ambiente,Estado_Ambientes_idEstado_Ambientes,idAmbientes,NombreUbicacion,NombreEstadoA   FROM detallecuentadante JOIN ambientes on detallecuentadante.Ambientes_idAmbientes = ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN estado_ambientes ON ambientes.Estado_Ambientes_idEstado_Ambientes=estado_ambientes.idEstado_Ambientes WHERE  Estado_C = 1";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
@@ -207,7 +207,7 @@ class ambientesModel extends Model{
         function consultarCuentadantes($idambientes){
 
             $conexion = $this->db->connect();
-            $consulta="SELECT Numero_Documento,Nombre,Numero_Celular,Fecha,Estado_C from DetalleCuentadante JOIN persona ON DetalleCuentadante.cuentadante=Persona.idPersona    WHERE Ambientes_idAmbientes =  ?";
+            $consulta="SELECT Numero_Documento,Nombre,Numero_Celular,Fecha,Fecha_Final,Estado_C from DetalleCuentadante JOIN persona ON DetalleCuentadante.cuentadante=Persona.idPersona    WHERE Ambientes_idAmbientes =  ?";
             $stmt = $conexion->prepare($consulta);
             $stmt->bindParam(1, $idambientes, PDO::PARAM_INT );
             $stmt->execute();
@@ -219,12 +219,15 @@ class ambientesModel extends Model{
         }
 
 
-        function destivarCuentadantes($idambientes){
-
+        function destivarCuentadante($idDetalleCuentadante){
+            
+            ini_set('date.timezone','America/Bogota'); 
+            $fechasalida = date("Y-m-d H:i:s");
             $conexion = $this->db->connect();
-            $consulta="UPDATE  DetalleCuentadante SET `Estado_C` = 2 WHERE  Ambientes_idAmbientes = ?";
+            $consulta="UPDATE  DetalleCuentadante SET `Estado_C` = 2  , `Fecha_Final` = ? WHERE  idDetalleCuentadante = ?";
             $stmt = $conexion->prepare($consulta);
-            $stmt->bindParam(1, $idambientes, PDO::PARAM_INT );
+            $stmt->bindParam(1, $fechasalida, PDO::PARAM_STR );
+            $stmt->bindParam(2, $idDetalleCuentadante, PDO::PARAM_INT );
             $stmt->execute();
             
 
@@ -232,7 +235,11 @@ class ambientesModel extends Model{
         }
 
 
-        function registrarCuentadante($fecha,$idcuentadante,$idambientes,$estado){
+        function registrarCuentadante($idcuentadante,$idambientes){
+
+            ini_set('date.timezone','America/Bogota'); 
+            $fecha = date("Y-m-d H:i:s");
+            $estado= 1;
 
             $conexion = $this->db->connect();
             $consulta="INSERT INTO detallecuentadante  (Fecha,Cuentadante,Ambientes_idAmbientes,Estado_C)values (?,?,?,?)";

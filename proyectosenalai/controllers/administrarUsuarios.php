@@ -54,7 +54,7 @@ class administrarUsuarios extends Controller {
       $idpersona = $param[0];
       $rol = $this->model->verificarId($idpersona);
 
-      if ($_SESSION['Roles_idRoles'] !=4 && $rol['Roles_idRoles'] == 4 or $rol['Roles_idRoles']  == 3  ) {
+      if ($_SESSION['Roles_idRoles'] !=4 && $rol['Roles_idRoles'] == 4 or  $_SESSION['Roles_idRoles'] !=4 && $rol['Roles_idRoles']  == 3  ) {
 
                echo "No puedes editar este Usuario";
                die();     
