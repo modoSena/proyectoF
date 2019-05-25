@@ -68,7 +68,7 @@
               <p for="">Se ha registrado el ambiente</p>
         </div>
         <div class="modal-footer">
-                <a href="<?php echo constant('URL')?>ambientes/registrarAmbientes" class="btn btn-primary">Aceptar</a>
+                <a href="<?php echo constant('URL')?>ambientes" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
       </div>
