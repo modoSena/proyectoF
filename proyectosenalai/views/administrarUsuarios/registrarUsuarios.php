@@ -214,7 +214,7 @@
                     <div class="modal-footer">
                         <img class="loading" id="loading" src="<?php echo constant('URL');?>public/img/loading.gif" alt=""> <span id="mensajes">
                         </span>
-                        <a href="<?php echo constant('URL');?>administrarUsuarios/registrarUsuario/" class="btn btn-primary">Aceptar</a>
+                        <a href="<?php echo constant('URL');?>administrarUsuarios" class="btn btn-primary">Aceptar</a>
                     </div>
                 </form>
             </div>
