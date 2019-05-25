@@ -104,7 +104,7 @@ class actualizarContrasena extends Controller{
            
             $this->model->actualizarContrasena($n,$idPersona);
 
-            $_SESSION['usuario'] = $n;
+            $_SESSION['contrasena'] = $n;
             
             echo 1 ;
         
