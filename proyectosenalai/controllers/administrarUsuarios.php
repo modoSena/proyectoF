@@ -739,7 +739,7 @@ class administrarUsuarios extends Controller {
                         }
           //---- REGISTRAR USUARIO CORRECTAMENTE----- /// 
                 else {
-                  if ($_SESSION['Roles_idRoles'] != 4 && $rol == 4 or $rol == 3 ) {
+                  if ($_SESSION['Roles_idRoles'] != 4 && $rol == 4 or  $_SESSION['Roles_idRoles'] != 4 &&  $rol == 3 ) {
                      echo "ERROR ";
                      die(); 
                   } 
