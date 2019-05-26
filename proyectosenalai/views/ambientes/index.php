@@ -56,7 +56,7 @@
                         <td> <a onclick="return confirm('¿Estas seguro?');" href='ambientes/habilitarambiente/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-danger'>Ocupado</button></a> </td>
                         <?php } ?>
                        <td> <a href='ambientes/actualizarambientes/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>
-                       <td> <button   onclick="obtenerid(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button>
+                       <td> <button  onclick="obtener(<?php echo $fila['idDetalleCuentadante']?> , <?php echo $fila['idAmbientes']?>)"    type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button>
                         <button  onclick="buscar_datos(<?php echo $fila['idAmbientes']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
             <?php } ?>
                        <td> <a href='ambientes/elementosAmbiente/<?php echo $fila['idAmbientes']?>'><button type='button' class='btn btn-info'><span class='glyphicon glyphicon-list-alt'></span></button></a> </td>
@@ -86,6 +86,7 @@
                <input type="text" name="cuentadante" id="cuentadante" class="form-control " placeholder=" " tabindex="3" >
               </div> 
               <input type="hidden" id="idd" name="idambiente">
+              <input type="hidden" id="iddh" name="idDetalleCuentadante">
   <div class="row">
                   <div  class="col-xs-6 col-md-6">
   
@@ -148,7 +149,8 @@
     <script src="<?php echo constant('URL');?>public/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo constant('URL');?>public/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL');?>DataTables/datatables.js"></script>
-    <script > function  obtenerid(id){ $("#idd").val(id);}</script>
+    <script > function  obtener(idC,idA){ $("#idd").val(idA); $("#iddh").val(idC);}</script>
+
     <script>$(document).ready( function () {
     $('#table_id').DataTable();
 } );</script>

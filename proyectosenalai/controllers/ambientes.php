@@ -318,6 +318,8 @@ $salida = "<table id='table_id2' class='display'>
      
     $Cuentadante = $_POST['cuentadante'];
     $idambientes = $_POST['idambiente'];
+    $idDetalleCuentadante = $_POST['idDetalleCuentadante'];
+
 
     $this->e =$this->model->validardocumentoexiste($Cuentadante);
     
@@ -345,14 +347,22 @@ $salida = "<table id='table_id2' class='display'>
   }
   
   else {
-       $this->model->destivarCuentadantes($idambientes);
+
+
+
+
+       $this->model->destivarCuentadante($idDetalleCuentadante);
+
        $cuentadante = $this->model->consultarIdPersona($Cuentadante);
+
        $idcuentadante =  $cuentadante['idPersona'];
-       ini_set('date.timezone','America/Bogota'); 
-       $fecha = date("Y-m-d H:i:s");
-       $estado= 1;
-       $this->model->registrarCuentadante($fecha,$idcuentadante,$idambientes,$estado);
+
+       $this->model->registrarCuentadante($idcuentadante,$idambientes);
+
        echo 1;
+
+
+
   }
 
 
@@ -385,6 +395,7 @@ $salida = "<table id='table_id2' class='display'>
                   <th>Nombres</th>
                   <th>Celular</th>
                   <th>Fecha Registro</th>
+                  <th>Fecha Salida</th>
                   
         </tr>
     </thead>
@@ -399,7 +410,8 @@ $salida = "<table id='table_id2' class='display'>
              $salida .= "<td>" . $fila['Numero_Documento'] ."</td>      
                <td>".  $fila['Nombre']. "</td>
                <td>".$fila['Numero_Celular']. "</td>
-               <td>".$fila['Fecha']. "</td>";
+               <td>".$fila['Fecha']. "</td>
+               <td>".$fila['Fecha_Final']. "</td>";
             
               
 

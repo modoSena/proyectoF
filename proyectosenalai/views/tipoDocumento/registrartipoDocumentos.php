@@ -56,7 +56,7 @@
               <p for="">Se ha registrado el tipo documento</p>
         </div>
         <div class="modal-footer">
-                <a href="<?php echo constant('URL')?>tipoDocumento/registrartipoDocumentos" class="btn btn-primary">Aceptar</a>
+                <a href="<?php echo constant('URL')?>tipoDocumento" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
       </div>

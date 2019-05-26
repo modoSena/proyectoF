@@ -140,7 +140,7 @@ class actualizarDatosModel extends Model
         
           public function consultarUsuario($idPersona){
             $conexion = $this->db->connect();
-            $consulta="SELECT idPersona,Numero_Documento,Nombre,Apellido_Primero,Telefono,Direccion,Numero_Celular,Email,Usuario,Programa_idPrograma,Numero_Ficha,Ciudad_idCiudad,Roles_idRoles,Tipo_Documento_idTipo_Documento,Sexo_idSexo,Apellido_Segundo FROM persona  WHERE idPersona = :idPersona ";
+            $consulta="SELECT NombreCiudad,NombreSexo,NombrePrograma,NombreRoles,Tipo_Documento,idPersona,Numero_Documento,Nombre,Apellido_Primero,Telefono,Direccion,Numero_Celular,Email,Usuario,Programa_idPrograma,Numero_Ficha,Ciudad_idCiudad,Roles_idRoles,Tipo_Documento_idTipo_Documento,Sexo_idSexo,Apellido_Segundo FROM persona JOIN Programa ON Persona.Programa_idPrograma=Programa.idPrograma  JOIN Ciudad ON Persona.Ciudad_idCiudad=Ciudad.idCiudad JOIN Roles ON Persona.Roles_idRoles=Roles.idroles JOIN Tipo_Documento ON Persona.Tipo_Documento_idTipo_Documento=Tipo_Documento.idTipo_Documento   JOIN Sexo ON Persona.Sexo_idSexo=Sexo.idSexo WHERE idPersona = :idPersona ";
             $stmt = $conexion->prepare($consulta);
             $stmt->bindParam(':idPersona',$idPersona,PDO::PARAM_INT);
             $stmt->execute();
@@ -164,26 +164,17 @@ class actualizarDatosModel extends Model
             $resul= null;
         }
     
-        public function  actualizarUsuario($idPersona,$nombres,$apellido_primero,$apellido_segundo,$usuario,$rol,$tipodocumento,$documento,$ciudad,$direccion,$email,$sexo,$numero_celular,$telefono,$idprograma,$numero_ficha){
+        public function  actualizarUsuario($idPersona,$ciudad,$direccion,$email,$sexo,$numero_celular,$telefono){
             $conexion = $this->db->connect();
-            $consulta  ="UPDATE  persona  set Numero_Documento = ? ,Tipo_Documento_idTipo_Documento = ? ,Nombre=? ,Apellido_Primero= ? ,Apellido_Segundo= ? ,Direccion= ? ,Email=  ? ,Telefono= ? ,Sexo_idSexo= ? ,Numero_Celular= ? ,Ciudad_idCiudad= ? ,Usuario= ? ,Roles_idRoles= ? ,Numero_Ficha= ? ,Programa_idPrograma = ? where idPersona = ? ";
+            $consulta  ="UPDATE  persona  set   Direccion= ? ,Email=  ? ,Telefono= ? ,Sexo_idSexo= ? ,Numero_Celular= ? ,Ciudad_idCiudad= ?   where idPersona = ? ";
             $stmt=$conexion->prepare($consulta);
-            $stmt->bindParam(1,$documento,PDO::PARAM_STR);
-            $stmt->bindParam(2,$tipodocumento, PDO::PARAM_INT);
-            $stmt->bindParam(3,$nombres,PDO::PARAM_STR);
-            $stmt->bindParam(4,$apellido_primero,PDO::PARAM_STR);
-            $stmt->bindParam(5,$apellido_segundo,PDO::PARAM_STR);
-            $stmt->bindParam(6,$direccion,PDO::PARAM_STR);
-            $stmt->bindParam(7,$email,PDO::PARAM_STR);
-            $stmt->bindParam(8,$telefono,PDO::PARAM_STR);
-            $stmt->bindParam(9,$sexo, PDO::PARAM_INT);
-            $stmt->bindParam(10,$numero_celular,PDO::PARAM_STR);
-            $stmt->bindParam(11,$ciudad, PDO::PARAM_INT);
-            $stmt->bindParam(12,$usuario,PDO::PARAM_STR);
-            $stmt->bindParam(13,$rol, PDO::PARAM_INT);
-            $stmt->bindParam(14,$numero_ficha, PDO::PARAM_INT);
-            $stmt->bindParam(15,$idprograma, PDO::PARAM_INT);
-            $stmt->bindParam(16,$idPersona, PDO::PARAM_INT);
+            $stmt->bindParam(1,$direccion,PDO::PARAM_STR);
+            $stmt->bindParam(2,$email,PDO::PARAM_STR);
+            $stmt->bindParam(3,$telefono,PDO::PARAM_STR);
+            $stmt->bindParam(4,$sexo, PDO::PARAM_INT);
+            $stmt->bindParam(5,$numero_celular,PDO::PARAM_STR);
+            $stmt->bindParam(6,$ciudad, PDO::PARAM_INT);
+            $stmt->bindParam(7,$idPersona, PDO::PARAM_INT);
             $stmt->execute();
         }            
 }
