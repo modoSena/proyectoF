@@ -243,7 +243,7 @@ class elementosModel extends Model
     function consultarHistorialElemento($idElemento){
 
         $conexion = $this->db->connect();
-        $consulta="SELECT idDetalleAmbiente,Fecha_Novedad,Novedad_Fecha_Salida,Numero_Ambiente,NombreUbicacion,Numero_Serial,Placa_Equipo,Marca,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where idElementos = ?  ";
+        $consulta="SELECT idDetalleAmbiente,Estado_E,Fecha_Novedad,Novedad_Fecha_Salida,Numero_Ambiente,NombreUbicacion,Numero_Serial,Placa_Equipo,Marca,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where idElementos = ?  ";
         $stmt = $conexion->prepare($consulta);
         $stmt->bindParam(1,$idElemento, PDO::PARAM_INT);
         $stmt->execute();

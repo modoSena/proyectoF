@@ -33,7 +33,7 @@ class ambientesModel extends Model{
         $conexion = $this->db->connect();
         $consulta = "SELECT Numero_Ambiente from Ambientes  where Numero_Ambiente= :Numero_Ambiente and Ubicacion_idUbicacion =:ubicacion ";
         $stmt=$conexion->prepare($consulta);
-        $stmt->bindParam(':Numero_Ambiente',$numeroAmbiente,PDO::PARAM_INT);
+        $stmt->bindParam(':Numero_Ambiente',$numeroAmbiente,PDO::PARAM_STR);
         $stmt->bindParam(':ubicacion',$ubicacion,PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch();
@@ -48,7 +48,7 @@ class ambientesModel extends Model{
         $conexion = $this->db->connect();
         $consulta = "INSERT INTO Ambientes  (Numero_Ambiente,Estado_Ambientes_idEstado_Ambientes,Ubicacion_idUbicacion) values(?,?,?)";        
         $stmt = $conexion->prepare($consulta);
-        $stmt->bindParam(1,$NumeroAmbiente,PDO::PARAM_INT);
+        $stmt->bindParam(1,$NumeroAmbiente,PDO::PARAM_STR);
         $stmt->bindParam(2,$estado,PDO::PARAM_INT);
         $stmt->bindParam(3,$ubicacion,PDO::PARAM_INT);
         $stmt->execute();
@@ -120,7 +120,7 @@ class ambientesModel extends Model{
             $conexion = $this->db->connect();
             $consulta="UPDATE ambientes set Numero_Ambiente = ?  ,Ubicacion_idUbicacion = ? where idAmbientes = ? ";
             $stmt = $conexion->prepare($consulta);
-            $stmt->bindParam(1, $NumeroAmbiente, PDO::PARAM_INT );
+            $stmt->bindParam(1, $NumeroAmbiente, PDO::PARAM_STR );
             $stmt->bindParam(2, $Ubicacion, PDO::PARAM_INT );
             $stmt->bindParam(3, $idAmbientes, PDO::PARAM_INT );
 
@@ -254,6 +254,20 @@ class ambientesModel extends Model{
             $stmt= null;
 
 
+        }
+
+        function consultarIdNuevoAmbiente($NumeroAmbiente,$ubicacion){
+            $conexion = $this->db->connect();
+            $consulta="SELECT idAmbientes from ambientes where Numero_Ambiente = ?  and Ubicacion_idUbicacion = ? " ;
+            $stmt = $conexion->prepare($consulta);
+            $stmt->bindParam(1,$NumeroAmbiente,PDO::PARAM_STR);
+            $stmt->bindParam(2,$ubicacion,PDO::PARAM_INT);
+            $stmt->execute();
+            $resul = $stmt->fetch();
+            return $resul;
+            $conexion = null;
+            $stmt= null;
+            $resul= null;
         }
 
 

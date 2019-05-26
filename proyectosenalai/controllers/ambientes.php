@@ -90,7 +90,9 @@ class ambientes extends Controller{
         
 
         
+
         
+        $this->e =$this->model->validardocumentoexiste($Cuentadante);
         $this->p =$this->model->ambienteExiste($NumeroAmbiente,$ubicacion);
         
         
@@ -113,9 +115,9 @@ class ambientes extends Controller{
         
         
           // solo caracteres numericos  
-            else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
+            else if(!preg_match("/^[0-9a-zA-Z]+$/",$NumeroAmbiente)){  
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo Número Ambiente debe contener solo números.
+            <strong>ERROR!</strong>  El campo Número Ambiente debe contener solo (números,letras,o ambas) pero no deben haber espacios.
             </div>';
           } 
         
@@ -126,6 +128,29 @@ class ambientes extends Controller{
             <strong>ERROR!</strong> El Ambiente ya existe en esta ubicación.
              </div>' ;
         }
+
+    
+         else if(empty($Cuentadante) ) {
+            
+          echo '<div class="alert alert-danger">
+          <strong>ERROR!</strong> El documento del cuentadante  no puede ir vacío.
+           </div>' ;
+      } 
+      
+      
+        // solo caracteres numericos  
+          else if(!preg_match("/^[0-9]+$/",$Cuentadante)){  
+          echo '<div class="alert alert-danger">
+          <strong>ERROR!</strong> El documento del cuentadante debe contener solo números.
+          </div>';
+        } 
+                 
+      
+      else if ($this->e == 0) {
+          echo '<div class="alert alert-danger">
+          <strong>ERROR!</strong>  El Cuentadante no existe.
+           </div>' ;
+      }
         
         
         
@@ -133,6 +158,19 @@ class ambientes extends Controller{
             
            
             $this->model->registrarAmbiente($NumeroAmbiente,$ubicacion);
+            
+            $idambientee = $this->model->consultarIdNuevoAmbiente($NumeroAmbiente,$ubicacion);
+            
+            $idambientes = $idambientee['idAmbientes'];
+
+            $cuentadante = $this->model->consultarIdPersona($Cuentadante);
+
+            $idcuentadante =  $cuentadante['idPersona'];
+
+            $this->model->registrarCuentadante($idcuentadante,$idambientes);
+
+
+
             echo 1;
         }
         

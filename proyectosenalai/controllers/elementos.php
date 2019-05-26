@@ -267,7 +267,8 @@ class elementos extends Controller{
     
     $salida = "<table id='table_id2' class='display'>
               <thead>
-            <tr>
+            <tr>      
+                      <th>Estado</th>
                       <th>Número Placa</th>
                       <th>Número Serial</th>
                       <th>Ambiente</th>
@@ -279,6 +280,12 @@ class elementos extends Controller{
         <tbody>";
         foreach($this->view->queryu as  $fila) { 
           $salida .=  "<tr>";
+                 
+          if ($fila['Estado_E'] == 1 ) {
+            $salida .= "<td>".'Activo'."</td>";
+          }else {
+            $salida .= "<td>".'Inactivo'."</td>";
+          }
           
                  $salida .= "<td>" . $fila['Placa_Equipo']."</td>  
                    <td>".$fila['Numero_Serial']. "</td>       
