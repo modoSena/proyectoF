@@ -409,7 +409,7 @@ class administrarUsuarios extends Controller {
                                  
                            $message .= "<tbody>
                                           <tr align='center' height='50' style='font-family:Verdana, Geneva, sans-serif;'>
-                                    <td style='background-color:fff; text-align:center;'><h1 style='color:black'; >hola aprendiz, ".$nombres."</td>
+                                    <td style='background-color:fff; text-align:center;'><h1 style='color:black'; >Hola Señor(a):, ".$nombres."</td>
                         
                                     </tr>
                                  
@@ -417,9 +417,9 @@ class administrarUsuarios extends Controller {
                                     <td colspan='4' style='padding:15px;'>
                                     <p style='font-size:20px;'>CUENTA CREADA SATISFACTORIAMENTE</p>
                                     <hr />
-                                    <p style='font-size:25px;'>Tus datos son:</p>
+                                    <p style='font-size:25px;'>Tus Datos Son:</p>
                                     <p style='font-size:25px;'>Usuario: ".$usuario."</p>
-                                    <p style='font-size:25px;'>contraseña: Es el número de tu documento</p>
+                                    <p style='font-size:25px;'>Contraseña: Es el número de tu documento</p>
                                     <p style='font-size:25px;'>ALERTA: POR FAVOR ACTUALIZA TU CONTRASEÑA LO MAS PRONTO POSIBLE</p>
                                     
                                  
