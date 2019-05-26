@@ -56,7 +56,7 @@
               <p for="">Se ha registrado el tipo elemento</p>
         </div>
         <div class="modal-footer">
-                <a href="<?php echo constant('URL')?>tipoElemento/registrartipoElementos" class="btn btn-primary">Aceptar</a>
+                <a href="<?php echo constant('URL')?>tipoElemento" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
       </div>

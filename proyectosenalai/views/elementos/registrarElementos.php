@@ -109,7 +109,7 @@
               <p for="">Se ha registrado el elemento</p>
         </div>
         <div class="modal-footer">
-                <a href="<?php echo constant('URL')?>elementos/registrarElementos" class="btn btn-primary">Aceptar</a>
+                <a href="<?php echo constant('URL')?>elementos" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
       </div>

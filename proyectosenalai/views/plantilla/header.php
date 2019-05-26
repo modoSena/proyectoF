@@ -11,14 +11,9 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
             <?php if($_SESSION['Roles_idRoles'] == 1) { ?>               
-                <li> <a  href="" >Prestar locker</a></li>
-                <li> <a  href="" >Prestar equipos</a></li>
             <?php } ?>
             <?php if($_SESSION['Roles_idRoles'] == 2) { ?>   
                 <li><a  href="<?php echo constant('URL');?>ambientes"><span  class="glyphicon glyphicon-home"></span> Ambientes</a></li>
-                <li> <a  href="" >Prestar locker</a></li>
-                <li> <a  href="" >Prestar equipos</a></li>
-                <li> <a  href="" >Prestar auditorios</a></li>
             <?php } ?>
                         <?php if($_SESSION['Roles_idRoles'] == 3) { ?>
                             <li><a  href="<?php echo constant('URL');?>ambientes"><span  class="glyphicon glyphicon-home"></span> Ambientes</a></li>

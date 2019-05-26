@@ -55,7 +55,7 @@
               <p for="">Se ha registrado el programa</p>
         </div>
         <div class="modal-footer">
-                <a href="<?php echo constant('URL')?>programa/registrarProgramas" class="btn btn-primary">Aceptar</a>
+                <a href="<?php echo constant('URL')?>programa" class="btn btn-primary">Aceptar</a>
                 </div>
         </form>
       </div>
