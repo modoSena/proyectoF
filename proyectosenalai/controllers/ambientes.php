@@ -114,7 +114,7 @@ class ambientes extends Controller{
         } 
         
         
-          // solo caracteres numericos  
+          
             else if(!preg_match("/^[0-9a-zA-Z]+$/",$NumeroAmbiente)){  
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong>  El campo Número Ambiente debe contener solo (números,letras,o ambas) pero no deben haber espacios.
@@ -227,12 +227,12 @@ class ambientes extends Controller{
             <strong>ERROR!</strong>  El  Número Ambiente  no puede ir vacío.
              </div>' ;
         } 
-          // solo caracteres numericos  
-            else if(!preg_match("/^[0-9]+$/",$NumeroAmbiente)){  
-            echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El campo Número Ambiente debe contener solo números.
-            </div>';
-          } 
+        else if(!preg_match("/^[0-9a-zA-Z]+$/",$NumeroAmbiente)){  
+          echo '<div class="alert alert-danger">
+          <strong>ERROR!</strong>  El campo Número Ambiente debe contener solo (números,letras,o ambas) pero no deben haber espacios.
+          </div>';
+        } 
+      
            else if ( $this->comparador['Ubicacion_idUbicacion'] != $ubicacion && $this->p > 0 ) {
             echo '<div class="alert alert-danger">
             <strong>ERROR!</strong> El Ambiente ya existe en esta ubicación.

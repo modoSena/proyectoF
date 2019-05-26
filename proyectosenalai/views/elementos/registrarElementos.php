@@ -58,13 +58,13 @@
                 </div>
             </div>
 
-            <center><p>Nota: Si no selecciona una ubicación, por defecto su ubicación inicial sera el ambiente 1 de torre sur</p></center>
+            <center><p>Nota: Si no selecciona una ubicación, por defecto su ubicación inicial sera el ambiente bodega de torre norte</p></center>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
                         <label>Ubicación</label>
                         <select class='form-control' id='ubicacion' name='ubicacion'>
-                            <option value="2">selecciona:</option>
+                            <option value="1">selecciona:</option>
                             <?php foreach ( $this->consultarUbicacion as $resultado) { ?>
                             <option value="<?php echo $resultado['idUbicacion']; ?>">
                                 <?php echo $resultado['NombreUbicacion']; ?> </option>
