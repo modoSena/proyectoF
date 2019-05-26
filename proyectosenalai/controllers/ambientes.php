@@ -87,7 +87,7 @@ class ambientes extends Controller{
         
         $NumeroAmbiente = $_POST['NumeroAmbiente'];
         $ubicacion = $_POST['ubicacion'];
-        
+        $Cuentadante = $_POST['Cuentadante'];
 
         
 
