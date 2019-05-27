@@ -92,7 +92,7 @@
     <div class="modal-content">
        
     <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLongTitle">Mover Elementos</h2>
+        <h2 class="modal-title" id="exampleModalLongTitle" style="text-align: center; font-family: fantasy;">Mover Elementos</h2>
         
       </div>
       <div class="modal-body">
@@ -181,7 +181,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="myModalLabel">Novedades reportadas</h2>
+        <h2 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Novedades reportadas</h2>
       </div>
       <div class="modal-body">
 
@@ -205,7 +205,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="myModalLabel">Historial del Elemento</h2>
+        <h2 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Historial del Elemento</h2>
       </div>
       <div class="modal-body">
 

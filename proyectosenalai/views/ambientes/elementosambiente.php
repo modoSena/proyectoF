@@ -60,8 +60,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Reportar Novedad</h4>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Reportar Novedad</h4>
       </div>
       <div class="modal-body">
       <form id="reportarNovedad">
@@ -100,7 +99,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="myModalLabel">Novedades reportadas</h2>
+        <h2 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Novedades reportadas</h2>
       </div>
       <div class="modal-body">
 

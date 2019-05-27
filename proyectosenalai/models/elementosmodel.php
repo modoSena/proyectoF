@@ -32,7 +32,7 @@ class elementosModel extends Model
 
     function consultarTipoEquipos(){
         $conexion = $this->db->connect();
-        $consulta="SELECT * FROM  tipo_elementos ";
+        $consulta="SELECT * FROM  tipo_elementos ORDER BY NombreTipoElemento ASC";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
@@ -42,7 +42,7 @@ class elementosModel extends Model
 
     function consultarMarca(){
         $conexion = $this->db->connect();
-        $consulta="SELECT * FROM  Marcas  ";
+        $consulta="SELECT * FROM  Marcas  ORDER BY Marca ASC";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
@@ -77,7 +77,6 @@ class elementosModel extends Model
     }
 
      function  registrarElemento($Placa_Equipo,$Numero_Serial,$idTipo_Elementos,$marca,$Descripcion){
-
         $estadoElementos =1;
         $conexion = $this->db->connect();
         $consulta  ="INSERT into elementos(Numero_Serial,Placa_Equipo,Tipo_Equipo_idTipo_Equipo,Estado_Elementos_idEstado_Elementos,Marcas_idMarcas,Descripcion) values (?,?,?,?,?,?)";
@@ -142,15 +141,13 @@ class elementosModel extends Model
 
     
     function consultarUbicacion(){
-
         $conexion = $this->db->connect();
         $consulta="SELECT * FROM  ubicacion  ";
         $stmt = $conexion->prepare($consulta);
         $stmt->execute();
         return $stmt;
         $conexion = null;
-        $stmt= null;
-        
+        $stmt= null;  
     }
 
     function consultarNovedades($idElemento){
@@ -163,12 +160,9 @@ class elementosModel extends Model
         return $stmt;
         $conexion = null;
         $stmt= null;
-
-
     }
 
     function consultarAmbientePorUbicacion($idUbicacion){
-
         $conexion = $this->db->connect();
         $consulta=" SELECT idAmbientes,Numero_Ambiente FROM ambientes where Ubicacion_idUbicacion = ? ";
         $stmt = $conexion->prepare($consulta);
@@ -177,10 +171,8 @@ class elementosModel extends Model
         return $stmt;
         $conexion = null;
         $stmt= null;
-        
     }
     function consultaridELementoPorPlacaequipo($placa){
-
         $conexion = $this->db->connect();
         $consulta="SELECT idElementos FROM elementos where Placa_Equipo = ?  ";
         $stmt = $conexion->prepare($consulta);
@@ -191,7 +183,6 @@ class elementosModel extends Model
         $conexion = null;
         $stmt= null;
         $resul= null;
-        
     }
 
     function  ibicacionInicial($idElemento,$ambiente){
@@ -225,7 +216,6 @@ class elementosModel extends Model
 
 
     function consultaridELementoPoridDetalleambiente($idDetalleambiente){
-
         $conexion = $this->db->connect();
         $consulta="SELECT Elementos_idElementos FROM DetalleAmbiente where idDetalleAmbiente = ?  ";
         $stmt = $conexion->prepare($consulta);
@@ -236,12 +226,10 @@ class elementosModel extends Model
         $conexion = null;
         $stmt= null;
         $resul= null;
-        
     }
 
 
     function consultarHistorialElemento($idElemento){
-
         $conexion = $this->db->connect();
         $consulta="SELECT idDetalleAmbiente,Estado_E,Fecha_Novedad,Novedad_Fecha_Salida,Numero_Ambiente,NombreUbicacion,Numero_Serial,Placa_Equipo,Marca,NombreEstado,NombreTipoElemento FROM  detalleambiente JOIN ambientes on detalleambiente.Ambientes_idAmbientes = Ambientes.idAmbientes  JOIN ubicacion ON ambientes.Ubicacion_idUbicacion=ubicacion.idUbicacion  JOIN elementos on detalleambiente.Elementos_idElementos = elementos.idElementos JOIN tipo_elementos ON elementos.Tipo_Equipo_idTipo_Equipo=tipo_elementos.idTipo_Elementos JOIN estado_elementos ON elementos.Estado_Elementos_idEstado_Elementos=estado_elementos.idEstado_Elementos  JOIN Marcas ON elementos.Marcas_idMarcas =Marcas.idMarcas  where idElementos = ?  ";
         $stmt = $conexion->prepare($consulta);
@@ -250,12 +238,6 @@ class elementosModel extends Model
         return $stmt;
         $conexion = null;
         $stmt= null;
-
-        
-    }
-
-
-
-    
+    }  
 }
 ?>

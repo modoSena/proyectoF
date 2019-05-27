@@ -76,8 +76,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Nuevo Cuentadante</h4>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Nuevo Cuentadante</h4>
       </div>
       <div class="modal-body">
       <form id="registrarCuentadante">
@@ -113,7 +112,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="myModalLabel">Cuentadante</h2>
+        <h2 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Cuentadante</h2>
       </div>
       <div class="modal-body">
     <div id="table_idy">

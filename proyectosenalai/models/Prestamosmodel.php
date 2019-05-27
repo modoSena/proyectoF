@@ -43,7 +43,7 @@ class Prestamosmodel extends Model
         WHERE elementos.idElementos NOT IN (SELECT ep.Elementos_idElementos
                                             FROM ep
                                             INNER JOIN prestamos ON ep.Prestamo_idPrestamo = prestamos.idPrestamos
-                                            WHERE prestamos.jornada_idJornada = :Jornada AND prestamos.Fecha_inicial = :Fecha AND prestamos.Estado_Prestamo = 'E') AND elementos.Estado_Elementos_idEstado_Elementos = 1 AND elementos.Tipo_Equipo_idTipo_Equipo = :tipo AND detalleambiente.Ambientes_idAmbientes in (1,2)";
+                                            WHERE prestamos.jornada_idJornada = :Jornada AND prestamos.Fecha_inicial = :Fecha AND prestamos.Estado_Prestamo = 'E') AND elementos.Estado_Elementos_idEstado_Elementos = 1 AND elementos.Tipo_Equipo_idTipo_Equipo = :tipo AND detalleambiente.Ambientes_idAmbientes in (1,2,3,4,5,6,7,8,9,10,11)";
         $stmt = $Connection->prepare($SqlCommand);
         $stmt->bindValue(":tipo",$tipoElemento, PDO::PARAM_INT);
         $stmt->bindValue(":Jornada",$Jornada, PDO::PARAM_INT);
@@ -109,7 +109,7 @@ class Prestamosmodel extends Model
     function getPersonas()
     {
         $Connection = $this->db->connect();
-        $SqlCommand = "SELECT * FROM persona";
+        $SqlCommand = "SELECT * FROM persona ORDER BY Nombre ASC";
         $stmt = $Connection->prepare($SqlCommand);
         if ($stmt->execute()) {
             $this->Object = array();
@@ -138,7 +138,8 @@ class Prestamosmodel extends Model
         $SqlCommand = "SELECT idTipo_Elementos, NombreTipoElemento
                         FROM tipo_elementos
                         WHERE idTipo_Elementos IN (SELECT Tipo_Equipo_idTipo_Equipo
-                                                    FROM elementos)";
+                                                    FROM elementos)
+                                                    ORDER BY NombreTipoElemento ASC";
         $stmt = $Connection->prepare($SqlCommand);
         if ($stmt->execute()) {
             $this->Object = array();
