@@ -41,6 +41,8 @@
               <td>Número Serial</td>
               <td>Tipo Elemento</td>
               <td>Descripción Elemento</td>
+              <td>Ubicación</td>
+              <td>Número Ambiente</td>
             </tr>
           </thead>
           <tbody id="listaElementosPrestamo">
@@ -100,7 +102,7 @@
                   success: function(R) {
                     $('#listaElementosPrestamo').html('');
                     $.each(R.Objeto, function (i, item) {
-                        $('#listaElementosPrestamo').append("<tr><td>"+item.Placa+"</td><td>"+item.Serial+"</td><td>"+item.TipoE+"</td><td>"+item.Descripcion+"</td></tr>");
+                        $('#listaElementosPrestamo').append("<tr><td>"+item.Placa+"</td><td>"+item.Serial+"</td><td>"+item.TipoE+"</td><td>"+item.Descripcion+"</td><td>"+item.Ubicacion+"</td><td>"+item.NumeroA+"</td></tr>");
                     });
                   }, error: function(jqXHR, textStatus, errorThrown) {
 
