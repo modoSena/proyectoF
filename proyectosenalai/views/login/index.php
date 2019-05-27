@@ -37,7 +37,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class='glyphicon glyphicon-user'
                                         style='font-size:23px'></i></span>
-                                <input type="text" class="form-control" placeholder="Email O usuario" id="usuario"
+                                <input type="text" class="form-control" placeholder="Email o Usuario" id="usuario"
                                     name="usuario">
                             </div>
                         </div>
@@ -49,10 +49,10 @@
                                     name="contrasena">
                             </div>
                         </div>
-                        <input id="submit" type="button" value="Iniciar sesion" class="btn btn-basic btn-block btn-lg">
+                        <input id="submit" type="button" value="Iniciar sesión" class="btn btn-basic btn-block btn-lg">
                         <br>
                         <label for=""><a class="recuperacontrasena"
-                                href="<?php echo constant('URL')?>recuperarcontrasena">Recuperar Contraseña?</a></label>
+                                href="<?php echo constant('URL')?>recuperarcontrasena">¿Recuperar Contraseña?</a></label>
                     </form>
                 </div>
                 <div class="card-footer">
