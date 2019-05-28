@@ -67,7 +67,7 @@ class login extends Controller{
 
             if ($this->view->datos['Estado_idEstado'] != 1) {
                 echo  '<div class="alert alert-danger">
-            <strong>ERROR!</strong> Usuario "inhabilitado" Contacte Administrador.
+            <strong>ERROR!</strong> Usuario "Inhabilitado" Contacte Administrador.
             </div>';
             }else {
                echo 1;
@@ -77,7 +77,7 @@ class login extends Controller{
         }
          else{
             echo  '<div class="alert alert-danger">
-            <strong>ERROR!</strong> Datos incorretos "intentalo de nuevo"  
+            <strong>ERROR!</strong> Datos incorretos "Inténtelo de nuevo"  
             </div>';
         }
 
