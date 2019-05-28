@@ -17,6 +17,8 @@
     <div class="container-entrada">
         <div class="mision">
             <img class="logo" src="<?php echo constant('URL');?>public/img/lsena.png" alt="">
+            <br>
+            <br>
             <h1>Misión</h1>
             <p>
                 El SENA está  encargado de cumplir la función que le corresponde al Estado de invertir en el desarrollo social y
