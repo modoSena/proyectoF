@@ -16,7 +16,7 @@
     <?php require('views/plantilla/header.php')  ?>
     <div class="container">
         <form class="form" id="formularioActualizarDatosUsuario">
-            <h2 style="text-align: center; font-family: fantasy;">Actúalizar Datos </h2>
+            <h2 style="text-align: center; font-family: fantasy;">Actualizar Datos </h2>
             <hr style=" height: 1px;
   background-color: black;s" />
             <input type="hidden" value="<?php echo $this->valores['idPersona'] ?>" name="idPersona">
@@ -187,7 +187,7 @@
             <div class="row">
                 <div class="col-xs-6 col-md-6">
                     <input type="hidden" name="envioActualizarUsuario">
-                    <input id="Asubmit" name="Asubmit" type="button" value="Actúalizar"
+                    <input id="Asubmit" name="Asubmit" type="button" value="Actualizar"
                         class="btn btn-primary btn-block btn-lg" tabindex="7">
                 </div>
                 <div class="col-xs-6 col-md-6">
@@ -207,7 +207,7 @@
                     <h2 class="modal-title" id="exampleModalLongTitle">Éxito</h2>
                 </div>
                 <div class="modal-body">
-                    <p for="">Usuario actúalizado correctamente.</p>
+                    <p for="">Usuario actualizado correctamente.</p>
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo constant('URL')?>administrarUsuarios/actualizarUsuarios/<?php echo $this->valores['idPersona'] ?>"

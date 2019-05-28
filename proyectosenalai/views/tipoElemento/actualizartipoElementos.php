@@ -18,7 +18,7 @@
 
 <form class="form" id="ActualizartipoElemento" >
   
-<h2 style="text-align: center; font-family: fantasy;">Actúalizar Tipo Elemento</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actualizar Tipo Elemento</h2>
 
 <hr style=" height: 1px;background-color: black;">
 
@@ -33,7 +33,7 @@
 <div class="row">
 				<div  class="col-xs-6 col-md-6">
 				 <input type="hidden" name="envioActualizotipoElemento">
-				   <input id="submittipoElemento" name="submittipoElemento" type="button" value="Actúalizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
+				   <input id="submittipoElemento" name="submittipoElemento" type="button" value="Actualizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
 				</div>
 
 				<div  class="col-xs-6 col-md-6">
@@ -53,10 +53,10 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Tipo elemento actúalizado con éxito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Tipo elemento actualizado con éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha actúalizado el tipo elemento</p> 
+              <p for="">Se ha actualizado el tipo elemento</p> 
         </div>
         <div class="modal-footer">
 				

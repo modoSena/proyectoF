@@ -73,7 +73,7 @@ class actualizarContrasena extends Controller{
            //NO tiene minimo de 5 caracteres o mas de 12 caracteres  
            else if(strlen($nuevaContrasena) < 8 || strlen($nuevaContrasena) > 30){  
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  La Contrasena  no puede tener menos de 8 caracteres o mas de 30 caracteres
+            <strong>ERROR!</strong>  La Contrasena  no puede tener menos de 8 caracteres ni mas de 30 caracteres
             </div>' ;
            } 
            // SI longitud, NO VALIDO numeros y letras  

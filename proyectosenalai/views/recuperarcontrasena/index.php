@@ -35,7 +35,7 @@
                             <h2 class="text-center text-light">Recuperar contraseña</h2>
                         </div>
                         <div class="card-body">
-                        <h5 style="color:#fff;">Ingresa el Email que tienes asociado a tu cuenta  Sena L.A.I</h5>
+                        <h5 style="color:#fff;">Ingresa el Email que tienes asociado a Sena L.A.I</h5>
                             <form class="needs-validation" id="emailformularioRecuperarContrasena">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
@@ -45,7 +45,7 @@
                                 </div>
                                     <input id="submitRecuperarContrasena" type="button" value="Enviar" class="btn btn-basic btn-block btn-lg" >
                                     <br>
-                                  <label for=""><a class="recuperacontrasena" href="<?php echo constant('URL')?>login">Regresar al inicio de sesion?</a></label>
+                                  <label for=""><a class="recuperacontrasena" href="<?php echo constant('URL')?>login">¿Regresar al inicio de sesión?</a></label>
                             </form>
                         </div>
                         <div class="card-footer">

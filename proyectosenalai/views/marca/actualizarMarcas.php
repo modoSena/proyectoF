@@ -19,7 +19,7 @@
 
 <form class="form" id="ActualizarMarca" >
   
-<h2 style="text-align: center; font-family: fantasy;">Actúalizar Marca</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actualizar Marca</h2>
 
 <hr style=" height: 1px;background-color: black;">
 
@@ -34,7 +34,7 @@
 <div class="row">
 				<div  class="col-xs-6 col-md-6">
 				 <input type="hidden" name="envioActualizoMarca">
-				   <input id="submitMarca" name="submitMarca" type="button" value="Actúalizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
+				   <input id="submitMarca" name="submitMarca" type="button" value="Actualizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
 				</div>
 
 				<div  class="col-xs-6 col-md-6">
@@ -54,10 +54,10 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Marca actúalizado con éxito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Marca actualizado con éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha actpualizado la marca</p> 
+              <p for="">Se ha actualizado la marca</p> 
         </div>
         <div class="modal-footer">
                 <a href="<?php echo constant('URL')?>marca/actualizarMarcas/<?php echo $this->idMarcas ?>" class="btn btn-primary">Aceptar</a>
