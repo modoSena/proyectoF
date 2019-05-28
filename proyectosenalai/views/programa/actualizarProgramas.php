@@ -17,7 +17,7 @@
 <br>
 <div class="container">
 <form class="form" id="ActualizarPrograma" >
-<h2 style="text-align: center; font-family: fantasy;">Actúalizar Programa</h2>
+<h2 style="text-align: center; font-family: fantasy;">Actualizar Programa</h2>
 <hr style=" height: 1px;background-color: black;">
 <div class="form-group">
 			 <label for="">Nombre Programa</label>
@@ -27,7 +27,7 @@
 <div class="row">
 				<div  class="col-xs-6 col-md-6">
 				 <input type="hidden" name="envioActualizoPrograma">
-				   <input id="submitPrograma" name="submitPrograma" type="button" value="Actúalizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
+				   <input id="submitPrograma" name="submitPrograma" type="button" value="Actualizar" class="btn btn-primary btn-block btn-lg" tabindex="7" >
 				</div>
 
 				<div  class="col-xs-6 col-md-6">
@@ -46,10 +46,10 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Programa actúalizado con éxito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Programa actualizado con éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha actúalizado el programa</p> 
+              <p for="">Se ha actualizado el programa</p> 
         </div>
         <div class="modal-footer">	
                 <a href="<?php echo constant('URL')?>programa/actualizarProgramas/<?php echo $this->idPrograma ?>" class="btn btn-primary">Aceptar</a>

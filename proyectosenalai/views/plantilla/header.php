@@ -39,7 +39,7 @@
              </ul>
              </li>
               <?php } ?>
-              <li><a  href="<?php echo constant('URL');?>Prestamos"> <i class="glyphicon glyphicon-calendar"></i> Prestamos  </a></li>
+              <li><a  href="<?php echo constant('URL');?>Prestamos"> <i class="glyphicon glyphicon-calendar"></i> Préstamos  </a></li>
              </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
