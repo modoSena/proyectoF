@@ -50,10 +50,10 @@
                 <?php foreach($this->query as  $fila) { ?>
               <tr>
               <?php if ($fila['Estado_idEstado'] == 1) { ?>
-              <td>   <a onclick="return confirm('¿Estas seguro?');" href='administrarUsuarios/inhabilitarUsuario/<?php echo $fila['idPersona']?>'><button type='button' class='btn btn-success'>Activado</button></a> </td>
+              <td>   <a onclick="return confirm('¿Estas seguro?');" href='administrarUsuarios/inhabilitarUsuario/<?php echo $fila['idPersona']?>'><button type='button' class='btn btn-success'>Activo</button></a> </td>
               <?php } else  { ?>
               
-              <td> <a  onclick="return confirm('¿Estas seguro?');" href='administrarUsuarios/habilitarUsuario/<?php echo $fila['idPersona']?>'><button type='button' class='btn btn-danger'>Desativado</button></a> </td>
+              <td> <a  onclick="return confirm('¿Estas seguro?');" href='administrarUsuarios/habilitarUsuario/<?php echo $fila['idPersona']?>'><button type='button' class='btn btn-danger'>Inactivo</button></a> </td>
               <?php } ?>
 
               <td> <a href='administrarUsuarios/actualizarUsuarios/<?php echo $fila['idPersona']?>'><button type='button' class='btn btn-warning'><span class='glyphicon glyphicon-edit'></span></button></a> </td>   
