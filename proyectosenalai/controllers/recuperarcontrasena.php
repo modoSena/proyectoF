@@ -232,7 +232,7 @@ class recuperarcontrasena extends Controller{
                //NO tiene minimo de 8 caracteres o mas de 30 caracteres  
                else if(strlen($Rcontrasena1) < 8 || strlen($Rcontrasena1) > 30){  
                 echo '<div class="alert alert-danger">
-                <strong>ERROR!</strong>  La Nueva Contraseña  no puede tener menos de 8 caracteres o mas de 30 caracteres.
+                <strong>ERROR!</strong>  La Nueva Contraseña  no puede tener menos de 8 caracteres ni mas de 30 caracteres.
                 </div>' ;
                } 
         
