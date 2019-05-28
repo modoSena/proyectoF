@@ -12,10 +12,12 @@ class loginModel extends Model
       function validarUsuario($usuario,$contrasena){
         $conexion = $this->db->connect();
         $consulta="SELECT Usuario,Contrasena,idPersona,Nombre,Apellido_Primero,Email,Telefono,Roles_idRoles,Estado_idEstado from Persona
-        where Usuario = :Usuario and Contrasena =  :Contrasena  ";
+        where Usuario = :Usuario and Contrasena =  :Contrasena  or Email = :Email and Contrasena=  :Contrasenaa ";
         $stmt=$conexion->prepare($consulta);
         $stmt->bindParam(':Usuario',$usuario,PDO::PARAM_STR);
         $stmt->bindParam(':Contrasena',$contrasena,PDO::PARAM_STR);
+        $stmt->bindParam(':Email',$usuario,PDO::PARAM_STR);
+        $stmt->bindParam(':Contrasenaa',$contrasena,PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetch();
         return $result;
