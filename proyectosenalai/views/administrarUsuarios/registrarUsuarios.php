@@ -21,7 +21,7 @@
             <h2 style="text-align: center; font-family: fantasy;">Registro de usuario</h2>
             <hr style=" height: 1px; background-color: black;s" />
             <div class="form-group">
-                <label for="">Nombres</label>
+                <label for="">Nombres <span class="glyphicon glyphicon-asterisk"></span></label>
                 <input type="text" name="nombres" id="nombres" class="form-control " placeholder="" tabindex="3">
             </div>
 
@@ -29,7 +29,7 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
 
                     <div class="form-group">
-                        <label for="">Primer Apellido</label>
+                        <label for="">Primer Apellido <span class="glyphicon glyphicon-asterisk"></span></label>
                         <input type="text" name="apellido_primero" id="apellido_primero" class="form-control "
                             placeholder="" tabindex="1">
                     </div>
@@ -50,7 +50,7 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
 
                     <div class="form-group">
-                        <label for="">Usuario</label>
+                        <label for="">Usuario <span class="glyphicon glyphicon-asterisk"></span></label>
                         <input type="text" name="usuario" id="usuario" class="form-control " placeholder=""
                             tabindex="3">
                     </div>
@@ -61,7 +61,7 @@
 
                     <div class="form-group">
 
-                        <label>Rol</label>
+                        <label>Rol <span class="glyphicon glyphicon-asterisk"></span></label>
                         <select class='form-control' id='rol' name='rol'>
                             <option value="">selecciona:</option>
                             <?php foreach ($this->consultarrol as $resultado) { ?>
@@ -74,7 +74,7 @@
 <?php }else{?>  
     <div class="col-xs-6 col-sm-6 col-md-6">
 <div class="form-group">
-    <label>Rol</label>
+    <label>Rol <span class="glyphicon glyphicon-asterisk"></span></label>
     <select class='form-control' id='rol' name='rol'>
         <option value="">selecciona:</option>
         <option value="1">Usuario</option>
@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label>Tipo Documento</label>
+                        <label>Tipo Documento <span class="glyphicon glyphicon-asterisk"></span></label>
                         <select class='form-control' id='tipodocumento' name='tipodocumento'>
                             <option value="">selecciona:</option>
                             <?php foreach($this->consultartipodocumento as $resultado ) { ?>
@@ -99,14 +99,14 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Núm. Documento</label>
+                        <label for="">Núm. Documento <span class="glyphicon glyphicon-asterisk"></span></label>
                         <input type="text" name="documento" id="documento" class="form-control " placeholder=""
                             tabindex="3">
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label>Sexo</label>
+                <label>Sexo <span class="glyphicon glyphicon-asterisk"></span></label>
                 <select class='form-control' id='sexo' name='sexo'>
                     <option value="">selecciona:</option>
                     <?php foreach($this->consultarsexo as $resultado) { ?>
@@ -118,7 +118,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label>Departamento</label>
+                        <label>Departamento <span class="glyphicon glyphicon-asterisk"></span></label>
                         <select class='form-control' id='departamento' name='departamento'>
                             <option value="">selecciona:</option>
                             <?php foreach ( $this->consultardepartamento as $resultado) { ?>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group" id="ciudades">
-                        <label>Municipio</label>
+                        <label>Municipio <span class="glyphicon glyphicon-asterisk"></span></label>
                         <select class='form-control' id='ciudad' name='ciudad'>
                             <option value="">Primero selecciona un departamento</option>
                         </select>
@@ -142,14 +142,14 @@
                 <input type="text" name="direccion" id="direccion" class="form-control " placeholder=" " tabindex="3">
             </div>
             <div class="form-group">
-                <label for="">Email</label>
+                <label for="">Email <span class="glyphicon glyphicon-asterisk"></span></label>
                 <input type="email" name="email" id="email" class="form-control " placeholder=" " tabindex="3">
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
 
                     <div class="form-group">
-                        <label for="">Celular </label>
+                        <label for="">Celular <span class="glyphicon glyphicon-asterisk"></span></label>
                         <input type="text" name="numero_celular" id="numero_celular" class="form-control "
                             placeholder=" " tabindex="3">
                     </div>
@@ -164,10 +164,10 @@
 
                 </div>
             </div>
-            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos</p>
+            <p style="text-align: center;">Nota: Los campos son  marcados por un <span class="glyphicon glyphicon-asterisk"></span> son requeridos</p>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label>Programa</label>
+                    <label>Programa <span class="glyphicon glyphicon-asterisk"></span></label>
                     <select class='form-control' id='idprograma' name='idprograma'>
                         <option value="">selecciona:</option>
                         <?php foreach ($this->consultarprograma as $resultado) { ?>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Número Ficha</label>
+                        <label for="">Número Ficha <span class="glyphicon glyphicon-asterisk"></span></label>
                         <input type="text" name="numero_ficha" id="numero_ficha" class="form-control " placeholder=" "
                             tabindex="3">
                     </div>

@@ -46,7 +46,7 @@
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class='	glyphicon glyphicon-lock' style='font-size:22px'></i></span>
-                                        <input type="password" class="form-control" placeholder="repite tu contraseña" id="Rcontrasena2"  name="Rcontrasena2" >
+                                        <input type="password" class="form-control" placeholder="Confirme contraseña" id="Rcontrasena2"  name="Rcontrasena2" >
                                         <input name="codigo" id="codigo"type="hidden" value="<?php echo $this->codigo ?>">
                                     </div>   
                                 </div>
@@ -69,7 +69,7 @@
           <h2 class="modal-title" id="exampleModalLongTitle">Contraseña recuperada correctamente</h2>
         </div>
         <div class="modal-body">
-              <p for="">Presiona aceptar para redirigirte al inicio de sesión.</p>
+              <p for="">Presiona aceptar para ingresar de nuevo a su sesión.</p>
         </div>
         <div class="modal-footer">
         <a href="<?php echo constant('URL')?>login" class="btn btn-primary">Aceptar</a>

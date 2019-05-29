@@ -99,7 +99,7 @@ class recuperarcontrasena extends Controller{
                             <p style='font-size:20px;'>Recuperar contraseña</p>
                             <hr />
                             <p style='font-size:25px;'>Ingrese al siguiente link para que puedas recuperar su contraseña</p>
-                            <p style='font-size:25px;'>http://localhost/proyectosenalai/recuperarcontrasena/nuevacontrasena/".$codigo."</p>
+                            <p style='font-size:25px;'>http://localhost/proyectoF/proyectosenalai/recuperarcontrasena/nuevacontrasena/".$codigo."</p>
 
                             
                             
