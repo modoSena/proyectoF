@@ -34,14 +34,14 @@
                <th>Nombres</th>
                <th>Primer Apellido</th>
                <th>Segundo Apellido</th>
+               <th>Sexo</th>
+               <th>Email</th>
+               <th>Municipio</th>
                <th>Dirección</th>
                <th>Celular</th>
                <th>Tel.</th>
-               <th>Email</th>
-               <th>Sexo</th>
                <th>Programa</th>
                <th>Ficha</th>
-               <th>Municipio</th>
                <th>Usuario</th>
                <th>Rol</th>
                 </tr>
@@ -62,14 +62,14 @@
                <td><?php echo $fila['Nombre'] ?></td>
                <td><?php echo $fila['Apellido_Primero'] ?></td>
                <td><?php echo $fila['Apellido_Segundo'] ?></td>
+               <td><?php echo $fila['NombreSexo'] ?></td>  
+               <td><?php echo $fila['Email'] ?></td> 
+               <td><?php echo $fila['NombreCiudad'] ?></td>     
                <td><?php echo $fila['Direccion'] ?></td>
                <td><?php echo $fila['Numero_Celular'] ?></td>
-               <td><?php echo $fila['Telefono'] ?> </td>
-               <td><?php echo $fila['Email'] ?></td>
-               <td><?php echo $fila['NombreSexo'] ?></td>         
+               <td><?php echo $fila['Telefono'] ?> </td> 
                <td><?php echo $fila['NombrePrograma'] ?></td>
                <td><?php echo $fila['Numero_Ficha'] ?></td>
-               <td><?php echo $fila['NombreCiudad'] ?></td>
                <td><?php echo $fila['Usuario'] ?></td>
                <td><?php echo $fila['NombreRoles'] ?></td>
                </tr>
