@@ -18,6 +18,13 @@
                         <?php if($_SESSION['Roles_idRoles'] == 3) { ?>
                             <li><a  href="<?php echo constant('URL');?>ambientes"><span  class="glyphicon glyphicon-home"></span> Ambientes</a></li>
                             <li> <a  href="<?php echo constant('URL');?>administrarUsuarios" ><span  class="glyphicon glyphicon-user"></span> Usuarios </a></li>
+                            <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Mantenimiento<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                 <li><a  href="<?php echo constant('URL');?>tipoDocumento" >Tipo Documentos</a></li>
+                <li><a  href="<?php echo constant('URL');?>programa">Programa</a></li>
+             </ul>
+             </li>
             <?php } ?>
             <?php   if ($_SESSION['Roles_idRoles'] == 4) { ?>
                 <li><a  href="<?php echo constant('URL');?>ambientes"><span  class="glyphicon glyphicon-home"></span> Ambientes</a></li>                
