@@ -164,26 +164,13 @@
 
                 </div>
             </div>
-            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos</p>
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label>Programa</label>
-                    <select class='form-control' id='idprograma' name='idprograma'>
-                        <option value="">selecciona:</option>
-                        <?php foreach ($this->consultarprograma as $resultado) { ?>
-                        <option value="<?php echo $resultado['idPrograma']; ?>">
-                            <?php echo $resultado['NombrePrograma']; ?> </option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <label for="">Número Ficha</label>
-                        <input type="text" name="numero_ficha" id="numero_ficha" class="form-control " placeholder=" "
-                            tabindex="3">
-                    </div>
-                </div>
+            <div id="camposAprendiz" >
+            <input type='hidden' value='1' id='idprograma' name='idprograma'>
+            
+            <input type='hidden'  value='0' id='numero_ficha'  name='numero_ficha'>
+
             </div>
+            
             <hr />
             <div class="row">
                 <div class="col-xs-6 col-md-6">
@@ -272,4 +259,34 @@ $('select#departamento').on('change',function(){
        buscar_datos(valor);
    }
 });
+
+
+
+
+
+function CamposRequeridosAprendiz(consulta){
+    $.ajax({
+		url:'<?php echo constant('URL')?>administrarUsuarios/CamposRequeridosAprendiz' ,
+		type: 'POST' ,
+		dataType: 'html',
+		data: {consulta: consulta},
+	})
+	.done(function(respuesta){
+		$("#camposAprendiz").html(respuesta);
+	})
+	.fail(function(){
+		console.log("error");
+	});
+}
+$('select#rol').on('change',function(){
+    var valor = $(this).val();
+   if (valor != "") {
+    CamposRequeridosAprendiz(valor);
+   }
+});
+
+
+
+
+
 </script>

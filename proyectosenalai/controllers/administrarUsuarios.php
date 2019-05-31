@@ -10,6 +10,9 @@ class administrarUsuarios extends Controller {
         parent::__construct();  
     }
 
+
+
+
     function render(){
         session_start();
         if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
@@ -24,6 +27,12 @@ class administrarUsuarios extends Controller {
         }
         $this->view->render('administrarUsuarios/index');
     }
+
+
+
+
+
+
 
     function inhabilitarUsuario($param = null){
       session_start();
@@ -72,7 +81,6 @@ class administrarUsuarios extends Controller {
       $this->view->consultarsexo = $this->model->consultarsexo();
       $this->view->consultardepartamento = $this->model->consultardepartamento();
       $this->view->consultarrol = $this->model->consultarrol();
-      $this->view->consultarprograma = $this->model->consultarprograma();
       $this->view->consultartipodocumento = $this->model->consultartipodocumento();
       $this->view->render('administrarUsuarios/registrarUsuarios');
     }
@@ -334,12 +342,7 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong>  El campo Celular debe tener 10 números.
                                  </div>';
                                  }
-                                 else if($idprograma==""){
 
-                                 echo '<div class="alert alert-danger">
-                                 <strong>ERROR!</strong>  Seleccione un Programa.
-                                 </div>';
-                                 }
                   //---- VALIDACIONES DEL TELEFONO----- /// 
                            // solo caracteres numericos  
                               else if(!preg_match("/^[0-9]+$/",$telefono) && $telefono !=""){  
@@ -354,14 +357,40 @@ class administrarUsuarios extends Controller {
                            <strong>ERROR!</strong>  El campo Tel  FIjo debe tener los 7 dígitos o puede ir vacío.
                            </div>';
                         }
+
+
+
+                        else if( $rol== 1  && $idprograma == ""){  
+                           echo '<div class="alert alert-danger">
+                           <strong>ERROR!</strong> Debe Seleccionar un programa.
+                           </div>';
+                        }
+
+                        else if( $rol== 1  && $idprograma == 1){  
+                           echo '<div class="alert alert-danger">
+                           <strong>ERROR!</strong> Debe Seleccionar un programa distinto a NULL.
+                           </div>';
+                        }
+
+
                   //---- VALIDACIONES DEL NUMERO FICHA----- ///
-                        
-                           
-                           else if(!preg_match("/^[0-9]+$/",$numero_ficha) && $numero_ficha !=""){  
+
+
+                  else if($rol== 1 && $numero_ficha == ""){  
+                     echo '<div class="alert alert-danger">
+                     <strong>ERROR!</strong>  El Campo Número Ficha no puede ir vacio.
+                     </div>';
+                  }
+
+
+
+                           else if(!preg_match("/^[0-9]+$/",$numero_ficha)){  
                               echo '<div class="alert alert-danger">
-                              <strong>ERROR!</strong>  El Campo Número Ficha debe contener solo números o puede ir vacío.
+                              <strong>ERROR!</strong>  El Campo Número Ficha debe contener solo números.
                               </div>';
-                                 }
+                           }
+
+
                   //---- REGISTRAR USUARIO CORRECTAMENTE----- /// 
 
                         else {
@@ -748,5 +777,71 @@ class administrarUsuarios extends Controller {
                } 
          }
     }
+
+
+
+    function CamposRequeridosAprendiz(){
+      $rol = $_POST['consulta']; 
+
+
+      if ($rol == 1) {   
+
+         $this->view->consultarprograma = $this->model->consultarprograma();
+
+            $salida = "<div class='row'>";
+            
+            $salida .= "<div class='col-xs-6 col-sm-6 col-md-6'>";
+
+            $salida .= "<label>Programa</label>";
+            
+            $salida .="<select class='form-control' id='idprograma' name='idprograma'> ";
+            
+            $salida .="<option value=''>selecciona:</option>";
+            
+            foreach($this->view->consultarprograma as $resultado ){ 
+            
+               $salida .= "<option value=".$resultado['idPrograma'].">" .$resultado['NombrePrograma'].  "</option>";
+            
+            } 
+            $salida .="</select>";
+
+            $salida .="</div>";
+
+
+            $salida .= "<div class='col-xs-6 col-sm-6 col-md-6'>";
+
+            $salida .= "<div class='form-group'>";
+             
+            $salida .= "<label for=''>Número Ficha</label>";
+
+            $salida .= "<input type='text' name='numero_ficha' id='Anumero_ficha'
+            value='' class='form-control' placeholder=''
+            tabindex='3'>";
+
+            $salida .="</div>";
+
+            $salida .="</div>";
+
+
+
+            $salida .="</div>";
+
+
+            
+            }else{
+               
+            
+               $salida ="<input type='hidden' value='1' id='idprograma' name='idprograma'>";
+            
+               $salida .="<input type='hidden'  value='0' id='numero_ficha'  name='numero_ficha'>";
+
+            
+            }
+            
+            echo $salida;
+            
+            
+  
+   }
 }
 ?>
