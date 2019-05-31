@@ -27,7 +27,7 @@
 <div class="form-group">
 			 <label for="">Placa Equipo</label>
 				<input type="text" name="Placa_Equipo" id="Placa_Equipo" class="form-control " placeholder=" " tabindex="3" >
-                <label for="">Descripción Equipo</label>
+                <label for="">Descripción Elemento</label>
 				<input type="text" name="Descripcion" id="Descripcion" class="form-control " placeholder=" " tabindex="3" >
 
             </div>

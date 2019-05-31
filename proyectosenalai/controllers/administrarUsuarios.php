@@ -271,7 +271,7 @@ class administrarUsuarios extends Controller {
                                  <strong>ERROR!</strong>  El Número Documento ya ha sido registrado.
                                  </div>';
                                  } 
-                                          //---- VALIDACIONES DEL tipo documento----- ///      
+                                          //---- VALIDACIONES DE sexo----- ///      
                                           else if($sexo == ""){
                                                 echo '<div class="alert alert-danger">
                                                 <strong>ERROR!</strong>  Seleccione un sexo.
@@ -444,12 +444,12 @@ class administrarUsuarios extends Controller {
                                  
                                     <tr>
                                     <td colspan='4' style='padding:15px;'>
-                                    <p style='font-size:20px;'>CUENTA CREADA SATISFACTORIAMENTE</p>
+                                    <p style='font-size:20px;'>Cuenta Creada Sastifactoriamente</p>
                                     <hr />
-                                    <p style='font-size:25px;'>Tus Datos Son:</p>
+                                    <p style='font-size:25px;'>Sus datos son:</p>
                                     <p style='font-size:25px;'>Usuario: ".$usuario."</p>
-                                    <p style='font-size:25px;'>Contraseña: Es el número de tu documento</p>
-                                    <p style='font-size:25px;'>ALERTA: POR FAVOR ACTUALIZA TU CONTRASEÑA LO MAS PRONTO POSIBLE</p>
+                                    <p style='font-size:25px;'>Contraseña: Es el número de su documento</p>
+                                    <p style='font-size:25px; color: red;'>ALERTA:</p> <p style='font-size:20px;'>Por favor actualice su contraseña </p>
                                     
                                  
                                     </td>

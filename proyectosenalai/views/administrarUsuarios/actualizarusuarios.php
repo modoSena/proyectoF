@@ -21,14 +21,14 @@
   background-color: black;s" />
             <input type="hidden" value="<?php echo $this->valores['idPersona'] ?>" name="idPersona">
             <div class="form-group">
-                <label for="">Nombres</label>
+                <label for="">Nombres <span>*</span></label>
                 <input type="text" name="Anombres" id="Anombres" value="<?php echo $this->valores['Nombre']; ?>"
                     class="form-control " placeholder="" tabindex="3">
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Primer Apellido</label>
+                        <label for="">Primer Apellido <span>*</span></label>
                         <input type="text" name="Aapellido_primero" id="Aapellido_primero"
                             value="<?php echo $this->valores['Apellido_Primero']; ?>" class="form-control " placeholder=""
                             tabindex="1">
@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Usuario</label>
+                        <label for="">Usuario <span>*</span></label>
                         <input type="text" name="Ausuario" id="Ausuario" value="<?php echo $this->valores['Usuario']; ?>"
                             class="form-control " placeholder="" tabindex="3">
                     </div>
@@ -56,7 +56,7 @@
                 <?php  if($_SESSION['Roles_idRoles'] == 4)  {?>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label>Rol</label>
+                        <label>Rol <span>*</span></label>
                         <select class='form-control' id='Arol' name='Arol'>
                             <option value="<?php echo $this->valores['Roles_idRoles']; ?>">selecciona:</option>
                             <?php foreach ($this->consultarrol as $resultado) { ?>
@@ -69,7 +69,7 @@
 <?php }else{?>  
                     <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                                <label>Rol</label>
+                                <label>Rol <span>*</span></label>
                                 <select class='form-control' id='Arol' name='Arol'>
                                     <option value="<?php echo $this->valores['Roles_idRoles']; ?>">selecciona:</option>
                                     <option value="1">Usuario</option>
@@ -82,7 +82,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label>Tipo Documento</label>
+                        <label>Tipo Documento <span>*</span></label>
                         <select class='form-control' id='Atipodocumento' name='Atipodocumento'>
                             <OPTION value="<?php echo $this->valores['Tipo_Documento_idTipo_Documento']; ?>">Selecciona:
                             </option>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Núm. Documento</label>
+                        <label for="">Núm. Documento <span>*</span></label>
                         <input type="text" name="Adocumento" id="Adocumento"
                             value="<?php echo $this->valores['Numero_Documento']; ?>" class="form-control " placeholder=" "
                             tabindex="3">
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>Sexo</label>
+                <label>Sexo <span>*</span></label>
                 <select class='form-control' id='Asexo' name='Asexo'>
                     <option value="<?php echo $this->valores['Sexo_idSexo']; ?>">selecciona:</option>
                     <?php foreach ( $this->consultarsexo as $resultado) { ?>
@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label>Departamento</label>
+                        <label>Departamento <span>*</span></label>
                         <select class='form-control' id='departamento' name='departamento'>
                             <option value="">selecciona:</option>
                             <?php foreach ($this->consultardepartamento as $resultado ) { ?>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group" id="ciudades">
-                        <label>Municipio</label>
+                        <label>Municipio <span>*</span></label>
                         <select class='form-control' id='ciudad' name='ciudad'>
                             <option value="<?php echo $this->valores['Ciudad_idCiudad']; ?>">Primero selecciona un
                                 departamento</option>
@@ -136,19 +136,19 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Dirección</label>
+                <label for="">Dirección <span>*</span></label>
                 <input type="text" name="Adireccion" id="Adireccion" value="<?php echo $this->valores['Direccion']; ?>"
                     class="form-control " placeholder=" " tabindex="3">
             </div>
             <div class="form-group">
-                <label for="">Email</label>
+                <label for="">Email <span>*</span></label>
                 <input type="email" name="Aemail" id="Aemail" value="<?php echo $this->valores['Email']; ?>"
                     class="form-control " placeholder=" " tabindex="3">
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Celular </label>
+                        <label for="">Celular <span>*</span></label>
                         <input type="text" name="Anumero_celular" id="Anumero_celular"
                             value="<?php echo $this->valores['Numero_Celular']; ?>" class="form-control " placeholder=" "
                             tabindex="3">
@@ -162,10 +162,10 @@
                     </div>
                 </div>
             </div>
-            <p style="text-align: center;">Nota: Los Siguientes Campos son Requeridos</p>
+            <p style="text-align: center; color: Red;">Nota: Los campos son  marcados por un <span class="glyphicon glyphicon-asterisk"></span> son requeridos</p>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label>Programa</label>
+                    <label>Programa <span>*</span></label>
                     <select class='form-control' id='Aidprograma' name='Aidprograma'>
                         <OPTION value="<?php echo $this->valores['Programa_idPrograma']; ?>">Selecciona:</option>
                         <?php foreach ($this->consultarprograma as $resultado) { ?>
@@ -176,7 +176,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <label for="">Número Ficha</label>
+                        <label for="">Número Ficha <span>*</span></label>
                         <input type="text" name="Anumero_ficha" id="Anumero_ficha"
                             value="<?php echo $this->valores['Numero_Ficha']; ?>" class="form-control " placeholder=" "
                             tabindex="3">

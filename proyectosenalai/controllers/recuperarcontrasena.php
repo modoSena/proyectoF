@@ -7,24 +7,17 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 
 class recuperarcontrasena extends Controller{
-
-
     function __construct()
     {
-        parent::__construct();
-    
-        
+        parent::__construct();  
     }
 
     function render(){
-        
         $this->view->render('recuperarcontrasena/index');
     }
 
-
     function emailrecuperarcontrasena(){
             function createRandomcode() { 
-
             $chars = "abcdefghijkmnopqrstuvwxyz023456789"; 
             srand((double)microtime()*1000000); 
             $i = 0; 
@@ -40,16 +33,9 @@ class recuperarcontrasena extends Controller{
             return time().$pass; 
     
         }
-
                 $email = $_POST['email'];
-
-
                 $obj = new recuperarContrasena();
                 $this->view->f = $this->model->validarEmailRecuperarContrasena($email);
-
-
-
-
 
                 //---- VALIDACIONES DEL  EMAIL----- ///  
                 if(strlen($email) == 0){ 
@@ -63,25 +49,13 @@ class recuperarcontrasena extends Controller{
                 <strong>ERROR!</strong>  Debe ingresar un Email valido.
                 </div>';   
                 }  
-
-
-
-                
-
                 //---- VALIDACIONES DEL  EMAIL(VALIDAR QUE EL EMAIL NO EXISTA EN LA BASE DE DATOS)----- ///      
-
-
                 //Comprovar si email existe 
                 else if($this->view->f  > 0){
                 $codigo = createRandomcode();
                 ini_set('date.timezone','America/Bogota'); 
                 $fechaRecuperacion = date("Y-m-d H:i:s", strtotime('+24 hours'));
-
                 $this->model->datosRecuperacion($codigo,$email,$fechaRecuperacion);
-
-                
-                    
-
                     $mail = new PHPMailer(true); 
 
                     // Passing `true` enables exceptions
@@ -95,7 +69,6 @@ class recuperarcontrasena extends Controller{
                         $mail->Password = 'colonbia123';                          // SMTP password
                         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 587;                                    // TCP port to connect to
-                    
                         //Recipients
                         $mail->setFrom('senalai31@gmail.com', 'Sena L.A.I');
                         $mail->addAddress($email, 'APREDNDIZ');     // Add a recipient
@@ -117,16 +90,16 @@ class recuperarcontrasena extends Controller{
                             
                         $message .= "<tbody>
                                     <tr align='center' height='50' style='font-family:Verdana, Geneva, sans-serif;'>
-                            <td style='background-color:fff; text-align:center;'><h1 style='color:black'; >hola aprendiz, ".$this->view->f['Nombre']."</td>
+                            <td style='background-color:fff; text-align:center;'><h1 style='color:black'; >Hola Señor(a): ".$this->view->f['Nombre']."</td>
                     
                             </tr>
                             
                             <tr>
                             <td colspan='4' style='padding:15px;'>
-                            <p style='font-size:20px;'>RECUPERACION DE CONTRASEÑA </p>
+                            <p style='font-size:20px;'>Recuperar contraseña</p>
                             <hr />
-                            <p style='font-size:25px;'>ingresa al siguiente link para cambiar tu contraseña</p>
-                            <p style='font-size:25px;'>http://localhost/proyectosenalai/recuperarcontrasena/nuevacontrasena/".$codigo."</p>
+                            <p style='font-size:25px;'>Ingrese al siguiente link para que puedas recuperar su contraseña</p>
+                            <p style='font-size:25px;'>http://localhost/proyectoF/proyectosenalai/recuperarcontrasena/nuevacontrasena/".$codigo."</p>
 
                             
                             

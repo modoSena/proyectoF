@@ -98,19 +98,7 @@ class elementos extends Controller{
             echo 1;
            }
           }
-          
-
-
-
-
-         
-
-
-
     }
-
-
-    
 
     function registrarElemento(){
         session_start();
