@@ -43,7 +43,7 @@ class Prestamosmodel extends Model
         WHERE elementos.idElementos NOT IN (SELECT ep.Elementos_idElementos
                                             FROM ep
                                             INNER JOIN prestamos ON ep.Prestamo_idPrestamo = prestamos.idPrestamos
-                                            WHERE prestamos.jornada_idJornada = :Jornada AND prestamos.Fecha_inicial = :Fecha AND prestamos.Estado_Prestamo = 'E') AND elementos.Estado_Elementos_idEstado_Elementos = 1 AND elementos.Tipo_Equipo_idTipo_Equipo = :tipo AND detalleambiente.Ambientes_idAmbientes in (1,2,3,4,5,6,7,8,9,10,11)";
+                                            WHERE prestamos.jornada_idJornada = :Jornada AND prestamos.Fecha_inicial = :Fecha AND prestamos.Estado_Prestamo = 'E') AND elementos.Estado_Elementos_idEstado_Elementos = 1 AND elementos.Tipo_Equipo_idTipo_Equipo = :tipo AND detalleambiente.Ambientes_idAmbientes in (2,3,4,5,6,7,8,9,10,11)";
         $stmt = $Connection->prepare($SqlCommand);
         $stmt->bindValue(":tipo",$tipoElemento, PDO::PARAM_INT);
         $stmt->bindValue(":Jornada",$Jornada, PDO::PARAM_INT);
@@ -58,14 +58,14 @@ class Prestamosmodel extends Model
     function ElementosByPrestamo($idPrestamo)
     {
         $Connection = $this->db->connect();
-        $SqlCommand = "SELECT elementos.idElementos,elementos.Placa_Equipo,elementos.Numero_Serial, elementos.Descripcion, tipo_elementos.NombreTipoElemento, ubicacion.NombreUbicacion, ambientes.Numero_Ambiente 
+        $SqlCommand = "SELECT elementos.idElementos,elementos.Placa_Equipo,elementos.Numero_Serial, elementos.Descripcion, tipo_elementos.NombreTipoElemento, ubicacion.NombreUbicacion, ambientes.Numero_Ambiente ,detalleambiente.Ambientes_idAmbientes ,detalleambiente.Estado_E 
                         FROM elementos 
                         INNER JOIN ep ON elementos.idElementos = ep.Elementos_idElementos
                         INNER JOIN tipo_elementos on elementos.Tipo_Equipo_idTipo_Equipo = tipo_elementos.idTipo_Elementos
                         INNER JOIN detalleambiente ON elementos.idElementos = detalleambiente.Elementos_idElementos
                         INNER JOIN ambientes ON detalleambiente.Ambientes_idAmbientes = ambientes.idAmbientes
                         INNER JOIN ubicacion ON ambientes.Ubicacion_idUbicacion = ubicacion.idUbicacion                
-                        WHERE ep.Prestamo_idPrestamo = $idPrestamo";
+                        WHERE ep.Prestamo_idPrestamo = $idPrestamo and detalleambiente.Ambientes_idAmbientes in (1,2,3,4,5,6,7,8,9,10,11) and detalleambiente.Estado_E = 1";
         $stmt = $Connection->prepare($SqlCommand);
         $stmt->execute();
         $this->Object = array();
