@@ -19,13 +19,11 @@
     <br><br>
     <section class="principal">
         <h1 style="text-align:center; font-family: fantasy;">Elementos Del Ambiente <?php echo $this->query2['Numero_Ambiente'];?></h1>
-
-
         <br>
         <div id="div1">
         <table id="table_id" class="display">
     <thead>
-        <tr>       
+        <tr>      
                   <th>Reportar Novedad</th>
                   <th>Ver Novedades</th>
                   <th>Número Serial</th>
@@ -34,7 +32,6 @@
                   <th>TIPO Elemento</th>
                   <th>Fecha </th>
                   <th>Estado</th>
-
         </tr>
     </thead>
     <tbody>
@@ -42,7 +39,6 @@
         <tr>
                <td> <button  onclick="obtenerid(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-file'></span></button> </td>
                <td> <button  onclick="buscar_datos(<?php echo $fila['idElementos']?>)" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2"><span class='glyphicon glyphicon-eye-open'></span></button> </td>
-
                <td><?php echo $fila['Numero_Serial'] ?></td>         
                <td><?php echo $fila['Placa_Equipo'] ?></td>
                <td><?php echo $fila['Marca'] ?></td>
@@ -89,11 +85,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -102,31 +93,12 @@
         <h2 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Novedades reportadas</h2>
       </div>
       <div class="modal-body">
-
-
     <div id="table_idy">
-
-    </div>
-     
-            
+    </div> 
       </div>
-
-      
-
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
  <!-- MODAL exito AL REPORTRA NOVEDAD ---->
  <div data-backdrop="static" data-keyboard="false" class="modal fade" id="modalExitoReportarNovedad" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -137,52 +109,25 @@
           <h2 class="modal-title" id="exampleModalLongTitle">Novedad reportada con éxito.</h2>
         </div>
         <div class="modal-body">
-        
               <p for="">Se ha enviado la novedad.</p>
-              
-              
         </div>
         <div class="modal-footer">
-				
-               
-                  
                 <a href="<?php echo constant('URL')?>ambientes/elementosAmbiente/<?php echo $this->idAmbientes ?>" class="btn btn-primary">Aceptar</a>
                 </div>
-  
-      
-  
       </div>
     </div>
   </div>  
-
-
-
-
-
-
     <br>
     <br>
     <br>
-
     <?php require('views/plantilla/footer.php')  ?>
     <script src="<?php echo constant('URL');?>public/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo constant('URL');?>public/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL');?>DataTables/datatables.js"></script>
-
     <script>$(document).ready( function () { $('#table_id').DataTable(); } );</script>
-
     <script > function  obtenerid(id){ $("#idd").val(id);}</script>
-  
-
-
-
-
 </body>
-
 </html>
-
-
-
 <script>
 $(function () {
     console.log('jquery funciona')  ;
@@ -201,7 +146,6 @@ $(function () {
               if (respuesta == 1) {
                 $('#myModal').modal('hide');
                 $('#modalExitoReportarNovedad').modal("show");
-                  
               }else{
                 $('#mensajes').html(respuesta);
               }
@@ -213,15 +157,7 @@ $(function () {
    )
 
 </script>
-
-
-
-
-
 <script>
-
-
-
 function buscar_datos(consulta){
     $.ajax({
 		url: '<?php echo constant('URL')?>ambientes/consultarNovedades' ,
@@ -236,8 +172,6 @@ function buscar_datos(consulta){
 		console.log("error");
 	});
 }
-
-
 </script>
 
 

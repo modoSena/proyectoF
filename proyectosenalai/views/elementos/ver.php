@@ -13,9 +13,6 @@
     <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
 </head>
 <title>Sena L.A.I</title>
-
-
-
 <br>
 <br>
 <br>
@@ -23,13 +20,9 @@
    echo '<h1>'.'no hay nada'.'</h1>'; 
 } ?>
 
-
-
   <?php foreach ($this->w as $idelementos ) { ?>
     <?php echo '<h1>'. $idelementos .'</h1>' ;?>
   <?php } ?>
-
-
 <body>
     <?php include('views/plantilla/header.php') ?>
     <?php include('views/plantilla/footer.php') ?>

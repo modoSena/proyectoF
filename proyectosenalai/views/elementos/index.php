@@ -29,7 +29,6 @@
         <table id="table_id" class="display">
     <thead>
         <tr>
-                 
                   <th>Cambiar Estado</th>
                   <th>Editar</th>
                   <th>Novedades Reportadas</th>
