@@ -70,33 +70,15 @@
     </tbody>
 
 </table>
-
-
-
-
 </form>
-        </div>          
-    </section>
-
-
-
-
-
-
-
-
-
     <!-- Modal -->
     <div id="modalElementosMover" data-backdrop="static" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-       
+    <div class="modal-content">  
     <div class="modal-header">
         <h2 class="modal-title" id="exampleModalLongTitle" style="text-align: center; font-family: fantasy;">Mover Elementos</h2>
-        
       </div>
       <div class="modal-body">
-
       <div id="div1">
             <form  id="moverElementos" method="POST">
             <div class="row">
@@ -121,7 +103,6 @@
                     </div>
                 </div>
             </div>
-
         <table id="table_idd" class="display">
     <thead>
         <tr>           
@@ -138,43 +119,28 @@
     <?php  foreach($this->queryy as  $fila) { ?>
         <tr>
             <td><input  type="checkbox" name="idsElementos[]"  value="<?php echo $fila['idDetalleAmbiente'] ?>" id=""></td>
-
-
-
                <td><?php echo $fila['Numero_Serial'] ?></td> 
                <td><?php echo $fila['Placa_Equipo'] ?></td> 
                <td><?php echo $fila['NombreTipoElemento'] ?></td>
                <td><?php echo $fila['Marca'] ?></td>
                <td><?php echo $fila['Descripcion'] ?></td>
                <td><?php echo $fila['NombreUbicacion'].' '.'ambiente'.' '.$fila['Numero_Ambiente'] ?></td>
-
         </tr>
     <?php } ?>
     </tbody>
-
 </table>
-
 <input type="hidden" name="envioMoverElemento">
 <div class="modal-footer">
 <a href="<?php echo constant('URL')?>elementos" class="btn btn-primary">Cancelar</a>
         <button type="button" id="submit" name="submit" class="btn btn-primary">Aceptar</button>
         <div id ="alert"><img class="loading" id="loading" src="<? echo constant('URL')?>public/img/loading.gif" alt=""> <span id="mensajes"> </span></div>
       </div>
-
 </form>
         </div>    
-
-
       </div>
-     
-       
-      
-     
       </div>
   </div>
 </div>
-
-
     <!-- Modal novedades reportadas -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -184,17 +150,9 @@
         <h2 class="modal-title" id="myModalLabel" style="text-align: center; font-family: fantasy;">Novedades reportadas</h2>
       </div>
       <div class="modal-body">
-
-
     <div id="table_idyy">
-
-    </div>
-     
-            
+    </div>  
       </div>
-
-      
-
     </div>
   </div>
 </div>

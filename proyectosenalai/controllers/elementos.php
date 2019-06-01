@@ -200,14 +200,8 @@ class elementos extends Controller{
           header('Location:'.constant('URL').'login');
           die();
         }
-    
-    
         $idElemento = $_POST['consulta'];
-        
         $this->view->query = $this->model->consultarNovedades($idElemento);
-    
-    
-    
     $salida = "<table id='table_id12' class='display'>
               <thead>
             <tr>
@@ -220,22 +214,15 @@ class elementos extends Controller{
         <tbody>";
         foreach($this->view->query as  $fila) { 
           $salida .=  "<tr>";
-                 $salida .= "<td>" . $fila['Nombre'] ."</td>         
+                 $salida .= "<td>" . $fila['Nombre'] .' '.$fila['Apellido_Primero']."</td>         
                    <td>".  $fila['Numero_Documento']. "</td>
                    <td>".$fila['Descripcion']. "</td>
                    <td>".$fila['Fecha_Realizacion']. "</td>";
-    
-                    
-    
              $salida .="</tr>";
          } 
         $salida.="</tbody></table>";
-    
        echo $salida;
-    
-    
        echo"<script>$(document).ready( function () { $('#table_id12').DataTable(); } );</script>";
-    
       }
 
 
