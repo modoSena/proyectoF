@@ -53,7 +53,7 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Tipo elemento actualizado con éxito</h2>
+          <h2 class="modal-title" style="text-align:center; font-family: fantasy;" id="exampleModalLongTitle">Tipo elemento actualizado con éxito</h2>
         </div>
         <div class="modal-body">
               <p for="">Se ha actualizado el tipo elemento</p> 

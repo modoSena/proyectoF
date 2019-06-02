@@ -50,7 +50,7 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Tipo elemento registrado con exito</h2>
+          <h2 class="modal-title" style="text-align:center; font-family: fantasy;" id="exampleModalLongTitle">Tipo elemento registrado con exito</h2>
         </div>
         <div class="modal-body">
               <p for="">Se ha registrado el tipo elemento</p>
