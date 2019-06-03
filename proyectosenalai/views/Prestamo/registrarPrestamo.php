@@ -80,7 +80,7 @@
         <button type="submit" id="btnGuardar" class="btn btn-primary btn-block btn-lg">Registrar Préstamo</button><br><br>
 				</div>
 				<div  class="col-xs-6 col-md-6">
-				<a href="<?php echo constant('URL')?>elementos" class="btn btn-primary btn-block btn-lg">Cancelar</a>
+				<a href="<?php echo constant('URL')?>Prestamo" class="btn btn-primary btn-block btn-lg">Cancelar</a>
 				</div>
 			</div>
 			
