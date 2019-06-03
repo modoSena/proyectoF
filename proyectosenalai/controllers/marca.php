@@ -59,7 +59,7 @@ class marca extends Controller{
 
             }else if ($this->comparador['Marca'] != $Marca && $this->r > 0) {
             echo '<div class="alert alert-danger">
-            <strong>ERROR!</strong>  El marca ya existe.
+            <strong>ERROR!</strong>  La marca ya existe.
             </div>';
           }else {
             $this->model->actualizarMarca($idMarcas,$Marca);
@@ -102,7 +102,7 @@ class marca extends Controller{
 
           }else if ( $this->r > 0) {
           echo '<div class="alert alert-danger">
-          <strong>ERROR!</strong>  El marca ya existe.
+          <strong>ERROR!</strong>  La marca ya existe.
           </div>';
         }else {
           $this->model->registrarMarca($Marca);

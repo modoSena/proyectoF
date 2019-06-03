@@ -10,6 +10,7 @@
     <link rel="stylesheet"  type="text/css" href="<?php echo constant('URL')?>public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/login.css">
     <link rel="stylesheet"  type="text/css" href="<?php echo constant('URL')?>public/css/tableUsuario.css">
+    <link rel="icon" href="<?php echo constant('URL');?>public/img/sena.png">
 </head><title>Sena L.A.I</title>
 <body>
 <?php include('views/plantilla/header.php') ?>
