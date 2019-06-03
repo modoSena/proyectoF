@@ -27,7 +27,7 @@
   <tr>
     <td colspan="2">
       Persona<br>
-      <select class="form-control" id="slPersonas" class="form-control"  name="slPersonas">
+      <select class="form-control" id="slPersonas" class="form-control"  name="slPersonas" required>
       </select>
     </td>
   </tr>
@@ -40,7 +40,7 @@
     </td>
   </tr>
   <tr>
-    <td colspan="2">Fecha Inicial<br><input type="date" name="dtFechaInicial" class="form-control" min="<?php echo date("Y-m-d"); ?>" max="" class="readonly"></td>
+    <td colspan="2">Fecha Inicial<br><input type="date" name="dtFechaInicial" class="form-control" min="<?php echo date("Y-m-d"); ?>" max="" class="readonly" required></td>
   </tr>
   <tr>
     <td>
