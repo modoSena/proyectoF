@@ -50,10 +50,10 @@
       <div class="modal-content">
        
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Marca registrado con éxito</h2>
+          <h2 class="modal-title" id="exampleModalLongTitle">Marca registrada con éxito</h2>
         </div>
         <div class="modal-body">
-              <p for="">Se ha registrado la marca</p>
+              <p for="">Se ha registrada la marca</p>
         </div>
         <div class="modal-footer">
                 <a href="<?php echo constant('URL')?>marca" class="btn btn-primary">Aceptar</a>
