@@ -11,11 +11,10 @@ class tipoDocumento extends Controller{
     function render(){
         session_start();
 
-        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" || $_SESSION['Roles_idRoles'] != 4 ) {
-            header('Location:'.constant('URL').'login');
-            die();        
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
+          header('Location:'.constant('URL').'login');
+          die();
         }
-
         $this->view->query=$this->model->consultartipoDocumentos();
         $this->view->render('tipoDocumento/index');
     }
@@ -24,9 +23,10 @@ class tipoDocumento extends Controller{
     function actualizartipoDocumentos($param){
         session_start();
 
-        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" || $_SESSION['Roles_idRoles'] != 4 ) {
-            header('Location:'.constant('URL').'login');
-            die();        
+
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
+          header('Location:'.constant('URL').'login');
+          die();
         }
      $this->view->idTipo_Documento = $param[0];
      $this->view->valores = $this->model->consultartipoDocumento($this->view->idTipo_Documento);
@@ -35,10 +35,11 @@ class tipoDocumento extends Controller{
 
     function actualizartipoDocumento(){
         session_start();
-        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] != 4 ) {
+
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
           header('Location:'.constant('URL').'login');
-          die();        
-      }
+          die();
+        }
         
          
         if (isset($_POST["envioActualizotipoDocumento"])){
@@ -71,20 +72,22 @@ class tipoDocumento extends Controller{
     function  registrartipoDocumentos(){
         session_start();
   
-        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] != 4 ) {
+
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
           header('Location:'.constant('URL').'login');
-          die();        
-      }
+          die();
+        }
       $this->view->render('tipoDocumento/registrartipoDocumentos');
       }
 
       function  registrartipoDocumento(){
 
         session_start();
-        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] != 4 ) {
+
+        if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 or $_SESSION['Roles_idRoles'] == 2 ) {
           header('Location:'.constant('URL').'login');
-          die();        
-      }
+          die();
+        }
         
       if (isset($_POST["envioRegistrotipoDocumento"])){
         
