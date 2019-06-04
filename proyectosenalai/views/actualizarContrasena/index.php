@@ -26,13 +26,13 @@
          <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-6">
                   <div class="form-group">
-        <label for="">Nueva Contrasena</label>
+        <label for="">Nueva Contraseña</label>
               <input type="password" name="nuevaContrasena" id="nuevaContrasena" class="form-control input-lg" placeholder="ingrese contraseña" tabindex="3" >
             </div>          
       </div>
       <div class="col-xs-6 col-sm-6 col-md-6">       
             <div class="form-group">
-        <label for="">Repite Contrasena</label>
+        <label for="">Confirmar Contraseña</label>
               <input type="password" name="nuevaContrasena2" id="nuevaContrasena2" class="form-control input-lg" placeholder="Repita contraseña" tabindex="3" >
             </div>
                     
