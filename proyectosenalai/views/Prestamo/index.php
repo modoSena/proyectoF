@@ -54,8 +54,8 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <?php if ($_SESSION['Roles_idRoles'] == 3 || $_SESSION['Roles_idRoles'] == 4){ ?>
         <button type="button" class="btn btn-primary" id="btnDevolver">Devolución</button>
-      <?php } ?>
       <button class="btn btn-danger" id="btnCancelarPrestamo">Cancelar Préstamo</button>
+      <?php } ?>
       </div>
     </div>
   </div>
