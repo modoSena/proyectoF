@@ -145,6 +145,23 @@ class ambientesModel extends Model{
 
         }
 
+        function consultarE($idElemento){
+
+            $conexion = $this->db->connect();
+            $consulta="SELECT Placa_Equipo,Descripcion,NombreUbicacion,Numero_Ambiente FROM elementos
+            INNER JOIN detalleambiente ON elementos.idElementos = detalleambiente.Elementos_idElementos
+            INNER JOIN ambientes ON detalleambiente.Ambientes_idAmbientes =ambientes.idAmbientes
+            INNER JOIN ubicacion ON ambientes.Ubicacion_idUbicacion = ubicacion.idUbicacion where idElementos = ?";
+            $stmt = $conexion->prepare($consulta);
+            $stmt->bindParam(1, $idElemento, PDO::PARAM_INT );
+            $stmt->execute();
+            $resul = $stmt->fetch();
+            return $resul;
+            $conexion = null;
+            $stmt= null;
+            $resul= null;
+
+        }
 
         function consultarNumeroAmbiente($idAmbientes){
             $conexion = $this->db->connect();
