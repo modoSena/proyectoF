@@ -254,9 +254,9 @@ class administrarUsuarios extends Controller {
                                  </div>'; 
                                  }
                                  //NO cumple longitud minima  
-                                 else if(strlen($documento) > 30 ){  
+                                 else if(strlen($documento) < 4 || strlen($documento) > 20 ){  
                                  echo '<div class="alert alert-danger">
-                                 <strong>ERROR!</strong>  El campo Número Documento no puede  ser mayor de 30 caracteres.
+                                 <strong>ERROR!</strong>  El campo Documento minimo 4  y menor de 20 caracteres.
                                  </div>';
                                  }
                                  //SI longitud pero NO solo caracteres A-z  
@@ -653,9 +653,9 @@ class administrarUsuarios extends Controller {
                          </div>'; 
                         }
                         //NO cumple longitud minima  
-                        else if(strlen($documento) > 30 ){  
+                        else if ( strlen($documento) < 4 || strlen($documento) > 20 ){  
                          echo '<div class="alert alert-danger">
-                         <strong>ERROR!</strong>  El campo Documento no puede  ser mayor de 30 caracteres.
+                         <strong>ERROR!</strong>  El campo Documento minimo 4  y menor de 20 caracteres.
                          </div>';
                         }
                         //SI longitud pero NO solo caracteres A-z  
