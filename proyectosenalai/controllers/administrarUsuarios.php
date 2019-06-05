@@ -420,7 +420,7 @@ class administrarUsuarios extends Controller {
                         
                            //Recipients
                            $mail->setFrom('mate2801@gmail.com', 'Sena L.A.I');
-                           $mail->addAddress($email, 'APREDNDIZ');     // Add a recipient
+                           $mail->addAddress($email, 'APRENDIZ');     // Add a recipient
                         
                            $message  = "<html><body>";
                            
