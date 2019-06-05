@@ -200,8 +200,6 @@ class ambientes extends Controller{
       }
   }
 
-
-
   function consultarNovedades(){
     session_start();
     if ( $_SESSION['usuario'] ==""  and  $_SESSION['contrasena'] =="" or $_SESSION['Roles_idRoles'] == 1 ) {
@@ -225,24 +223,13 @@ $salida = "<table id='table_id2' class='display'>
              $salida .= "<td>" . $fila['Nombre'] .' '.$fila['Apellido_Primero']."</td>         
                <td>".  $fila['Numero_Documento']. "</td>
                <td>".$fila['Descripcion']. "</td>
-               <td>".$fila['Fecha_Realizacion']. "</td>";
-
-                
-
+               <td>".$fila['Fecha_Realizacion']. "</td>"; 
          $salida .="</tr>";
      } 
     $salida.="</tbody></table>";
-
    echo $salida;
-
-
    echo"<script>$(document).ready( function () { $('#table_id2').DataTable(); } );</script>";
-
   }
-
-
-
-
 
   function registrarCuentadantes(){
     session_start();
@@ -250,63 +237,34 @@ $salida = "<table id='table_id2' class='display'>
       header('Location:'.constant('URL').'login');
       die();
     }
-     
     $Cuentadante = $_POST['cuentadante'];
     $idambientes = $_POST['idambiente'];
     $idDetalleCuentadante = $_POST['idDetalleCuentadante'];
-
-
     $this->e =$this->model->validardocumentoexiste($Cuentadante);
-    
-
-    if(empty($Cuentadante) ) {
-        
+    if(empty($Cuentadante) ) { 
       echo '<div class="alert alert-danger">
       <strong>ERROR!</strong> El documento del cuentadante  no puede ir vacío.
        </div>' ;
   } 
-  
-  
     // solo caracteres numericos  
       else if(!preg_match("/^[0-9]+$/",$Cuentadante)){  
       echo '<div class="alert alert-danger">
       <strong>ERROR!</strong> El documento del cuentadante debe contener solo números.
       </div>';
     } 
-             
-  
   else if ($this->e == 0) {
       echo '<div class="alert alert-danger">
       <strong>ERROR!</strong>  El Cuentadante no existe.
        </div>' ;
   }
-  
   else {
-
-
-
-
        $this->model->destivarCuentadante($idDetalleCuentadante);
-
        $cuentadante = $this->model->consultarIdPersona($Cuentadante);
-
        $idcuentadante =  $cuentadante['idPersona'];
-
        $this->model->registrarCuentadante($idcuentadante,$idambientes);
-
        echo 1;
-
-
-
   }
-
-
-
   }
-
-
-
-
 
   function consultarCuentadantes(){
     session_start();
@@ -314,14 +272,8 @@ $salida = "<table id='table_id2' class='display'>
       header('Location:'.constant('URL').'login');
       die();
     }
-
-
     $idambiente = $_POST['consulta'];
-    
     $this->view->query = $this->model->consultarCuentadantes($idambiente);
-
-
-
 $salida = "<table id='table_id2' class='display'>
           <thead>
         <tr>
@@ -330,8 +282,7 @@ $salida = "<table id='table_id2' class='display'>
                   <th>Nombres</th>
                   <th>Celular</th>
                   <th>Fecha Registro</th>
-                  <th>Fecha Salida</th>
-                  
+                  <th>Fecha Salida</th>  
         </tr>
     </thead>
     <tbody>";
@@ -347,24 +298,13 @@ $salida = "<table id='table_id2' class='display'>
                <td>".$fila['Numero_Celular']. "</td>
                <td>".$fila['Fecha']. "</td>
                <td>".$fila['Fecha_Final']. "</td>";
-            
-              
-
-                
-
          $salida .="</tr>";
      } 
     $salida.="</tbody></table>";
-
    echo $salida;
-
-
    echo"<script>$(document).ready( function () { $('#table_id2').DataTable(); } );</script>";
 
   }
-
-
-
 }
 
 ?>
