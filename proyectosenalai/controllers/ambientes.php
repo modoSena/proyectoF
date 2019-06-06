@@ -256,7 +256,7 @@ class ambientes extends Controller{
                     <p style='font-size:25px;'>Ubicacion de elemento: ".$datosE['NombreUbicacion']."</p>
                     <p style='font-size:25px;'>Numero de ambiente: ".$datosE['Numero_Ambiente']."</p>
                     <p style='font-size:25px;'>Descripción de novedad: ".$novedad."</p>
-                    <p style='font-size:25px;'>Realizada por: ".$_SESSION['Nombre']."</p>
+                    <p style='font-size:25px;'>Realizada por: ".$_SESSION['Nombre']." ".$_SESSION['Apellido_Primero']."</p>
                     <p style='font-size:25px;'>Fecha de novedad: ".$fecha."</p>
                  
                     </td>
@@ -283,14 +283,7 @@ class ambientes extends Controller{
            
         } catch (Exception $e) {
            echo 'no se envio error: ', $mail->ErrorInfo;
-        } 
-
-
-
-
-
-
-       
+        }  
       }
       }
   }
