@@ -225,8 +225,8 @@ class ambientes extends Controller{
         
            //Recipients
            $mail->setFrom('mate2801@gmail.com', 'Sena L.A.I');
-           $mail->addAddress('senalai31@gmail.com', 'APRENDIZ');     // Add a recipient
-        
+           $mail->addAddress('senalai31@gmail.com', '');     // Add a recipient
+           $mail->addAddress($_SESSION['Email'], ''); 
            $message  = "<html><body>";
            
            $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
