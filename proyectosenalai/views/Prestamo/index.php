@@ -22,6 +22,9 @@
         </div>
         <div class="form-actions">
             <a href="<?php echo constant('URL');?>Prestamos/addprestamo"><button type="button" class="btn btn-primary">Agregar Préstamo <span class="glyphicon glyphicon-level-up"></span></button></a>
+            <?php if ($_SESSION['Roles_idRoles'] == 3 || $_SESSION['Roles_idRoles'] == 4){ ?>
+            <a href="<?php echo constant('URL');?>ep"><button type="button" class="btn btn-primary">Elementos Prestados <span class="glyphicon glyphicon-list-alt"></span></button></a>
+            <?php } ?>
         </div>
         <br>
 
